@@ -1,0 +1,45 @@
+@font-face {
+    font-family: bebas-bold;
+    src: url('./font/bebas_neue/BebasNeue\ Bold.otf');
+}
+
+@font-face {
+    font-family: bebas-regular;
+    src: url('./font/bebas_neue/BebasNeue\ Light.otf');
+}
+
+body {
+    background-color: black;
+    height: 10000px;
+}
+
+.utama {
+    color: white;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+h1 {
+    font-family: "bebas-bold";
+    font-size: 18vh;
+    margin-bottom: 2%;
+}
+
+a {
+    font-family: "bebas-regular";
+    font-size: 5vh;
+    color: unset;
+    text-decoration: unset;
+    
+}
+
+.kedua {
+    margin-left: 7%;
+    margin-top: 10%;
+}
+
+.kedua h3 {
+    font-family: "bebas-regular";
+    font-size: 10vh;
+    color: white;
+}
