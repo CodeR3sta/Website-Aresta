@@ -1,4 +1,4 @@
-# Berisi code code websites ARESTA.
+# Berisi code code website ARESTA.
 Dibuat oleh Divisi Digital dari Team Media Digital ARESTA Seventeen Project.
 
 
