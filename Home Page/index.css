@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "bebas-regular";
+    src: url("../font/BebasNeue\ Regular.otf");
+}
+@font-face {
+    font-family: "montserrat-regular";
+    src: url("../font/Montserrat-Regular.ttf");
+}
+body {
+    margin-top: 0px;
+    background-color: black;
+}
+.main {
+    margin-left: 18vh;
+    margin-top: 30vh;
+}
+.main h1 {
+    font-family: "bebas-regular";
+    color: white;
+}
+.Ajang {
+    font-size: 10vh;
+}
+.berprestasi {
+    margin-top: -8vh;
+    background-color: red;
+    display: block;
+    margin-right: 135vh;
+    font-size: initial;
+    font-size: 13vh;    
+    transform: rotate(-2deg);
+}
+.deskripsi {
+    color:white;
+    font-family: "montserrat-regular";
+    font-size: 2vh;
+    margin-right: 135vh;
+    margin-top: -5vh;
+    transform: rotate(-2deg);
+}
