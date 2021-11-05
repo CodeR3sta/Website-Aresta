@@ -6,13 +6,25 @@
     font-family: "montserrat-regular";
     src: url("../font/Montserrat-Regular.ttf");
 }
+@font-face {
+    font-family: "mont-thin";
+    src: url("../font/Montserrat-Thin.ttf");
+}
 body {
     margin-top: 0px;
     background-color: black;
+    margin: 0%;
+    height: 1000vh;
 }
 .main {
     margin-left: 18vh;
-    margin-top: 30vh;
+    margin-top: 20vh;
+}
+.proudly{
+    font-family: "mont-thin";
+    font-size: 2vh;
+    color: white;
+    margin-bottom: -5vh;
 }
 .main h1 {
     font-family: "bebas-regular";
@@ -29,6 +41,7 @@ body {
     font-size: initial;
     font-size: 13vh;    
     transform: rotate(-2deg);
+    text-align: center;
 }
 .deskripsi {
     color:white;
@@ -37,4 +50,27 @@ body {
     margin-right: 135vh;
     margin-top: -5vh;
     transform: rotate(-2deg);
+}
+.daftar {
+    font-size: 3.5vh;
+    color: white;
+    font-family: "montserrat-regular";
+    background-color: red;
+    margin-right: 145vh;
+    display: block;
+    text-align: center;
+}
+.wait{
+    font-family: "mont-thin";
+    color: white;
+    font-size: 2vh;
+    transform: rotate(2deg);
+    margin-top: 5vh;
+}
+.four{
+    font-family: "montserrat-regular";
+    color: white;
+    font-size: 2vh;
+    transform: rotate(2deg);
+    margin-top: -2vh;
 }
