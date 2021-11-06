@@ -9,7 +9,7 @@
 @media only screen and (max-width: 400px){
     .comingsoon {
         margin-left: 0vh;
-        font-size: unset;
+        margin: 0px;
     }
     h1 {
         font-size: 10px;
@@ -22,8 +22,12 @@
         font-size: 7px;
     }
     h4 {
+        font-size: 5px;
+    }
+    .aresta{
         font-size: 10px;
     }
+    
 }
 body{
     background-color: black;
@@ -46,15 +50,12 @@ h4{
     display: block;
     text-align: center;
     margin: 35vh auto 0;
-    font-size: 80%;
     color: white;
+    font-size: 15px;
 }
 a{
     color: inherit;
     font-size: inherit;
-}
-h4.abc{
-    font-size: 100%;
 }
 p{
     text-align: left;
