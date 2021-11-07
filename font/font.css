@@ -1,7 +1,20 @@
 @font-face {
     font-family: "poppins" ;
     src: url('./Poppins-Bold.ttf');
-
-    font-family: "poppins-regular";
-    src: url('./Poppins-ExtraLight.ttf');
+}
+@font-face {
+    font-family: "bebas-regular";
+    src: url('./BebasNeue\ Regular.otf');
+}
+@font-face {
+    font-family: "roboto-thin";
+    src: url('./Roboto-Thin.ttf');
+}
+@font-face {
+    font-family: "bebas-thin";
+    src: url('./BebasNeue\ Light.otf');
+}
+@font-face {
+    font-family: "roboto-bold";
+    src: url('./Roboto-Bold.ttf');
 }
