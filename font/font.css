@@ -18,3 +18,7 @@
     font-family: "roboto-bold";
     src: url('./Roboto-Bold.ttf');
 }
+@font-face {
+    font-family: "roboto-italic";
+    src: url('./Roboto-LightItalic.ttf');
+}

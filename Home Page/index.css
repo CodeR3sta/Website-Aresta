@@ -2,18 +2,31 @@
 
 body {
     background-color: black;
+    height: 100rem;
 }
+
+.topnav {
+    color: white;
+    font-family: "bebas-regular";
+    margin: 3rem 8rem 0rem 8rem;
+}
+
 .halaman-pertama {
     margin-left: 8rem;
     margin-right: 8rem;
     color: white;
-    margin-top: 6rem;
-    margin-bottom: 0rem;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+}
+
+.proudly {
+    font-family: "roboto-thin";
+    font-size: 0.8rem;
 }
 
 .judul {
     font-family: "bebas-regular";
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: white;
     display: unset;
     letter-spacing: 0.2rem;
@@ -63,4 +76,12 @@ body {
 
 .small-credit {
     color: white;
+}
+
+.halaman-dua {
+    margin: 10rem 8rem 6rem 8rem;
+}
+
+.video {
+    margin: 0rem 15rem 0rem 15rem;
 }
