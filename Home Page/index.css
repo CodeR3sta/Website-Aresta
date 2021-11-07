@@ -18,7 +18,7 @@ body {
 }
 .main {
     margin-left: 18vh;
-    margin-top: 20vh;
+    margin-top: 15vh;
 }
 .proudly{
     font-family: "mont-thin";
@@ -37,11 +37,9 @@ body {
     margin-top: -8vh;
     background-color: red;
     display: block;
-    margin-right: 135vh;
     font-size: initial;
     font-size: 13vh;    
-    transform: rotate(-2deg);
-    text-align: center;
+    text-align: left;
 }
 .deskripsi {
     color:white;
@@ -73,4 +71,15 @@ body {
     font-size: 2vh;
     transform: rotate(2deg);
     margin-top: -2vh;
+}
+.rectangle{
+    width: 50%;
+    margin-left: 50%;
+    height: 10vh;
+    background-color: red;
+    z-index: -1vh;
+    margin-top: unset;
+    margin-top: 0;
+    margin-bottom: unset;
+    margin-bottom: 0vh;
 }

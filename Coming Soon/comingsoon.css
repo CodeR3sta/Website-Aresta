@@ -1,63 +1,28 @@
 @font-face {
-    font-family: "poppins-bold";
-    src: url("../font/Poppins-Bold.ttf");
+    font-family: "uraenium";
+    src: url("../font/urae_nium.ttf");
 }
 @font-face {
-    font-family: "poppins-regular";
-    src: url("../font/Poppins-Regular.ttf");
+    font-family: "roboto mono";
+    src: url("../font/RobotoMono-Light.ttf");
 }
-@media only screen and (max-width: 400px){
-    .comingsoon {
-        margin-left: 0vh;
-        margin: 0px;
-    }
-    h1 {
-        font-size: 10px;
-    }
-    h4.abc {
-        font-size: unset;
-        font-size: 10px;
-    }
-    p {
-        font-size: 7px;
-    }
-    h4 {
-        font-size: 5px;
-    }
-    .aresta{
-        font-size: 10px;
-    }
-    
+body {
+    margin: 0%;
+    background-color:black;
 }
-body{
-    background-color: black;
-    height:auto;
-    display: block;
-    max-width: 180%;
-    max-height: 100%;
-    margin-left: 15vh;
-}
-h1{
-    font-family: "poppins-bold";
-    text-align: left;
-}
-h4{
-    font-family: "poppins-regular";
-    font-size: inherit;
-    text-align: left;
-}
-.comingsoon{
-    display: block;
-    text-align: center;
-    margin: 35vh auto 0;
+.comingsoon {
     color: white;
-    font-size: 15px;
+    margin-left: 4em;
+    margin-top: 10em;
 }
-a{
+.coming {
+    font-family: "uraenium";
+    font-size: 5rem;
+}
+.aresta,
+p,
+a {
+    font-family: "roboto mono";
+    font-size: 1rem;
     color: inherit;
-    font-size: inherit;
-}
-p{
-    text-align: left;
-    font-family: "poppins-regular";
 }
