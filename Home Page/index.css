@@ -1,85 +1,87 @@
-@font-face {
-    font-family: "bebas-regular";
-    src: url("../font/BebasNeue\ Regular.otf");
-}
-@font-face {
-    font-family: "montserrat-regular";
-    src: url("../font/Montserrat-Regular.ttf");
-}
-@font-face {
-    font-family: "mont-thin";
-    src: url("../font/Montserrat-Thin.ttf");
-}
+@import url('../font/font.css');
+
 body {
-    margin-top: 0px;
     background-color: black;
-    margin: 0%;
-    height: 1000vh;
+    height: 100rem;
 }
-.main {
-    margin-left: 18vh;
-    margin-top: 15vh;
-}
-.proudly{
-    font-family: "mont-thin";
-    font-size: 2vh;
+
+.topnav {
     color: white;
-    margin-bottom: -5vh;
-}
-.main h1 {
     font-family: "bebas-regular";
+    margin: 3rem 8rem 0rem 8rem;
+}
+
+.halaman-pertama {
+    margin-left: 8rem;
+    margin-right: 8rem;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+}
+
+.proudly {
+    font-family: "roboto-thin";
+    font-size: 0.8rem;
+}
+
+.judul {
+    font-family: "bebas-regular";
+    font-size: 1.6rem;
+    color: white;
+    display: unset;
+    letter-spacing: 0.2rem;
+}
+
+.judul h1 {
+    margin: 0rem;
+    margin-block: inherit;
+}
+
+.judul .modern {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-block-end: 0rem;
+}
+
+.nomor {
+    font-family: "bebas-thin";
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+    margin-top: 0rem;
+}
+
+.nomor h2 {
+    margin: 0.3rem 0rem 0rem 0rem;
+}
+
+.keterangan {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-right: 35rem;
+    font-family: "roboto-thin";
+    font-size: 0.8rem;
+    text-justify: inter-word;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.modernisasi {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left: 5rem;
     color: white;
 }
-.Ajang {
-    font-size: 10vh;
-}
-.berprestasi {
-    margin-top: -8vh;
-    background-color: red;
-    display: block;
-    font-size: initial;
-    font-size: 13vh;    
-    text-align: left;
-}
-.deskripsi {
-    color:white;
-    font-family: "montserrat-regular";
-    font-size: 2vh;
-    margin-right: 135vh;
-    margin-top: -5vh;
-    transform: rotate(-2deg);
-}
-.daftar {
-    font-size: 3.5vh;
+
+.small-credit {
     color: white;
-    font-family: "montserrat-regular";
-    background-color: red;
-    margin-right: 145vh;
-    display: block;
-    text-align: center;
 }
-.wait{
-    font-family: "mont-thin";
-    color: white;
-    font-size: 2vh;
-    transform: rotate(2deg);
-    margin-top: 5vh;
+
+.halaman-dua {
+    margin: 10rem 8rem 6rem 8rem;
 }
-.four{
-    font-family: "montserrat-regular";
-    color: white;
-    font-size: 2vh;
-    transform: rotate(2deg);
-    margin-top: -2vh;
-}
-.rectangle{
-    width: 50%;
-    margin-left: 50%;
-    height: 10vh;
-    background-color: red;
-    z-index: -1vh;
-    margin-top: unset;
-    margin-top: 0;
-    margin-bottom: unset;
-    margin-bottom: 0vh;
+
+.video {
+    margin: 0rem 15rem 0rem 15rem;
 }
