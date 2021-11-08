@@ -21,8 +21,21 @@ let createNewUser = async (req,res) => {
     try {
 
         let newUser = {
+            sekolah : req.body.asalSekolah,
+            tingkat : req.body.sekolah,
+            lomba : req.body.lomba,
+            kategori : req.body.kelompok,
+    
+            namaUtama : req.body.namaUtama,
+            anggota1 : cekNamaAnggota(req.body.namaAnggota1),
+            anggota2 : cekNamaAnggota(req.body.namaAnggota2),
+            anggota3 : cekNamaAnggota(req.body.namaAnggota3),
+            anggota4 : cekNamaAnggota(req.body.namaAnggota4),
+            anggota5 : cekNamaAnggota(req.body.namaAnggota5),
+    
             email : req.body.email,
-            password : req.body.password
+            password : req.body.password,
+            status : 1
         }
 
         let chat = await registerService.createNewUser(newUser)
@@ -36,6 +49,14 @@ let createNewUser = async (req,res) => {
 
 }
 
+let cekNamaAnggota = (nama) => {
+    if(nama === undefined){
+        nama = ''
+        return nama
+    }else{
+        return nama
+    }
+}
 
 module.exports = {
     registerGet,

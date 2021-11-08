@@ -14,7 +14,18 @@ let createNewUser = (user) => {
                 let salt = bcryptjs.genSaltSync(10)
                 let data = {
                     email : user.email,
-                    password : bcryptjs.hashSync(user.password,salt)
+                    password : bcryptjs.hashSync(user.password,salt),
+                    status : user.status,
+                    sekolah : user.sekolah,
+                    tingkat : user.tingkat,
+                    lomba : user.lomba,
+                    kategori : user.kategori,           
+                    namaUtama : user.namaUtama,
+                    anggota1 : user.anggota1,
+                    anggota2 : user.anggota2,
+                    anggota3 : user.anggota3,
+                    anggota4 : user.anggota4,
+                    anggota5 : user.anggota5,
                 }
 
                 db.query('INSERT INTO users set ?',data,(error,row) => {
