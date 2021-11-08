@@ -21,7 +21,6 @@ let createNewUser = async (req,res) => {
     try {
 
         let newUser = {
-            username : req.body.username,
             email : req.body.email,
             password : req.body.password
         }

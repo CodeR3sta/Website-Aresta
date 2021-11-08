@@ -6,17 +6,13 @@ let createNewUser = (user) => {
         try {
             // ceheck email exsist or not
             let cekEmail = await checkEmailUser(user.email)
-            let cekUserName = await checkUserName(user.username.toLowerCase())
 
             if(cekEmail){ // jika ketemu
                 reject(`${user.email} sdh ada`)
-            }else if (cekUserName) {
-                reject('username tidak tersedia')
-            } else{
+            }else{
                 // hash password
                 let salt = bcryptjs.genSaltSync(10)
                 let data = {
-                    username : user.username.toLowerCase(),
                     email : user.email,
                     password : bcryptjs.hashSync(user.password,salt)
                 }
@@ -53,23 +49,6 @@ let checkEmailUser = (email) => {
     })
 }
 
-let checkUserName = (username) => {
-    return new Promise((resolve,reject) => {
-        try {
-            db.query('SELECT * FROM users WHERE username = ?',[username],(error,row)=>{
-                if(error) reject(error)
-
-                if(row.length > 0){
-                    resolve(true) // ketemu
-                }else{
-                    resolve(false) // kgk nemu
-                }
-            })
-        } catch (e) {
-            reject(e)
-        }
-    })
-}
 
 module.exports = {
     createNewUser
