@@ -20,7 +20,7 @@ let comparePasswordUser = (user, password) => {
         try {
             let isMatch = await bcrypt.compare(password, user.password)
             if(isMatch) resolve(true)
-            resolve('password salah')
+            resolve('email atau password salah')
         } catch (e) {
             reject(e)
         }

@@ -14,7 +14,7 @@ let initPassportLocal = () => {
         try {
             let user = await loginService.findUserByEmail(email)
             if (!user) {
-                return done(null, false, req.flash('msg', 'email ini gk ada'))
+                return done(null, false, req.flash('msg', 'email atau password salah'))
             }
             if (user) {
                 // compare password

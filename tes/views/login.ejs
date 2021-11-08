@@ -4,49 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/login.css">
     <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
 </head>
-<body>  
-     
-    <nav>
-        <h4>NODE MYSQL</h4>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Register</a></li> 
-        </ul>
-    </nav>
+<body>
+    <div style="height: 60px; width: 100%; background-color: red;"></div>
 
-    <h1>Login Page</h1>
-    <div class="container">
+    <div class="card">
+        <h1>Login</h1>
         <form action="/login" method="post">
-            
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
+            <div class="input atas">
+                <input type="email" name="email" id="email" placeholder="Email" required
+                >
             </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
+            <div class="input">
+                <input type="password" name="password" id="password" placeholder="password" required>
+            </div>
+            <div class="show">
+                <input type="checkbox" name="show" id="show" onchange="showPass()">
+                <label for="show">show password</label>
             </div>
 
-            <button type="submit">Login </button>
-
-            <div>
-                <a href="#">forget password?</a>
-            </div>
-        </form>
-    </div>
-    
-    <% if (message !== "") { %>
-        <% message.forEach(msg => { %>
             <div class="message">
-                <h1><%- msg %> </h1>
+                <% message.forEach(element => { %>
+                    <p>* <%- element %> </p>
+                <% }) %>
             </div>
-        <% }) %>
-    <% } %>
-    
 
+            <div class="button">
+                <button class="login" type="submit">log in</button>
+                <h5>atau</h5>
+                <a class="daftar" href="/register">Daftar</a>
+            </div>
+
+        </form>
+
+        <a class="lupa" href="#">forget password?</a>
+
+    </div>
 </body>
+<script src="/js/login.js"></script>
 </html>
