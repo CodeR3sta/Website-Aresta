@@ -40,7 +40,7 @@ nav h2{
 nav h2:hover{
     background-color: rgba(241, 239, 239, 0.897);
     color: #14042d;
-    border-radius: 50px;
+    border-radius: 50px 0px 0px 50px;
 }
 
 nav h2.active{
@@ -53,6 +53,7 @@ nav h2.active{
 nav h2#logout:hover{
     color: white;
     background-color: red;
+    border-radius: 50px;
 }
 
 .tahap1,.tahap2,.tahap3,.status,.juknis,.sertifikat{    
