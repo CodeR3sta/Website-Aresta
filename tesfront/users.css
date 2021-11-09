@@ -5,14 +5,25 @@ body{
 }
 
 nav{
-    background-color: red;
+    background-color: rgb(223, 214, 214);
     width: 200px;
     height: 100%;
-    position: fixed;  
+    position: fixed; 
+    text-align: center; 
+}
+
+nav img{
+    margin-top: 20px;
 }
 
 nav h1{
-    margin: 50px auto;
+    margin: 2px;
+}
+
+nav button#daftar:hover,button#daftar{
+    color: black;
+    background-color: rgb(223, 214, 214);
+    cursor:unset;
 }
 
 nav button{
