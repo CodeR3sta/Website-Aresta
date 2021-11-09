@@ -1,0 +1,38 @@
+body{
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+nav{
+    background-color: red;
+    width: 200px;
+    height: 100%;
+    position: fixed;  
+}
+
+nav h1{
+    margin: 50px auto;
+}
+
+nav button{
+    background-color: rgb(223, 214, 214);
+    border-radius: 0px;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}  
+
+nav button:hover{
+    background-color: rgb(41, 38, 38);
+    color: white;
+}
+
+.tahap1{    
+    width: 100%;
+    margin-left: 200px;
+    background-color: blue;
+}
