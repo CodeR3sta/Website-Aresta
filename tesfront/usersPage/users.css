@@ -75,3 +75,14 @@ nav h2#logout:hover{
     color: red;
     padding: 20px;
 }
+
+
+/* Juknis & E-Sertifikat*/
+.pdf{
+    text-align: center;
+}
+
+.pdf embed{
+    height: 400px;
+    width: 700px;
+}
