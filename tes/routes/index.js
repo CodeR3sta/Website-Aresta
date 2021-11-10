@@ -29,10 +29,15 @@ let initWebRoutes = (app) => {
         failureFlash : true
     }))
 
-    // REGISTER
+    // REGISTERs
     router.get('/register', loginController.checkLoggedOut,registerController.registerGet)
     router.post('/register',authValidation.validateRegister, registerController.createNewUser)
     
+    router.use('/', (req, res) => {
+        res.status(404)
+        res.send(`NOT FOUND`)
+    })
+
     return app.use('/', router)
 
 }
