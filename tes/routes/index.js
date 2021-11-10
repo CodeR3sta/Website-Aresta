@@ -5,31 +5,32 @@ const passport = require('passport')
 const registerController = require("../controllers/registerController")
 const authValidation = require('../auth/authValidation')
 const initPassportLocal = require('../controllers/passportLocalController')
-const homePageController = require('../controllers/homeController')
+const homeController = require('../controllers/homeController')
 const loginController = require('../controllers/loginController')
+const usersController = require('../controllers/usersController')
 
 initPassportLocal()
 
 let initWebRoutes = (app) => {
 
     //HOME PAGE
-    router.get('/', loginController.checkLoggedIn , homePageController.getHomePage)
-    router.post('/logout', loginController.postLogOut)
+    router.get('/',loginController.checkLoggedOut, homeController.getHomePage)
 
     //USERS PAGE
-    router.get('/users',(req, res) => {res.render('users')})
+    router.get('/users',loginController.checkLoggedIn, usersController.getUsersPage)
+    router.post('/logout', loginController.postLogOut)
 
     // LOGIN 
     router.get('/login', loginController.checkLoggedOut, loginController.getLoginPage )
     router.post('/login', passport.authenticate('local', {
-        successRedirect : '/',
+        successRedirect : '/users',
         failureRedirect : '/login',
         successFlash : true,
         failureFlash : true
     }))
 
     // REGISTER
-    router.get('/register', registerController.registerGet)
+    router.get('/register', loginController.checkLoggedOut,registerController.registerGet)
     router.post('/register',authValidation.validateRegister, registerController.createNewUser)
     
     return app.use('/', router)

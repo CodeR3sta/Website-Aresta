@@ -37,11 +37,6 @@ nav h2{
     cursor: pointer;
 }  
 
-nav a{
-    color: white;
-    text-decoration: none;
-}
-
 nav h2:hover{
     background-color: rgba(241, 239, 239, 0.897);
     color: #14042d;
@@ -55,10 +50,20 @@ nav h2.active{
     border-top-left-radius: 50px;
 }
 
-nav h2#logout:hover{
+nav button{
+    width: 100%;
+    color: white;
+    font-size: 1.5em;
+    padding: 10px;
+    border: none;
+    background-color:transparent;
+}
+
+nav button#logout:hover{
     color: white;
     background-color: red;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 .tahap1,.tahap2,.tahap3,.status,.juknis,.sertifikat{    

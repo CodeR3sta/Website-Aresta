@@ -15,7 +15,7 @@
     <nav>
         <img src="/img/usersPage/logoAresta.png" alt="">
         <hr>
-        <h4>Muhammad Yahya Isa</h4>
+        <h4><%= user.namaUtama %></h4>
         <hr>
         <h2 id="daftar">Pendaftaran &#709</h2>
         <h2 class="tablinks" onclick="openCity(event, 'tahap1')" id="defaultOpen">Tahap 1</h2>
@@ -26,7 +26,11 @@
         <h2 class="tablinks" onclick="openCity(event, 'juknis')">Juknis Lomba</h2>
         <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
         <hr>
-        <a href="#"><h2 id="logout">Logout</h2></a>
+        <form action="/logout" method="post">
+            <button id="logout">
+                Logout
+            </button>
+        </form>
     </nav>
 
     <div class="tahap1 tabcontent" id="tahap1">
@@ -40,47 +44,42 @@
                     <tr>
                         <td id="1">Asal Sekolah</td>
                         <td>:</td>
-                        <td id="3">MA Husnul Khotimah</td>
+                        <td id="3"><%= user.sekolah %></td>
                     </tr>
                     <tr>
                         <td id="1">Tingkat</td>
                         <td>:</td>
-                        <td id="3">SMA / Sederajatnya</td>
+                        <td id="3"><%= user.tingkat %></td>
                     </tr>
                     <tr>
                         <td id="1">Lomba</td>
                         <td>:</td>
-                        <td id="3">Fotografi</td>
+                        <td id="3"><%= user.lomba %></td>
                     </tr>
                     <tr>
                         <td id="1">Kategori</td>
                         <td>:</td>
-                        <td id="3">Individu</td>
+                        <td id="3"><%= user.kategori %></td>
                     </tr>
                 </table>
             </div>
             <div class="namaPeserta">
                 <table>
+                    
                     <tr>
                         <td id="1">Nama Ketua</td>
                         <td>:</td>
-                        <td id="3">Muhammad Yahya Isa</td>
+                        <td id="3"><%= user.namaUtama %></td>
                     </tr>
-                    <tr>
-                        <td id="1">Anggota</td>
-                        <td>:</td>
-                        <td id="3">Ibrahim Muhammad</td>
-                    </tr>
-                    <tr>
-                        <td id="1">Anggota</td>
-                        <td>:</td>
-                        <td id="3">Ibrahim Muhammad</td>
-                    </tr>
-                    <tr>
-                        <td id="1">Anggota</td>
-                        <td>:</td>
-                        <td id="3">Ibrahim Muhammad</td>
-                    </tr>
+                    <% anggota.forEach(element => { %>
+                        <% if (element != '') { %>
+                            <tr>
+                                <td id="1">Anggota</td>
+                                <td>:</td>
+                                <td id="3"><%= element %></td>
+                            </tr>
+                        <% } %>
+                    <% }) %>
                 </table>
             </div>
         </div>
