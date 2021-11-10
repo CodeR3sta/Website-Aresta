@@ -16,6 +16,9 @@ let initWebRoutes = (app) => {
     router.get('/', loginController.checkLoggedIn , homePageController.getHomePage)
     router.post('/logout', loginController.postLogOut)
 
+    //USERS PAGE
+    router.get('/users',(req, res) => {res.render('users')})
+
     // LOGIN 
     router.get('/login', loginController.checkLoggedOut, loginController.getLoginPage )
     router.post('/login', passport.authenticate('local', {
