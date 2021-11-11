@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div style="height: 60px; width: 100%; background-color: red;"></div>
+
+    <div class="card">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <div class="input atas">
+                <input type="email" name="email" id="email" placeholder="Email" required
+                >
+            </div>
+            <div class="input">
+                <input type="password" name="password" id="password" placeholder="password" required>
+            </div>
+            <div class="show">
+                <input type="checkbox" name="show" id="show" onchange="showPass()">
+                <label for="show">show password</label>
+            </div>
+
+            <div class="message">
+                <% message.forEach(element => { %>
+                    <p>* <%- element %> </p>
+                <% }) %>
+            </div>
+
+            <div class="button">
+                <button class="login" type="submit">log in</button>
+                <h5>atau</h5>
+                <a class="daftar" href="/register">Daftar</a>
+            </div>
+
+        </form>
+
+        <a class="lupa" href="#">forget password?</a>
+
+    </div>
+</body>
+<script src="/js/login.js"></script>
+</html>

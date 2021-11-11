@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/usersPage/users.css">
+    <link rel="stylesheet" href="/css/usersPage/tahap1.css">
+    <link rel="stylesheet" href="/css/usersPage/tahap2.css">
+    <link rel="stylesheet" href="/css/usersPage/tahap3.css">
+    <link rel="stylesheet" href="/css/usersPage/status.css">
+    <title>Users Page</title>
+</head>
+<body>
+    <nav>
+        <img src="/img/usersPage/logoAresta.png" alt="">
+        <hr>
+        <h4><%= user.namaUtama %></h4>
+        <hr>
+        <h2 id="daftar">Pendaftaran &#709</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap1')" id="defaultOpen">Tahap 1</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap2')">Tahap 2</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
+        <hr>
+        <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'juknis')">Juknis Lomba</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
+        <hr>
+        <form action="/logout" method="post">
+            <button id="logout">
+                Logout
+            </button>
+        </form>
+    </nav>
+
+    <div class="tahap1 tabcontent" id="tahap1">
+        <div class="msg">
+            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+        </div>
+        <div class="form">
+            <h1>FORMULIR</h1>
+            <div class="table">
+                <table>
+                    <tr>
+                        <td id="1">Asal Sekolah</td>
+                        <td>:</td>
+                        <td id="3"><%= user.sekolah %></td>
+                    </tr>
+                    <tr>
+                        <td id="1">Tingkat</td>
+                        <td>:</td>
+                        <td id="3"><%= user.tingkat %></td>
+                    </tr>
+                    <tr>
+                        <td id="1">Lomba</td>
+                        <td>:</td>
+                        <td id="3"><%= user.lomba %></td>
+                    </tr>
+                    <tr>
+                        <td id="1">Kategori</td>
+                        <td>:</td>
+                        <td id="3"><%= user.kategori %></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="namaPeserta">
+                <table>
+                    
+                    <tr>
+                        <td id="1">Nama Ketua</td>
+                        <td>:</td>
+                        <td id="3"><%= user.namaUtama %></td>
+                    </tr>
+                    <% anggota.forEach(element => { %>
+                        <% if (element != '') { %>
+                            <tr>
+                                <td id="1">Anggota</td>
+                                <td>:</td>
+                                <td id="3"><%= element %></td>
+                            </tr>
+                        <% } %>
+                    <% }) %>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <h1>Data Tidak bisa di Ubah lagi !</h1>
+        </div>
+    </div>
+    <div class="tahap2 tabcontent" id="tahap2">
+        <div class="msg">
+            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+        </div>
+    </div>
+    <div class="tahap3 tabcontent" id="tahap3">
+        <div class="msg">
+            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+        </div>
+        <div class="infaq">
+            <h1>Pembayaran</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore aut corporis dolore, asperiores delectus deleniti quidem consequuntur aspernatur molestias voluptatum omnis fuga aliquid sapiente sint amet eaque id blanditiis cumque quas, doloribus odio quod. Odit, at blanditiis beatae earum consequuntur provident dignissimos, distinctio quisquam doloremque nihil, quis illo magni ipsum?</p>
+            <div class="chat">
+                <a class="chatWA" href="#">
+                    <img src="/img/usersPage/logoWa.png" alt="">
+                    <div>chat</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="status tabcontent" id="status">
+        <div class="msg">
+            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+        </div>
+    </div>
+    <div class="juknis tabcontent" id="juknis">
+        <div class="msg">
+            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+        </div>
+        <div class="pdf">
+            <embed src="/pdf/coba.pdf" type="application/pdf">
+        </div>
+    </div>
+    <div class="sertifikat tabcontent" id="sertifikat">
+        <div class="msg">
+            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+        </div>
+        <div class="pdf">
+            <embed src="/pdf/coba.pdf" type="application/pdf">
+        </div>
+    </div>
+</body>
+<script src="/js/users.js"></script>
+
+</html>

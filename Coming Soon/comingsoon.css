@@ -41,13 +41,17 @@ h4{
     text-align: center;
     margin: 35vh auto 0;
     color: white;
-    font-size: 15px;
+    margin-left: 4em;
+    margin-top: 10em;
 }
-a{
+.coming {
+    font-family: "uraenium";
+    font-size: 5rem;
+}
+.aresta,
+p,
+a {
+    font-family: "roboto mono";
+    font-size: 1rem;
     color: inherit;
-    font-size: inherit;
-}
-p{
-    text-align: left;
-    font-family: "poppins-regular";
 }
