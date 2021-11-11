@@ -76,12 +76,28 @@ body {
 
 .small-credit {
     color: white;
+    display: grid;
+    margin-top: 1.5rem;
 }
 
 .halaman-dua {
-    margin: 10rem 8rem 6rem 8rem;
+    margin: 20rem 8rem 6rem 8rem;
 }
 
 .video {
     margin: 0rem 15rem 0rem 15rem;
+}
+
+.pojokbawah {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-items: flex-start;
+}
+
+.pojokbawah2 {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    align-items: flex-start;
 }

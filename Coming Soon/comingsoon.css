@@ -1,48 +1,38 @@
-@font-face {
-    font-family: "poppins-bold";
-    src: url("../font/Poppins-Bold.ttf");
-}
-@font-face {
-    font-family: "poppins-regular";
-    src: url("../font/Poppins-Regular.ttf");
-}
+@import url('../font/font.css');
+
 @media only screen and (max-width: 400px){
     .comingsoon {
         margin-left: 0vh;
         margin: 0px;
     }
     h1 {
-        font-size: 10px;
+        font-size: 1.7rem;
     }
-    h4.abc {
-        font-size: unset;
-        font-size: 10px;
-    }
+    
     p {
         font-size: 7px;
     }
-    h4 {
-        font-size: 5px;
-    }
     .aresta{
-        font-size: 10px;
+        font-size: 0.5rem;
     }
     
 }
+
 body{
     background-color: black;
     height:auto;
     display: block;
     max-width: 180%;
     max-height: 100%;
-    margin-left: 15vh;
+    margin-left: 3rem;
 }
 h1{
-    font-family: "poppins-bold";
+    font-family: "bebas-regular";
     text-align: left;
+    letter-spacing: 0.5rem;
 }
 h4{
-    font-family: "poppins-regular";
+    font-family: "poppins-thin";
     font-size: inherit;
     text-align: left;
 }
