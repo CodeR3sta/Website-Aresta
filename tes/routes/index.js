@@ -18,6 +18,7 @@ let initWebRoutes = (app) => {
 
     //USERS PAGE
     router.get('/users',loginController.checkLoggedIn, usersController.getUsersPage)
+    router.post('/users',usersController.submitTahap2)
     router.post('/logout', loginController.postLogOut)
 
     // LOGIN 

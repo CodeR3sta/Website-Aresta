@@ -5,8 +5,12 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const passport = require('passport')
 const initWebRoutes = require('./routes/index')
+const fileUpload = require('express-fileupload')
 
 const app = express()
+
+// FILE UPLOADER
+app.use(fileUpload())
 
 // PUBLIC 
 const publicDirectory = path.join(__dirname, './public')

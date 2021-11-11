@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,8 +18,8 @@
         <h4><%= user.namaUtama %></h4>
         <hr>
         <h2 id="daftar">Pendaftaran &#709</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'tahap1')" id="defaultOpen">Tahap 1</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'tahap2')">Tahap 2</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap2')" id="defaultOpen">Tahap 2</h2>
         <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
         <hr>
         <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
@@ -36,6 +36,7 @@
     <div class="tahap1 tabcontent" id="tahap1">
         <div class="msg">
             <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            <%= user.id %> 
         </div>
         <div class="form">
             <h1>FORMULIR</h1>
@@ -90,6 +91,33 @@
     <div class="tahap2 tabcontent" id="tahap2">
         <div class="msg">
             <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+        </div>
+        <div class="upload">
+            <h1>
+                - KIS
+                - Foto 
+                - Surat rekomendasi
+                - Bukti follow Akun IG Aresta
+                - Bukti Post Instagram
+                - Bukti Transfer
+            </h1>
+            <form action="/users" method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="kis">Upload KIS :</label>
+                    <input type="file" name="kis" id="kis" accept="image/*">
+                    <label for="suratRekomendasi">Upload surat Rekomendai sekolah</label>
+                    <input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*">
+                </div>
+                <div>
+                    <label for="postIg">Upload Bukti Post IG</label>
+                    <input type="file" name="postIg" id="postIg" accept="image/*">
+                    <label for="followIg">Upload Bukti fllow IG ARESTA : </label>
+                    <input type="file" name="followIg" id="followIg" accept="image/*" >
+                </div>
+                
+                <input type="submit" value="submit">
+
+            </form>
         </div>
     </div>
     <div class="tahap3 tabcontent" id="tahap3">
