@@ -19,7 +19,7 @@
 }
 
 body{
-    background-color: black;
+    background-color: rgb(20, 4, 45);
     height:auto;
     display: block;
     max-width: 180%;
@@ -41,17 +41,13 @@ h4{
     text-align: center;
     margin: 35vh auto 0;
     color: white;
-    margin-left: 4em;
-    margin-top: 10em;
+    font-size: 15px;
 }
-.coming {
-    font-family: "uraenium";
-    font-size: 5rem;
-}
-.aresta,
-p,
-a {
-    font-family: "roboto mono";
-    font-size: 1rem;
+a{
     color: inherit;
+    font-size: inherit;
+}
+p{
+    text-align: left;
+    font-family: "poppins-regular";
 }
