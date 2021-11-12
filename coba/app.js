@@ -1,21 +1,15 @@
-const nodemailer = require('nodemailer')
+const express = require('express')
 
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'kangcritical@gmail.com',
-        pass: 'Critical123'
-    }
-});
+const app = express()
 
-let mailOptions = {
-    from: 'kangcritical@gmail.com',
-    to: 'idontwannabe3000@gmail.com',
-    subject: 'Sending Email using Nodejs',
-    text: 'That was easy!'
-};
+app.use(express.static('publc'))
 
-transporter.sendMail(mailOptions, (err, info) => {
-    if (err) throw err;
-    console.log('Email sent: ' + info.response);
-});
+
+app.get('/', (req, res) => ,mv{
+    res.sendFile('index')
+})
+
+
+app.listen(3000, () => {
+    console.log('listening in port 3000..')
+})
