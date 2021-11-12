@@ -11,21 +11,28 @@ let getUsersPage = (req, res) => {res.render('users',{
     pesan : req.flash('tahap2')
 })}
 
-let submitTahap2 = (req,res) => {
+let submitTahap2 = (req,res) => {    
 
-    let kis = {
-        type : req.files.kis.mimetype,
-        size : req.files.kis.size
-    }
 
-    if (!req.files || Object.keys(req.files).length === 0) {
+    if (!req.files || Object.keys(req.files).length < 4 || Object.keys(req.files).length > 4) {
         req.flash('tahap2', 'isi')
         return res.redirect('users')
-    }else if (kis.type === 'image/png' || kis.type === 'image/jpg' || kis.type === 'image/jpeg' || kis.type === 'application/pdf') {
-        req.flash('tahap2', 'true')
-        res.redirect('users')
+    }
+    
+    for (let index = 0; index < Object.keys(req.files).length ; index++) {
+        console.log(req.files[index])        
     }
 
+    let object = req.files
+
+    for (const key in object) {
+        if (Object.hasOwnProperty.call(object, key)) {
+            const element = object[key];
+            if (condition) {
+                
+            }
+        }
+    }
     console.log('hai')
     // if (kis.size ) {}
 
