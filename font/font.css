@@ -3,6 +3,10 @@
     src: url('./Poppins-Bold.ttf');
 }
 @font-face {
+    font-family: "poppins-thin";
+    src: url('./Poppins-Thin.ttf');
+}
+@font-face {
     font-family: "bebas-regular";
     src: url('./BebasNeue\ Regular.otf');
 }

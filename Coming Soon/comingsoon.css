@@ -1,28 +1,52 @@
-@font-face {
-    font-family: "uraenium";
-    src: url("../font/urae_nium.ttf");
+@import url('../font/font.css');
+
+@media only screen and (max-width: 400px){
+    .comingsoon {
+        margin: 0px;
+    }
+    h1 {
+        font-size: 1.7rem;
+    }
+    
+    p {
+        font-size: 7px;
+    }
+    .aresta{
+        font-size: 0.5rem;
+    }
+    
 }
-@font-face {
-    font-family: "roboto mono";
-    src: url("../font/RobotoMono-Light.ttf");
+
+body{
+    background-color:rgb(0, 0, 51);
+    height:auto;
+    display: block;
+    max-width: 180%;
+    max-height: 100%;
+    margin-left: 3rem;
 }
-body {
-    margin: 0%;
-    background-color:black;
+h1{
+    font-family: "bebas-regular";
+    text-align: left;
+    letter-spacing: 0.5rem;
 }
-.comingsoon {
+h4{
+    font-family: "poppins-thin";
+    font-size: inherit;
+    text-align: left;
+}
+.comingsoon{
+    display: block;
+    text-align: center;
+    margin: 35vh auto 0;
     color: white;
-    margin-left: 4em;
-    margin-top: 10em;
+    font-size: 15px;
 }
-.coming {
-    font-family: "uraenium";
-    font-size: 5rem;
-}
-.aresta,
-p,
-a {
-    font-family: "roboto mono";
-    font-size: 1rem;
+a{
     color: inherit;
+    font-size: inherit;
+}
+p{
+    text-align: left;
+    font-family: "poppins-regular";
 }
