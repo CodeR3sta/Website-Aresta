@@ -104,7 +104,7 @@
             <form action="/users" method="post" enctype="multipart/form-data">
                 <div>
                     <label for="kis">Upload KIS :</label>
-                    <input type="file" name="kis" id="kis" accept="image/*">
+                    <input type="file" name="kis" id="kis" accept="image/*" >
                     <label for="suratRekomendasi">Upload surat Rekomendai sekolah</label>
                     <input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*">
                 </div>
@@ -158,5 +158,17 @@
     </div>
 </body>
 <script src="/js/users.js"></script>
+<script>
+    let cond = '<%= pesan %>'
+    if (cond === 'isi') {
+        alert('isi duulu eouyyyyyy')
+    }
+    if (cond === 'true') {
+        alert('anjay yg lu masukin bener cok')
+        confirm('hello')
+    }
+
+
+</script>
 
 </html>
