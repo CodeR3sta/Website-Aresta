@@ -10,12 +10,18 @@ let createNewUser = (user) => {
             if(cekEmail){ // jika ketemu
                 reject(`${user.email} sdh ada`)
             }else{
+                let name = user.namaUtama
+                let lowName = name.toLowerCase()
+                let arr = lowName.split(' ')
+                let tes = arr.join('_')
                 // hash password
                 let salt = bcryptjs.genSaltSync(10)
                 let data = {
+                    username : tes,
                     email : user.email,
                     password : bcryptjs.hashSync(user.password,salt),
-                    status : user.status,
+                    status : 1,
+                    pdfStatus : false,
                     sekolah : user.sekolah,
                     tingkat : user.tingkat,
                     lomba : user.lomba,
@@ -32,7 +38,6 @@ let createNewUser = (user) => {
                     if (error) {
                         reject(error)
                     }
-                    console.log(row)
                     resolve("Sucsess register")
                 })
             }

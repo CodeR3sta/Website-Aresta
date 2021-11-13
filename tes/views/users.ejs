@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav>
-        <img src="/img/usersPage/logoAresta.png" alt="">
+        <img src="/img/usersPage/logoAresta.png" alt="logo-aresta">
         <hr>
         <h4><%= user.namaUtama %></h4>
         <hr>
@@ -27,17 +27,33 @@
         <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
         <hr>
         <form action="/logout" method="post">
-            <button id="logout">
-                Logout
-            </button>
+            <button id="logout">Logout</button>
         </form>
     </nav>
-
-    <div class="tahap1 tabcontent" id="tahap1">
-        <div class="msg">
-            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            <%= user.id %> 
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <hr>
+            <h1>data tidak dapat di ubah setelah di SUBMIT</h1>
+            <hr>
+            <label for="submit-tahap2">Submit</label>
+            <button class="closeb" type="button">close</button>
         </div>
+    </div>
+    <div class="tahap1 tabcontent" id="tahap1">
+        <% if (user.status === 1 || user.status === 2) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 3) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 4) { %>
+            <div class="msg">
+                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            </div>
+        <% } %>
         <div class="form">
             <h1>FORMULIR</h1>
             <div class="table">
@@ -85,45 +101,69 @@
             </div>
         </div>
         <div class="footer">
+            <h1 style="color: #0db02b;">Tahap 1 Pendaftaran Telah Di Selesaikan</h1>
             <h1>Data Tidak bisa di Ubah lagi !</h1>
         </div>
     </div>
     <div class="tahap2 tabcontent" id="tahap2">
-        <div class="msg">
-            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-        </div>
+        <% if (user.status === 1 || user.status === 2) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+                <% msg2.forEach(element => { %>
+                    <p>* <%- element %> </p>
+                <% }) %>
+            </div>
+        <% } else if (user.status === 3) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 4) { %>
+            <div class="msg">
+                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            </div>
+        <% } %>
         <div class="upload">
-            <h1>
-                - KIS
-                - Foto 
-                - Surat rekomendasi
-                - Bukti follow Akun IG Aresta
-                - Bukti Post Instagram
-                - Bukti Transfer
-            </h1>
-            <form action="/users" method="post" enctype="multipart/form-data">
-                <div>
-                    <label for="kis">Upload KIS :</label>
-                    <input type="file" name="kis" id="kis" accept="image/*" >
-                    <label for="suratRekomendasi">Upload surat Rekomendai sekolah</label>
-                    <input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*">
-                </div>
-                <div>
-                    <label for="postIg">Upload Bukti Post IG</label>
-                    <input type="file" name="postIg" id="postIg" accept="image/*">
-                    <label for="followIg">Upload Bukti fllow IG ARESTA : </label>
-                    <input type="file" name="followIg" id="followIg" accept="image/*" >
-                </div>
-                
-                <button type="submit">submit</button>
-
-            </form>
+            <% if (user.status === 1) { %>
+                <form action="/users" method="post" enctype="multipart/form-data">
+                    <div>
+                        <label for="kis">Upload KIS :</label>
+                        <input type="file" name="kis" id="kis" accept="image/*" >
+                        <label for="suratRekomendasi">Upload surat Rekomendai sekolah</label>
+                        <input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*">
+                    </div>
+                    <div>
+                        <label for="postIg">Upload Bukti Post IG</label>
+                        <input type="file" name="postIg" id="postIg" accept="image/*">
+                        <label for="fotoDiri">Upload Foto Diri</label>
+                        <input type="file" name="fotoDiri" id="fotoDiri" accept="image/*" >
+                    </div>
+                    <button id="op-modal" type="button">hay</button>
+                    <button id="submit-tahap2" type="submit"></button>
+                </form>
+            <% } else if (user.status === 2) { %>
+                <img id="logo-pending" src="/img/usersPage/attention.png" alt="attention" width="200px" height="200px" >
+                <h1>Sedang di Check Panitia ARESTA17</h1>
+            <% } else if (user.status === 3 || user.status === 4) { %>
+                <img id="logo-selesaiTahap2" src="/img/usersPage/verified.png" alt="verified" width="200px" height="200px">
+                <h1>Tahap 2 Pendaftaran Telah di Selesaikan</h1>
+            <% } %>
+            
         </div>
     </div>
     <div class="tahap3 tabcontent" id="tahap3">
-        <div class="msg">
-            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-        </div>
+        <% if (user.status === 1 || user.status === 2) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 3) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 4) { %>
+            <div class="msg">
+                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            </div>
+        <% } %>
         <div class="infaq">
             <h1>Pembayaran</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore aut corporis dolore, asperiores delectus deleniti quidem consequuntur aspernatur molestias voluptatum omnis fuga aliquid sapiente sint amet eaque id blanditiis cumque quas, doloribus odio quod. Odit, at blanditiis beatae earum consequuntur provident dignissimos, distinctio quisquam doloremque nihil, quis illo magni ipsum?</p>
@@ -136,36 +176,176 @@
         </div>
     </div>
     <div class="status tabcontent" id="status">
-        <div class="msg">
-            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+        
+        <% if (user.status === 1 || user.status === 2) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 3) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 4) { %>
+            <div class="msg">
+                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            </div>
+        <% } %>
+
+        <div class="st-container">
+            <div class="st-tahap1">
+                <h2>tahap 1</h2>
+                <hr>
+                <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                <h3 style="color: #0db02b;">selesai</h3>
+            </div>
+            <% if (user.status === 1) { %>
+                <div class="st-tahap2">
+                    <h2>tahap 2</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">selesaikan !</h3>
+                </div>
+                <div class="st-tahap3">
+                    <h2>tahap 3</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">selesaikan !</h3>
+                </div>
+                <div class="st-selesai">
+                    <h2>status</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">selesaikan Tahap-2</h3>
+                </div>
+            <% } else if (user.status === 2) { %>
+                <div class="st-tahap2">
+                    <h2>tahap 2</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">pending</h3>
+                </div>
+                <div class="st-tahap3">
+                    <h2>tahap 3</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">selesaikan !</h3>
+                </div>
+                <div class="st-selesai">
+                    <h2>status</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">tahap 2 sedang di cek panitia</h3>
+                </div>
+            <% } else if (user.status === 3) { %>
+                <div class="st-tahap2">
+                    <h2>tahap 2</h2>
+                    <hr>
+                    <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                    <h3 style="color: #0db02b;">selesai</h3>
+                </div>
+                <div class="st-tahap3">
+                    <h2>tahap 3</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">selesaikan !</h3>
+                </div>
+                <div class="st-selesai">
+                    <h2>status</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">selesaikan Tahap-3</h3>
+                </div>
+            <% } else if (user.status === 4) { %>
+                <div class="st-tahap2">
+                    <h2>tahap2</h2>
+                    <hr>
+                    <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                    <h3 style="color: #0db02b;">selesai</h3>
+                </div>
+                <div class="st-tahap3">
+                    <h2>tahap3</h2>
+                    <hr>
+                    <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                    <h3 style="color: #0db02b;">selesai</h3>
+                </div>
+                <div class="st-selesai">
+                    <h2>status</h2>
+                    <hr>
+                    <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                    <h3 style="color: #0db02b;">selesai</h3>
+                </div>
+            <% } %>          
         </div>
+        <div class="detail-tahap">
+            <h2>Tahap 1  -  Formulir</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, aspernatur ducimus! Totam, vitae nulla explicabo voluptatum, beatae molestiae odio dicta, dolore nesciunt pariatur suscipit. Enim, nam iusto doloribus id natus a dolorum fugiat, necessitatibus aut aliquid nulla accusantium dignissimos sequi. Repudiandae magnam asperiores voluptatibus, distinctio sunt voluptatum repellendus nobis suscipit.</p>
+        </div>
+        <div class="detail-tahap">
+            <h2>Tahap 2  -  Upload Foto</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, aspernatur ducimus! Totam, vitae nulla explicabo voluptatum, beatae molestiae odio dicta, dolore nesciunt pariatur suscipit. Enim, nam iusto doloribus id natus a dolorum fugiat, necessitatibus aut aliquid nulla accusantium dignissimos sequi. Repudiandae magnam asperiores voluptatibus, distinctio sunt voluptatum repellendus nobis suscipit.</p>
+        </div>
+        <div class="detail-tahap">
+            <h2>Tahap 3  -  Pembayaran</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, aspernatur ducimus! Totam, vitae nulla explicabo voluptatum, beatae molestiae odio dicta, dolore nesciunt pariatur suscipit. Enim, nam iusto doloribus id natus a dolorum fugiat, necessitatibus aut aliquid nulla accusantium dignissimos sequi. Repudiandae magnam asperiores voluptatibus, distinctio sunt voluptatum repellendus nobis suscipit.</p>
+        </div>
+
     </div>
     <div class="juknis tabcontent" id="juknis">
-        <div class="msg">
-            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-        </div>
+        <% if (user.status === 1 || user.status === 2) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 3) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 4) { %>
+            <div class="msg">
+                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            </div>
+        <% } %>
+
         <div class="pdf">
-            <embed src="/pdf/coba.pdf" type="application/pdf">
-        </div>
+            <% if (user.pdfStatus === true) { %>
+                <iframe src="/pdf/seminar.pdf" frameborder="0" width="80%" height="500px"></iframe>
+            <% } %>
+            <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
+            <h1>Juknis Lomba Belum Tersedia</h1>
+        </div> 
     </div>
     <div class="sertifikat tabcontent" id="sertifikat">
-        <div class="msg">
-            <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-        </div>
+        <% if (user.status === 1 || user.status === 2) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 3) { %>
+            <div class="msg">
+                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            </div>
+        <% } else if (user.status === 4) { %>
+            <div class="msg">
+                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            </div>
+        <% } %>
+
         <div class="pdf">
-            <embed src="/pdf/coba.pdf" type="application/pdf">
-        </div>
+            <% if (user.pdfStatus === true) { %>
+                <iframe src="/pdf/coba.pdf" frameborder="0" width="80%" height="500px"></iframe>        
+            <% } %>
+            <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
+            <h1>E-Sertifikat Belum Tersedia</h1>
+        </div> 
     </div>
 </body>
 <script src="/js/users.js"></script>
+<script src="/js/usersModal.js"></script>
 <script>
     let cond = '<%= pesan %>'
     if (cond === 'isi') {
         alert('upload semua Gambarnya sekaligus')
     }
-    if (cond === 'true') {
+    if (cond === 'extensi') {
         alert('anjay yg lu masukin bener cok')
-        confirm('hello')
     }
 
 
