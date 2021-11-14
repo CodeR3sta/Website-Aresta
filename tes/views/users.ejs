@@ -125,16 +125,16 @@
                     <div>
                         <label for="kis">Upload KIS :</label>
                         <input type="file" name="kis" id="kis" accept="image/*" >
-                        <label for="suratRekomendasi">Upload surat Rekomendai sekolah</label>
+                        <label for="suratRekomendasi">Upload surat Rekomendai sekolah :</label>
                         <input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*">
                     </div>
                     <div>
-                        <label for="postIg">Upload Bukti Post IG</label>
+                        <label for="postIg">Upload Bukti Post IG :</label>
                         <input type="file" name="postIg" id="postIg" accept="image/*">
-                        <label for="fotoDiri">Upload Foto Diri</label>
+                        <label for="fotoDiri">Upload Foto Diri :</label>
                         <input type="file" name="fotoDiri" id="fotoDiri" accept="image/*" >
                     </div>
-                    <button id="op-modal" type="button">hay</button>
+                    <button id="op-modal" type="button">Submit</button>
                     <button id="submit-tahap2" type="submit"></button>
                 </form>
             <% } else if (user.status === 2) { %>
@@ -165,7 +165,7 @@
             <h1>Pembayaran</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore aut corporis dolore, asperiores delectus deleniti quidem consequuntur aspernatur molestias voluptatum omnis fuga aliquid sapiente sint amet eaque id blanditiis cumque quas, doloribus odio quod. Odit, at blanditiis beatae earum consequuntur provident dignissimos, distinctio quisquam doloremque nihil, quis illo magni ipsum?</p>
             <div class="chat">
-                <a class="chatWA" href="#">
+                <a class="chatWA" href="https://api.whatsapp.com/send?phone=6281295278127&text=nama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor Hp%20%3A">
                     <img src="/img/usersPage/logoWa.png" alt="">
                     <div>chat</div>
                 </a>
@@ -324,7 +324,7 @@
 
         <div class="pdf">
             <% if (user.pdfStatus === true) { %>
-                <iframe src="/pdf/coba.pdf" frameborder="0" width="80%" height="500px"></iframe>        
+                <!-- <iframe src="#" frameborder="0" width="80%" height="500px"></iframe>         -->
             <% } %>
             <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
             <h1>E-Sertifikat Belum Tersedia</h1>
@@ -339,7 +339,13 @@
         alert('upload semua Gambarnya sekaligus')
     }
     if (cond === 'extensi') {
-        alert('anjay yg lu masukin bener cok')
+        alert('extensi yg anda masukkan salah')
+    }
+    if (cond === 'ukuran') {
+        alert('ukuran gambar lebih dari 15Mb')
+    }
+    if (cond === 'gagal') {
+        alert('gagal meng-upload silahkan kirim ulang')
     }
 
 

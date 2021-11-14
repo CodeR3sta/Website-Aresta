@@ -45,31 +45,47 @@ let submitTahap2 = async (req,res) => {
     let pathUp = `../tes/upload/${req.user.username}/`
     // BUAT DIRECTORY 
     mkdir(pathUp,0o777,(err) => {
-        if(err) console.log(err)
+        if(err){
+            console.log(err)
+            req.flash('tahap2', 'gagal')
+            return res.redirect('users')
+        } 
 
         let object = req.files
         let arr = []
+
+        for (const key in object) {
+            if (Object.hasOwnProperty.call(object, key)) {
+                const element = object[key];
+                arr.push(element.name)
+            }
+        }
+
+        let data = `status = 2,kis = '${arr[0]}',suratRekomendasi = '${arr[1]}',postIg = '${arr[2]}',fotoDiri='${arr[3]}'`
+        db.query(`UPDATE users SET ${data} WHERE email = '${req.user.email}' `,(err,rows) => {
+            if(err){
+                console.log(err)
+                req.flash('tahap2', 'gagal')
+                return res.redirect('users')
+            } 
+
+            return res.redirect('users')
+        })
+
         for (const key in object) {
             if (Object.hasOwnProperty.call(object, key)) {
                 const element = object[key];
                 // UPLOAD IMAGE TO DIRECTORY
                 element.mv(pathUp + `${element.name}`, (err) => {
-                    console.log(err)
+                    if(err){
+                        console.log(err)
+                        req.flash('tahap2', 'gagal')
+                        return res.redirect('users')
+                    } 
                 })
-                
-                arr.push(element.name)
             }
         }
-
-        console.log(arr)
-        let data = `status = 2,kis = '${arr[0]}',suratRekomendasi = '${arr[1]}',postIg = '${arr[2]}',fotoDiri='${arr[3]}'`
         
-
-        db.query(`UPDATE users SET ${data} WHERE email = '${req.user.email}' `,(err,rows) => {
-            if(err) console.log(err )
-
-            return res.redirect('users')
-        })
     })
     
        
