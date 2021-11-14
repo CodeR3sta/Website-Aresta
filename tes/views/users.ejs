@@ -109,9 +109,6 @@
         <% if (user.status === 1 || user.status === 2) { %>
             <div class="msg">
                 <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-                <% msg2.forEach(element => { %>
-                    <p>* <%- element %> </p>
-                <% }) %>
             </div>
         <% } else if (user.status === 3) { %>
             <div class="msg">
@@ -306,9 +303,6 @@
         <% } %>
 
         <div class="pdf">
-            <% if (user.pdfStatus === true) { %>
-                <iframe src="/pdf/seminar.pdf" frameborder="0" width="80%" height="500px"></iframe>
-            <% } %>
             <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
             <h1>Juknis Lomba Belum Tersedia</h1>
         </div> 

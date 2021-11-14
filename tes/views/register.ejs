@@ -10,6 +10,17 @@
 <body>
     <h1>Isi Formulir & Daftar Akun</h1>
 
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <hr>
+            <h1>data tidak dapat di ubah setelah di SUBMIT</h1>
+            <hr>
+            <label for="submit-tahap2">Submit</label>
+            <button class="closeb" type="button">close</button>
+        </div>
+    </div>
+
     <form action="/register" method="post">
         <div class="detail">
             <div class="asalSekolah">
@@ -46,6 +57,7 @@
         </div>
 
         <div class="akun">
+            <input type="text" name="phone" required placeholder="phone number">
             <input class="tambah" type="email" name="email" required placeholder="email">
             <input class="pass" type="password" name="password" required placeholder="password">
             <input class="pass" type="password" name="passwordConfirm" required placeholder="Confirm Password">
@@ -61,9 +73,10 @@
                 <% }) %>
             </div>
             
-            <button class="daftar" type="submit">Daftar</button>
+            <button id="op-modal" class="daftar" type="button">Daftar</button>
             <h5>atau</h5>
 
+            <button id="submit-tahap2" type="submit"></button>
             <a class="login" href="/login">Login</a>
 
             <a class="balik" href="/">Home</a>
@@ -71,4 +84,11 @@
     </form>
 </body>
 <script src="/js/register.js"></script>
+<script src="js/usersModal.js"></script>
+<script>
+    let cond = '<%= message %>'
+    if (cond !== '') {
+        alert(cond)
+    }
+</script>
 </html>

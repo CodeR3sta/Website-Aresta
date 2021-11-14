@@ -21,6 +21,9 @@ let createNewUser = async (req,res) => {
     try {
 
         let newUser = {
+            phone : req.body.phone,
+            email : req.body.email,
+            password : req.body.password,
             sekolah : req.body.asalSekolah,
             tingkat : req.body.sekolah,
             lomba : req.body.lomba,
@@ -33,8 +36,7 @@ let createNewUser = async (req,res) => {
             anggota4 : cekNamaAnggota(req.body.namaAnggota4),
             anggota5 : cekNamaAnggota(req.body.namaAnggota5),
     
-            email : req.body.email,
-            password : req.body.password,
+
         }
 
         let chat = await registerService.createNewUser(newUser)

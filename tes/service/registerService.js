@@ -18,6 +18,7 @@ let createNewUser = (user) => {
                 let salt = bcryptjs.genSaltSync(10)
                 let data = {
                     username : tes,
+                    phone : user.phone,
                     email : user.email,
                     password : bcryptjs.hashSync(user.password,salt),
                     status : 1,

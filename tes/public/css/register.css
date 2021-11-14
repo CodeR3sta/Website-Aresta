@@ -7,6 +7,7 @@ form{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     width: 80%;
     margin:  auto;
     padding: 50px;
@@ -117,4 +118,55 @@ form .akun {
     font-size: 23px;
     display: block;
     text-decoration: underline;
+}
+
+.akun button#submit-tahap2{
+    visibility: hidden;
+}
+
+/* MODAL */
+
+.modal{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .modal-content{
+    margin: 10% auto;
+    width: 60%;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 10px ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(240, 162, 162, 0.25);
+}
+
+.modal .modal-content .close{
+    left: 45%;
+    position: relative;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal .modal-content label,.closeb{
+    background-color: blue;
+    margin: auto 20px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+
+.modal .modal-content label{
+    background-color: #0db02b;
+}
+
+.modal .modal-content .closeb{
+    background-color: #aaaaaa;
 }
