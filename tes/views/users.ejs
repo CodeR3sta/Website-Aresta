@@ -162,14 +162,23 @@
             </div>
         <% } %>
         <div class="infaq">
-            <h1>Pembayaran</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore aut corporis dolore, asperiores delectus deleniti quidem consequuntur aspernatur molestias voluptatum omnis fuga aliquid sapiente sint amet eaque id blanditiis cumque quas, doloribus odio quod. Odit, at blanditiis beatae earum consequuntur provident dignissimos, distinctio quisquam doloremque nihil, quis illo magni ipsum?</p>
-            <div class="chat">
-                <a class="chatWA" href="https://api.whatsapp.com/send?phone=6281295278127&text=nama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor Hp%20%3A">
-                    <img src="/img/usersPage/logoWa.png" alt="">
-                    <div>chat</div>
-                </a>
-            </div>
+            <% if (user.status === 1 || user.status === 2) { %>
+                <img id="logo-pending" src="/img/usersPage/attention.png" alt="attention" width="200px" height="200px" >
+                <h1>Selesaikan Tahap 2 Pendaftaran</h1>
+            <% } else if (user.status === 3) { %>
+                <h1>Pembayaran</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore aut corporis dolore, asperiores delectus deleniti quidem consequuntur aspernatur molestias voluptatum omnis fuga aliquid sapiente sint amet eaque id blanditiis cumque quas, doloribus odio quod. Odit, at blanditiis beatae earum consequuntur provident dignissimos, distinctio quisquam doloremque nihil, quis illo magni ipsum?</p>
+                <div class="chat">
+                    <a class="chatWA" href="https://api.whatsapp.com/send?phone=6281295278127&text=nama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor Hp%20%3A">
+                        <img src="/img/usersPage/logoWa.png" alt="">
+                        <div>chat</div>
+                    </a>
+                </div>
+            <% } else if (user.status === 4) { %>
+                <img id="logo-selesaiTahap2" src="/img/usersPage/verified.png" alt="verified" width="200px" height="200px">
+                <h1>Tahap 3 Pendaftaran Telah di Selesaikan</h1>
+            <% } %>
+            
         </div>
     </div>
     <div class="status tabcontent" id="status">
