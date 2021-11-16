@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>username</td>
+            <td>:</td>
+            <td><%- obj.username %> </td>
+        </tr>
+        <tr>
+            <td>phone</td>
+            <td>:</td>
+            <td><%- obj.phone %> </td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>:</td>
+            <td><%- obj.email %> </td>
+        </tr>
+        <tr>
+            <td>status</td>
+            <td>:</td>
+            <td><%- obj.status %> </td>
+        </tr>
+        <tr>
+            <td>sekolah</td>
+            <td>:</td>
+            <td><%- obj.sekolah %> </td>
+        </tr>
+        <tr>
+            <td>tingkat</td>
+            <td>:</td>
+            <td><%- obj.tingkat %> </td>
+        </tr>
+        <tr>
+            <td>lomba</td>
+            <td>:</td>
+            <td><%- obj.lomba %> </td>
+        </tr>
+        <tr>
+            <td>kategori</td>
+            <td>:</td>
+            <td><%- obj.kategori %> </td>
+        </tr>
+    </table> 
+    <table>
+        <tr>
+            <td>nama Ketua</td>
+            <td>:</td>
+            <td><%- obj.namaUtama %> </td>
+        </tr>
+        <% anggota.forEach(element => { %>
+            <% if (element != '') { %>
+                <tr>
+                    <td>Anggota</td>
+                    <td>:</td>
+                    <td><%- element %> </td>
+                </tr>
+            <% } %>
+        <% }) %>
+    </table>
+    <!-- AMBIL GAMBAR -->
+    <% if (obj.status === 2) { %>
+        <div class="form">
+            <h1>Konfirmasi Gambar</h1>
+            <form action="/code/resta/panitia/users/konfirmasi/tahap2/<%- obj.id %> " method="post">
+                <label for="berhasil">Benar :</label>
+                <input type="radio" name="hasil" id="berhasil" value="benar" required>
+                <label for="gagal">Salah :</label>
+                <input type="radio" name="hasil" id="gagal" value="salah" required>
+
+                <input type="text" name="pesan" placeholder="pesan">
+
+                <input type="text" name="password" placeholder="password Konfirmasi" >
+
+                <button type="submit">Submit</button>
+
+            </form>
+        </div>
+    <% } else if (obj.status === 3) { %>
+        <div class="form">
+            <h1>Konfirmasi Pembayaran</h1>
+            <form action="/code/resta/panitia/users/konfirmasi/tahap3/<%- obj.id %>" method="post">
+                <input type="text" name="password" placeholder="password Konfirmasi">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    <% } %>
+</body>
+</html>

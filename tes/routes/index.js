@@ -8,6 +8,7 @@ const initPassportLocal = require('../controllers/passportLocalController')
 const homeController = require('../controllers/homeController')
 const loginController = require('../controllers/loginController')
 const usersController = require('../controllers/usersController')
+const adminController = require ('../admin/adminController')
 
 initPassportLocal()
 
@@ -34,6 +35,17 @@ let initWebRoutes = (app) => {
     router.get('/register', loginController.checkLoggedOut,registerController.registerGet)
     router.post('/register',authValidation.validateRegister, registerController.createNewUser)
     
+    // ADMIN
+    router.get('/code/resta/panitia/users',adminController.viewStatus) // get 
+    router.post('/code/resta/panitia/users',adminController.findUsers) // search engine
+    // DELETE USERS
+    router.get('/code/resta/panitia/users/delete/:id',adminController.deleteUsers) // delete users page
+    // VIEW USERS DATA
+    router.get('/code/resta/panitia/users/views/:id',adminController.viewUsers) // lihat users data
+    // KONFIRMASI TAHAP 2 & 3
+    router.post('/code/resta/panitia/users/konfirmasi/tahap2/:id',adminController.confirmTahap2)
+    router.post('/code/resta/panitia/users/konfirmasi/tahap3/:id',adminController.confirmTahap3)
+
     router.use('/', (req, res) => {
         res.status(404)
         res.send(`NOT FOUND`)

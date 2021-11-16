@@ -1,6 +1,5 @@
 const {mkdir} = require('fs')
 const db = require('../configs/connectDB')
-// const usersService = require('../service/usersService')
 
 let getUsersPage = (req, res) => {res.render('users',{
     user : req.user,
@@ -60,7 +59,7 @@ let submitTahap2 = async (req,res) => {
                 arr.push(element.name)
             }
         }
-
+        // HEX GAMBAR
         let data = `status = 2,kis = '${arr[0]}',suratRekomendasi = '${arr[1]}',postIg = '${arr[2]}',fotoDiri='${arr[3]}'`
         db.query(`UPDATE users SET ${data} WHERE email = '${req.user.email}' `,(err,rows) => {
             if(err){
