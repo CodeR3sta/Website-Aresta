@@ -1,10 +1,10 @@
 const express = require("express")
-const path = require("path")
 const flash = require("connect-flash")
+const path = require('path')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const passport = require('passport')
-const initWebRoutes = require('./routes/index')
+const {initWebRoutes} = require('./routes/index')
 const fileUpload = require('express-fileupload')
 
 const app = express()
@@ -44,6 +44,11 @@ app.use(passport.session())
 
 // init all Webroute
 initWebRoutes(app)
+
+app.use('/', (req, res) => {
+    res.status(404)
+    res.send(`NOT FOUND`)
+})
 
 const port = 3000
 app.listen(port, () => {

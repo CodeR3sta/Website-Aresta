@@ -5,7 +5,7 @@ const loginService = require('../service/loginService')
 let LocalStrategy = passportLocal.Strategy
 
 let initPassportLocal = () => {
-    passport.use(new LocalStrategy({
+    passport.use('local-user',new LocalStrategy({
         usernameField : 'email',
         passwordField : 'password',
         passReqToCallback : true

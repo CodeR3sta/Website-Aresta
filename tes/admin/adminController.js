@@ -98,12 +98,19 @@ let confirmTahap3 = (req, res) => {
     })
 }
 
+// VIEW USERS IMAGE
+let usersImage = (req, res) => {
+    const a = `\\upload\\${req.params.username}\\${req.params.gambar}`
+    return res.sendFile('C:\\Users\\ahmad naji\\Documents\\GitHub\\Website-Aresta\\tes' + a )
+}
 
+                                                                                                                                          
 module.exports = {
     viewStatus,
     findUsers,
     deleteUsers,
     viewUsers,
     confirmTahap2,
-    confirmTahap3
+    confirmTahap3,
+    usersImage
 }
