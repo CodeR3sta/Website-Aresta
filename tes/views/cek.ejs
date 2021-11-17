@@ -65,7 +65,14 @@
             <% } %>
         <% }) %>
     </table>
-    <!-- AMBIL GAMBAR -->
+    
+    <% if (obj.status !== 1) { %>
+        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.kis %>">Kis</a>
+        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.suratRekomendasi %>">surat rekomendasi</a>
+        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.postIg %>">post IG</a>
+        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.fotoDiri %>">foto diri</a>   
+    <% } %>
+
     <% if (obj.status === 2) { %>
         <div class="form">
             <h1>Konfirmasi Gambar</h1>
@@ -77,7 +84,7 @@
 
                 <input type="text" name="pesan" placeholder="pesan">
 
-                <input type="text" name="password" placeholder="password Konfirmasi" >
+                <input type="password" name="password" placeholder="password Konfirmasi" >
 
                 <button type="submit">Submit</button>
 
@@ -87,14 +94,12 @@
         <div class="form">
             <h1>Konfirmasi Pembayaran</h1>
             <form action="/code/resta/panitia/users/konfirmasi/tahap3/<%- obj.id %>" method="post">
-                <input type="text" name="password" placeholder="password Konfirmasi">
+                <input type="password" name="password" placeholder="password Konfirmasi">
                 <button type="submit">Submit</button>
             </form>
         </div>
     <% } %>
-    <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.kis %> ">Kis</a>
-    <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.suratRekomendasi %>">surat rekomendasi</a>
-    <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.postIg %>">post IG</a>
-    <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.fotoDiri %>">foto diri</a>
+
+
 </body>
 </html>

@@ -82,7 +82,7 @@ let confirmTahap2 = (req, res) => {
         let pesan = req.body.pesan
         db.query(`UPDATE users SET status = 1, pesan = '${pesan}' WHERE id = ?`,[req.params.id],(err, results) => {
             if(err)console.log(err)
-            // hapus gambar
+            // hapus directory
             return res.redirect('/code/resta/panitia/users')
         })
     }
