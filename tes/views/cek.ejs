@@ -83,6 +83,7 @@
                 <input type="radio" name="hasil" id="gagal" value="salah" required>
 
                 <input type="text" name="pesan" placeholder="pesan">
+                <input type="text" name="username" placeholder="username">
 
                 <input type="password" name="password" placeholder="password Konfirmasi" >
 
@@ -94,6 +95,7 @@
         <div class="form">
             <h1>Konfirmasi Pembayaran</h1>
             <form action="/code/resta/panitia/users/konfirmasi/tahap3/<%- obj.id %>" method="post">
+                <input type="text" name="username" placeholder="username">
                 <input type="password" name="password" placeholder="password Konfirmasi">
                 <button type="submit">Submit</button>
             </form>

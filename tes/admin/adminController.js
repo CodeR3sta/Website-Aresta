@@ -2,7 +2,7 @@ const db = require('../configs/connectDB')
 
 // HOME status 1, 2, 3, 4
 let viewStatus = (req,res) => {
-
+    console.log(req.user)
     db.query('SELECT * FROM users', (err, row) => {
         if(err) console.log(err)
         
@@ -71,21 +71,35 @@ let viewUsers = (req, res) => {
 }
 
 // KONFRIMASI TAHAP 2
-let confirmTahap2 = (req, res) => {
-    // cek password 
-    if (req.body.hasil === 'benar') {
-        db.query('UPDATE users SET status = 3 WHERE id = ?',[req.params.id],(err, results) => {
-            if(err) console.log(err)
-            return res.redirect('/code/resta/panitia/users')
-        })
-    }else{
-        let pesan = req.body.pesan
-        db.query(`UPDATE users SET status = 1, pesan = '${pesan}' WHERE id = ?`,[req.params.id],(err, results) => {
-            if(err)console.log(err)
-            // hapus directory
-            return res.redirect('/code/resta/panitia/users')
-        })
+let confirmTahap2 = async(req, res) => {
+    
+    let user = await adminFind.findUser(req.body.username)
+    if (!user) {
+      return res.send('username salah')
     }
+
+    if (user) {
+        let match = await adminFind.comparePassword(user,req.body.password)
+
+        if (match === true) {
+            if (req.body.hasil === 'benar') {
+                db.query('UPDATE users SET status = 3 WHERE id = ?',[req.params.id],(err, results) => {
+                    if(err) console.log(err)
+                    return res.redirect('/code/resta/panitia/users')
+                })
+            }else{
+                let pesan = req.body.pesan
+                db.query(`UPDATE users SET status = 1, pesan = '${pesan}' WHERE id = ?`,[req.params.id],(err, results) => {
+                    if(err)console.log(err)
+                    // hapus directory
+                    return res.redirect('/code/resta/panitia/users')
+                })
+            }
+        }else{
+            return res.send('Password Salah')
+        }
+    }
+
 }
 
 // KONFIRMASI TAHAP 3 / PEMBAYARAN
@@ -104,6 +118,36 @@ let usersImage = (req, res) => {
     return res.sendFile('C:\\Users\\ahmad naji\\Documents\\GitHub\\Website-Aresta\\tes' + a )
 }
 
+
+
+
+
+
+let findUser = (username) => {
+    return new Promise((resolve, reject) => {
+        try {
+            db.query(`SELECT * FROM admin WHERE username = '${username}'`, (error, rows) => {
+                if(error) reject(error)
+                let user = rows[0]
+                resolve(user)
+            })
+        } catch (e) {
+            reject(e)
+        }
+    })
+  }
+  
+  let comparePassword = (user, password) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let isMatch = await bcrypt.compare(password, user.password)
+            if(isMatch) resolve(true)
+            resolve('Username or Password Incorrect')
+        } catch (e) {
+            reject(e)
+        }
+    })
+  }
                                                                                                                                           
 module.exports = {
     viewStatus,

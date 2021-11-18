@@ -10,10 +10,12 @@ const loginController = require('../controllers/loginController')
 const usersController = require('../controllers/usersController')
 const adminController = require ('../admin/adminController')
 
+const adminLogin = require('../admin/adminLogin')
+const { validateToken } = require("../admin/JWT")
 
 initPassportLocal()
 
-let initWebRoutes = (app) => {
+let initWebRoutes = (app) => {      
 
     //HOME PAGE
     router.get('/',loginController.checkLoggedOut, homeController.getHomePage)
@@ -40,17 +42,21 @@ let initWebRoutes = (app) => {
     router.post('/adreg',regis.reg)
     
     // ADMIN
+    // ADMIN LOGIN
+    app.get('/code/resta/panitia/login',adminLogin.getLogin )
+    app.post("/code/resta/panitia/login",adminLogin.postLogin)
     // ADMIN PAGE
-    router.get('/code/resta/panitia/users',adminController.viewStatus) // get 
-    router.post('/code/resta/panitia/users',adminController.findUsers) // search engine
+    router.get('/code/resta/panitia/users',validateToken,adminController.viewStatus) // get 
+    router.post('/code/resta/panitia/users',validateToken,adminController.findUsers) // search engine
     // DELETE USERS
-    router.get('/code/resta/panitia/users/delete/:id',adminController.deleteUsers) // delete users page
+    router.get('/code/resta/panitia/users/delete/:id',validateToken,adminController.deleteUsers) // delete users page
     // VIEW USERS DATA
-    router.get('/code/resta/panitia/users/views/:id',adminController.viewUsers) // lihat users data
-    router.get('/code/resta/panitia/users/gambar/:username/:gambar',adminController.usersImage)
+    router.get('/code/resta/panitia/users/views/:id',validateToken,adminController.viewUsers) // lihat users data
+    // VIEW IMAGE DATA
+    router.get('/code/resta/panitia/users/gambar/:username/:gambar',validateToken,adminController.usersImage)
     // KONFIRMASI TAHAP 2 & 3
-    router.post('/code/resta/panitia/users/konfirmasi/tahap2/:id',adminController.confirmTahap2)
-    router.post('/code/resta/panitia/users/konfirmasi/tahap3/:id',adminController.confirmTahap3)
+    router.post('/code/resta/panitia/users/konfirmasi/tahap2/:id',validateToken,adminController.confirmTahap2)
+    router.post('/code/resta/panitia/users/konfirmasi/tahap3/:id',validateToken,adminController.confirmTahap3)
 
     return app.use('/', router)
 
