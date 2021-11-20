@@ -1,2 +1,3 @@
 User-agent: googlebot
+sitemap: http://www.aresta17.com/sitemap.xml
 Disallow: /test/

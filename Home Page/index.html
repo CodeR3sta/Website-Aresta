@@ -5,11 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="./logo.png" type="image/x-icon" sizes="13x20">
     <title>Aresta 17</title>
 </head>
 
 <body>
-    <div class="topnav">
+    <div class="topnav" id="myTopnav">
+            <a href="#">Home</a>
+            <a href="#">Lomba</a>
+            <a href="#">Informasi</a>
+            <a href="#">Tentang</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i></a>
+    </div>
+    <div class="topnavaa">
         <p>ajang remaja<br>berprestasi</p>
     </div>
     <div class="halaman-pertama">
@@ -17,7 +27,7 @@
             <p>PROUDLY PRESENT</p>
         </div>
         <div class="judul">
-            <div class="modern"><h1>Modernisasi,<br>Membawa perubahan, memajukan peradaban<br>4-6 january.</b></h1></div>
+            <div class="modern"><h1>Modernisasi,<br>Membawa perubahan, memajukan peradaban<br>27-29 JANUARI.</b></h1></div>
         </div>
         <div class="nomor">
             <h2>09.01-21</h2>
@@ -34,6 +44,9 @@
                 <div class="pojokbawah2">
                     <p2>OSHK 26<br>Proudly Present</p2>
                 </div>
+                <div class="">
+
+                </div>
             </div>
         </div>
     </div>
@@ -45,5 +58,17 @@
 
         </div>
     </div>
+
+
+    <script>
+        function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+    </script>
 </body>
 </html>
