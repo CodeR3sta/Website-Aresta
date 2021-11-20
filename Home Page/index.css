@@ -1,8 +1,8 @@
 @import url('../font/font.css');
 
 @media screen and (max-width: 600px) {
-    .topnav  a:not(:first-child) {display: none;}
-    .topnav  a.icon {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
         float: right;
         display: block;
     }
@@ -22,7 +22,7 @@
     
 }
 body {
-    background-color: black;
+    background-color: rgb(0, 0, 51);
     height: 100rem;
     margin:0%;
 }
@@ -32,7 +32,7 @@ body {
     overflow: hidden;
 }
 
-.topnav .icon a {
+.topnav a {
     padding: 0px;
 }
 .topnav  a {
@@ -56,16 +56,6 @@ body {
 .topnav .icon {
     display: none;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(255, 255, 51);
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
 
 .topnavaa {
     color: white;
