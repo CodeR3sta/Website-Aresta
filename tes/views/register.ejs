@@ -28,15 +28,16 @@
             </div>
     
             <div class="jenjang">
-                <select name="sekolah" id="sekolah" onchange="ubah()" required>
+                <select name="sekolah" id="sekolah" required>
                     <option value="" disabled selected>--jenjang sekolah--</option>
+                    <option value="sd">SD / Sederajatnya</option>
                     <option value="smp">SMP / Sederajatnya</option>
                     <option value="sma">SMA / Sederajatnya</option>
                 </select>
             </div>
     
             <div class="listLomba">
-                <select name="lomba" id="lomba" onchange="myFunction()" required>
+                <select name="lomba" id="lomba" required>
                     <option value="" selected disabled>--pilih lomba--</option>
                     <option value="" disabled>pilih jenjang sekolah terlebih dahulu</option>
                 </select>
@@ -63,7 +64,7 @@
             <input class="pass" type="password" name="passwordConfirm" required placeholder="Confirm Password">
 
             <div class="show">
-                <input type="checkbox" name="show" id="show" onchange="showPassReg()">
+                <input type="checkbox" name="show" id="show" >
                 <label for="show">show password</label>
             </div>
 

@@ -16,6 +16,11 @@ let initPassportLocal = () => {
             if (!user) {
                 return done(null, false, req.flash('msg', 'email atau password salah'))
             }
+
+            if (user.status === 0) {
+                return done(null, false, req.flash('msg','akun anda blm di verifikasi'))
+            }
+
             if (user) {
                 // compare password
                 let match = await loginService.comparePasswordUser(user, password)

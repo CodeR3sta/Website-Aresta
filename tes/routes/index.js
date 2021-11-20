@@ -23,9 +23,14 @@ let initWebRoutes = (app) => {
     //USERS PAGE
     router.get('/users',loginController.checkLoggedIn, usersController.getUsersPage)
     router.post('/users',usersController.submitTahap2)
-    router.post('/logout', loginController.postLogOut)
+    router.post('/logout', loginController.postLogOut) //Logout
 
-    // LOGIN 
+    // REGISTER USERS //CLEAR 
+    router.get('/register', loginController.checkLoggedOut,registerController.registerGet)
+    router.post('/register',authValidation.validateRegister, registerController.createNewUser)// Buat Akun & kirim Verifikasi email
+    router.get('/verification',registerController.verifikasiEmail) // Verifikasi email
+
+    // LOGIN USERS//FORGET PASSWORD
     router.get('/login', loginController.checkLoggedOut, loginController.getLoginPage )
     router.post('/login', passport.authenticate('local-user', {
         successRedirect : '/users',
@@ -34,14 +39,13 @@ let initWebRoutes = (app) => {
         failureFlash : true
     }))
 
-    // REGISTERs
-    router.get('/register', loginController.checkLoggedOut,registerController.registerGet)
-    router.post('/register',authValidation.validateRegister, registerController.createNewUser)
+
+
+    // ADMIN
+    // ADMIN REGISTER
     const regis = require('../admin/register')
     router.get('/adreg', (req, res) => {res.render('adminRegis')})
     router.post('/adreg',regis.reg)
-    
-    // ADMIN
     // ADMIN LOGIN
     app.get('/code/resta/panitia/login',adminLogin.getLogin )
     app.post("/code/resta/panitia/login",adminLogin.postLogin)
