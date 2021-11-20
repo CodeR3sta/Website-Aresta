@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>http://www.aresta17.com/</loc>
+        <lastmod>2020-11-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>http://www.aresta17.com/home</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+
+    <url>
+        <loc>http://www.aresta17.com/informasi</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+
+    <url>
+        <loc>http://www.aresta17.com/macam-lomba</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+
+    <url>
+        <loc>http://www.aresta17.com/kontak</loc>
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <url>
+        <loc>http://www.aresta17.com/bantuan</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+
+    <url>
+        <loc>http://www.aresta17.com/daftar</loc>
+        <changefreq>never</changefreq>
+    </url>
+
+    <url>
+        <loc>http://www.aresta17.com/login</loc>
+        <changefreq>never</changefreq>
+    </url>
