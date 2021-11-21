@@ -38,3 +38,7 @@
     font-family: "opensans-regular";
     src: url('./OpenSans-Regular.ttf');
 }
+@font-face {
+    font-family: "poppins-regular";
+    src: url('./Poppins-Regular.ttf');
+}

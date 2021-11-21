@@ -1,13 +1,13 @@
 @import url('../font/font.css');
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
         float: right;
         display: block;
     }
 }
-@media screen and (max-width:600px) {
+@media (max-width:600px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive  a.icon {
         position: absolute;
@@ -19,9 +19,13 @@
         display: block;
         text-align: left;
     }
-    
-}
-
+    .judul {
+        text-size-adjust: auto;
+    }
+    .halaman-tiga .judul .tabel .center tr th a {
+        font-size: 3vw;
+    }
+}    
 html {
     scroll-behavior: smooth;
 }
@@ -29,7 +33,7 @@ html {
 body {
     background-color: rgb(0, 0, 51);
     height: 100rem;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .topnav {
@@ -69,10 +73,11 @@ body {
 }
 
 .halaman-pertama {
-    margin-left: 8rem;
-    margin-right: 8rem;
     color: white;
-    margin-top: 10rem;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
 }
 
 .proudly {
@@ -82,9 +87,9 @@ body {
 
 .judul {
     font-family: "bebas-regular";
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
     color: white;
-    display: unset;
+    display: block;
     letter-spacing: 0.2rem;
 }
 
@@ -137,9 +142,24 @@ body {
 .halaman-dua {
     margin-top: 10rem;
 }
-.halaman-dua iframe{
-    margin: 0 auto;
+
+.halaman-dua .video {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
 }
+
+.halaman-dua .video .trailer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 70%;
+}
+
 
 .halaman-dua .centered {
     text-align: center;
@@ -147,6 +167,7 @@ body {
 
 .halaman-dua .video iframe{
     display: block;
+    margin: 0 auto;
 }
 
 .pojokbawah {
@@ -217,7 +238,7 @@ body {
 }
 
 .halaman-tiga .tabel .center tr th {
-    padding: 40px;
+    padding: 1rem;
 }
 
 .halaman-tiga .judul {
