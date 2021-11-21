@@ -23,7 +23,7 @@
         <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
         <hr>
         <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'juknis')">Juknis Lomba</h2>
         <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
         <hr>
         <form action="/logout" method="post">
@@ -312,24 +312,8 @@
         <% } %>
 
         <div class="pdf">
-            <% if (user.lomba === 'nasyid') { %>
-                <iframe src="https://drive.google.com/file/d/1_4PtkkY4uiXzD5Drgz0MhhOQDN8BOu-z/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
-            <% } else if (user.lomba === 'videoKreatif') { %>
-                <iframe src="https://drive.google.com/file/d/1INvnItn1RwLcHqcJdZ1eTMAayiHQfQiq/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
-            <% } else if (user.lomba === 'ldbi') { %>
-                <iframe src="https://drive.google.com/file/d/1U6kCOMkjMcWkaX6wLWN5iJ0MK45CcD6X/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
-            <% } else if (user.lomba === 'khitobah') { %>
-                <iframe src="https://drive.google.com/file/d/1ohWDwl0WWS2fkuxrP3KPBbrFR3pCc0Ii/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
-            <% } else if (user.lomba === 'fotografi') { %>
-                <iframe src="https://drive.google.com/file/d/12HC3x_wmgsmCWRLWh-MwdHO0HcxuiIuz/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
-            <% } else if (user.lomba === 'designPoster') { %>
-                <iframe src="https://drive.google.com/file/d/1hdY1avcK0hNLguO_joyvoK7Nig3n-cPI/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
-            <% } else if (user.lomba === 'businessPlan') { %>
-                <iframe src="https://drive.google.com/file/d/1yjYYsAUeGKoYWc8MpxaZVsee0m_i7b3s/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
-            <% } %>
-
             <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
-            <h1>Ketentuan Umum Lomba Belum Tersedia</h1>
+            <h1>Juknis Lomba Belum Tersedia</h1>
         </div> 
     </div>
     <div class="sertifikat tabcontent" id="sertifikat">
@@ -348,6 +332,9 @@
         <% } %>
 
         <div class="pdf">
+            <% if (user.pdfStatus === true) { %>
+                <!-- <iframe src="#" frameborder="0" width="80%" height="500px"></iframe>         -->
+            <% } %>
             <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
             <h1>E-Sertifikat Belum Tersedia</h1>
         </div> 

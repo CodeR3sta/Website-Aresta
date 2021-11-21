@@ -1,6 +1,5 @@
 const {mkdir} = require('fs')
 const db = require('../configs/connectDB')
-const path = require('path')
 
 let getUsersPage = (req, res) => {res.render('users',{
     user : req.user,
@@ -9,32 +8,11 @@ let getUsersPage = (req, res) => {res.render('users',{
         req.user.anggota2,
         req.user.anggota3,
         req.user.anggota4,
-        req.user.anggota5,
-        req.user.anggota6,
-        req.user.anggota7,
-        req.user.anggota8,
-        req.user.anggota9,
-        req.user.anggota10,
-        req.user.anggota11,
-        req.user.anggota12,
-        req.user.anggota13,
-        req.user.anggota14,
-        req.user.anggota15,
-        req.user.anggota16,
-        req.user.anggota17,
-        req.user.anggota18,
-        req.user.anggota19,
-        req.user.anggota20,
-        req.user.anggota21,
-        req.user.anggota22,
-        req.user.anggota23,
-        req.user.anggota24
+        req.user.anggota5
     ],
     pesan : req.flash('tahap2'),
     msg2 : req.flash('msg-2')
 })}
-
-
 
 let submitTahap2 = async (req,res) => {    
 
@@ -63,13 +41,13 @@ let submitTahap2 = async (req,res) => {
         }
     }
 
-    let pathUp = path.join(__dirname , `../upload/${req.user.sekolah}/${req.user.username}/`)
+    let pathUp = `../tes/upload/${req.user.username}/`
     // BUAT DIRECTORY 
     mkdir(pathUp,0o777,(err) => {
         if(err){
             console.log(err)
             req.flash('tahap2', 'gagal')
-            return res.redirect('/users')
+            return res.redirect('users')
         } 
 
         let object = req.files
@@ -81,16 +59,16 @@ let submitTahap2 = async (req,res) => {
                 arr.push(element.name)
             }
         }
-        // HEX GAMBAR   
+        // HEX GAMBAR
         let data = `status = 2,kis = '${arr[0]}',suratRekomendasi = '${arr[1]}',postIg = '${arr[2]}',fotoDiri='${arr[3]}'`
         db.query(`UPDATE users SET ${data} WHERE email = '${req.user.email}' `,(err,rows) => {
             if(err){
                 console.log(err)
                 req.flash('tahap2', 'gagal')
-                return res.redirect('/users')
+                return res.redirect('users')
             } 
 
-            return res.redirect('/users')
+            return res.redirect('users')
         })
 
         for (const key in object) {
@@ -101,7 +79,7 @@ let submitTahap2 = async (req,res) => {
                     if(err){
                         console.log(err)
                         req.flash('tahap2', 'gagal')
-                        return res.redirect('/users')
+                        return res.redirect('users')
                     } 
                 })
             }
