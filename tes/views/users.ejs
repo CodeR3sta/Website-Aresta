@@ -125,24 +125,26 @@
                     <table>
                         <tr>
                             <td><label for="suratRekomendasi">Upload surat Rekomendai sekolah :</label></td>
-                            <td><input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*"></td>
+                            <td><input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*" required></td>
                         </tr>
-                        <tr>
-                            <td><label for="fotoTim">Upload Foto Tim :</label></td>
-                            <td><input type="file" name="fotoTim" id="fotoTim" accept="image/*"></td>
-                        </tr>
+                        <% if (user.lomba === 'nasyid') { %>
+                            <tr>
+                                <td><label for="fotoTim">Upload Foto Tim :</label></td>
+                                <td><input type="file" name="fotoTim" id="fotoTim" accept="image/*" required></td>
+                            </tr>
+                        <% } %>
                         <% for( let i = 1; i <= user.jumlahAnggota + 1; i++ ) { %>
                             <tr>
                                 <td><label for="kis<%- 1 %>">Upload KIS <%- i %> :</label></td>
-                                <td><input type="file" name="kis<%- i %>" id="kis<%- i %>" accept="image/*" ></td>
+                                <td><input type="file" name="kis<%- i %>" id="kis<%- i %>" accept="image/*" required></td>
                             </tr>
                             <tr>
                                 <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
-                                <td><input type="file" name="postIg<%- i %>" id="postIg<%- i %>" accept="image/*"></td>
+                                <td><input type="file" name="postIg<%- i %>" id="postIg<%- i %>" accept="image/*" required></td>
                             </tr>
                             <tr>
                                 <td><label for="fotoDiri<%- i %>">Upload Foto Diri <%- i %> :</label></td>
-                                <td><input type="file" name="fotoDiri<%- i %>" id="fotoDiri<%- i %>" accept="image/*" ></td>
+                                <td><input type="file" name="fotoDiri<%- i %>" id="fotoDiri<%- i %>" accept="image/*" required></td>
                             </tr>
                         <% } %>
                     </table>

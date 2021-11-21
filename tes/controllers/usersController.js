@@ -103,6 +103,13 @@ let submitTahap2 = async (req,res) => {
 
             mkdir(pathUp,0o777,(err) => {
                 if (err) {
+                    db.query(`DELETE FROM users WHERE email = '${req.user.email}'`,(err, results) => {
+                        if(err){
+                            console.log(err)
+                        }else{
+                            req.flash('tahap2', 'gagal')
+                            return res.redirect('/users')                        }
+                    })
                     req.flash('tahap2', 'gagal')
                     return res.redirect('/users')
                 }else{
@@ -180,7 +187,13 @@ let hexImgNameArr = (array) => {
 let imgUp = (variable,pathUp) => {
     variable.mv(pathUp + `${variable.name}`, (err) => {
         if(err){
-            console.log(err)
+            db.query(`DELETE FROM users WHERE email = '${req.user.email}'`,(err, results) => {
+                if(err){
+                    console.log(err)
+                }else{
+                    req.flash('tahap2', 'gagal')
+                    return res.redirect('/users')                        }
+            })
             req.flash('tahap2', 'gagal')
             return res.redirect('/users')
         }
@@ -191,7 +204,13 @@ let imgUpArr = (array,pathUp) => {
     array.forEach(element => {
         element.mv(pathUp + `${element.name}`, (err) => {
             if(err){
-                console.log(err)
+                db.query(`DELETE FROM users WHERE email = '${req.user.email}'`,(err, results) => {
+                    if(err){
+                        console.log(err)
+                    }else{
+                        req.flash('tahap2', 'gagal')
+                        return res.redirect('/users')                        }
+                })
                 req.flash('tahap2', 'gagal')
                 return res.redirect('/users')
             }
