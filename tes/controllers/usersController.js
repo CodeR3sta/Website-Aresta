@@ -46,6 +46,10 @@ let submitTahap2 = async (req,res) => {
     }
 
     // BUAT VARIABLE UNTUK OBJ REQ FILES
+    let fotoTim
+    if (req.user.lomba === 'nasyid') {
+        fotoTim = req.files["fotoTim"]
+    }
     let suratRekomendasi = req.files["suratRekomendasi"]
     let kis = []
     let fotoDiri = []
@@ -58,18 +62,28 @@ let submitTahap2 = async (req,res) => {
     }
 
     // CEK EXTENSI DAN SIZE
+    if (req.user.lomba) {
+        cekExSize(fotoTim)
+    }
     cekExSize(suratRekomendasi)
     cekExSizeArr(kis)
     cekExSizeArr(fotoDiri)
     cekExSizeArr(postIg)
 
     // HEX IMAGE NAME
+    if (req.user.lomba) {
+        hexImgName(fotoTim)
+    }
     hexImgName(suratRekomendasi)
     hexImgNameArr(kis)
     hexImgNameArr(fotoDiri)
     hexImgNameArr(postIg)
 
     // BUAT VARIABLE UNTUK INSERT DB
+    let fotoTimData
+    if (req.user.lomba) {
+        fotoTimData = fotoTim['name']
+    }
     let suratRekomendasiData = suratRekomendasi['name']
     let kisData = []
     let fotoDiriData = []
@@ -89,7 +103,12 @@ let submitTahap2 = async (req,res) => {
     });
 
     // sql 
-    let data = `status = 2,kis = '${kisData}',suratRekomendasi = '${suratRekomendasiData}',postIg = '${postIgData}',fotoDiri='${fotoDiriData}'`
+    let data
+    if (req.user.lomba) {
+        data = `status = 2,kis = '${kisData}',suratRekomendasi = '${suratRekomendasiData}',fotoTim = '${fotoTimData}',postIg = '${postIgData}',fotoDiri='${fotoDiriData}'`
+    }else{
+        data = `status = 2,kis = '${kisData}',suratRekomendasi = '${suratRekomendasiData}',postIg = '${postIgData}',fotoDiri='${fotoDiriData}'`
+    }
 
     // INSERT DATA
     db.query(`UPDATE users SET ${data} WHERE email = '${req.user.email}' `,(err,rows) => {
@@ -113,6 +132,9 @@ let submitTahap2 = async (req,res) => {
                     req.flash('tahap2', 'gagal')
                     return res.redirect('/users')
                 }else{
+                    if (req.user.lomba) {
+                        imgUp(fotoTim,pathUp)
+                    }
                     imgUp(suratRekomendasi,pathUp)
                     imgUpArr(kis,pathUp)
                     imgUpArr(fotoDiri,pathUp)
