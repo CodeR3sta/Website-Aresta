@@ -34,3 +34,7 @@
     font-family: "poppins-semi";
     src: url('./Poppins-SemiBold.ttf');
 }
+@font-face {
+    font-family: "opensans-regular";
+    src: url('./OpenSans-Regular.ttf');
+}

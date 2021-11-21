@@ -1,9 +1,12 @@
 const {mkdir, rmdirSync} = require('fs')
 const db = require('../configs/connectDB')
 <<<<<<< HEAD
+<<<<<<< HEAD
 const path = require('path')
 const uuid = require('uuid')
 const { rmdir } = require('fs/promises')
+=======
+>>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
 =======
 >>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
 
@@ -102,6 +105,10 @@ let submitTahap2 = async (req,res) => {
     let pathUp = path.join(__dirname , `../upload/${req.user.username}/`)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    let pathUp = `../tes/upload/${req.user.username}/`
+>>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
 =======
     let pathUp = `../tes/upload/${req.user.username}/`
 >>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
@@ -111,9 +118,12 @@ let submitTahap2 = async (req,res) => {
             console.log(err)
             req.flash('tahap2', 'gagal')
 <<<<<<< HEAD
+<<<<<<< HEAD
             return res.redirect('/users')
         }
 =======
+=======
+>>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
             return res.redirect('users')
         } 
 >>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
@@ -136,6 +146,7 @@ let submitTahap2 = async (req,res) => {
                 fotoTim["name"] = uuid.v4() + '.jpeg'
             }
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         for (let i = 0; i < kis.length; i++) {
@@ -250,6 +261,8 @@ let submitTahap2 = async (req,res) => {
             data = `status = 2,kis = '${kisData}',suratRekomendasi = '${suratRekomendasiData}',postIg = '${postIgData}',fotoDiri='${fotoDiriData}'`
         }
 =======
+=======
+>>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
         // HEX GAMBAR
         let data = `status = 2,kis = '${arr[0]}',suratRekomendasi = '${arr[1]}',postIg = '${arr[2]}',fotoDiri='${arr[3]}'`
 >>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
