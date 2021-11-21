@@ -24,7 +24,7 @@
 body {
     background-color: rgb(0, 0, 51);
     height: 100rem;
-    margin:0%;
+    margin: auto;
 }
 
 .topnav {
@@ -60,15 +60,14 @@ body {
 .topnavaa {
     color: white;
     font-family: "bebas-regular";
-    margin: 6rem 8rem 0rem 8rem;
+    margin: 3rem 8rem 0rem 8rem;
 }
 
 .halaman-pertama {
     margin-left: 8rem;
     margin-right: 8rem;
     color: white;
-    margin-top: 3rem;
-    margin-bottom: 6rem;
+    margin-top: 10rem;
 }
 
 .proudly {
@@ -96,15 +95,12 @@ body {
     margin-block-end: 0rem;
 }
 
-.nomor {
+.nomor p{
     font-family: "bebas-thin";
-    font-size: 1.3rem;
+    font-size: 2rem;
     letter-spacing: 0.2rem;
     margin-top: 0rem;
-}
-
-.nomor h2 {
-    margin: 0.3rem 0rem 0rem 0rem;
+    margin-bottom: 1rem;
 }
 
 .keterangan {
@@ -116,6 +112,7 @@ body {
     font-size: 0.8rem;
     text-justify: inter-word;
     color: rgba(255, 255, 255, 0.5);
+    margin-top: 2rem;
 }
 
 .modernisasi {
@@ -133,11 +130,18 @@ body {
 }
 
 .halaman-dua {
-    margin: 20rem 8rem 6rem 8rem;
+    margin-top: 10rem;
+}
+.halaman-dua iframe{
+    margin: 0 auto;
 }
 
-.video {
-    margin: 0rem 15rem 0rem 15rem;
+.halaman-dua .centered {
+    text-align: center;
+}
+
+.halaman-dua .video iframe{
+    display: block;
 }
 
 .pojokbawah {
@@ -176,6 +180,43 @@ body {
 
 .flex-container {
     display: flex;
+}
+
+.halaman-tiga {
+    margin-top: 10rem;
+}
+
+.halaman-tiga .tabel .center{
+    margin: 0 auto;
+}
+
+.halaman-tiga .tabel table tr,
+.halaman-tiga .tabel table tr th {
+    border: 10px solid rgb(0, 0, 51);
+    border-collapse: collapse;
+}
+
+/*.halaman-tiga .tabel table tr th, .halaman-tiga .tabel table tr {
+    background-color: rgb(255, 255, 51);
+}*/
+
+.halaman-tiga .tabel .center tr th a {
+    text-decoration: none;
+    color: white;
+    font-family: "poppins-thin";
+    font-size: 2rem;
+}
+
+.halaman-tiga .tabel .center tr th a:hover {
+    color: rgb(255, 255, 51);
+}
+
+.halaman-tiga .tabel .center tr th {
+    padding: 40px;
+}
+
+.halaman-tiga .judul {
+    text-align: center;
 }
 
 * {
