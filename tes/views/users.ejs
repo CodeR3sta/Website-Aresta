@@ -122,18 +122,37 @@
         <div class="upload">
             <% if (user.status === 1) { %>
                 <form action="/users" method="post" enctype="multipart/form-data">
-                    <div>
-                        <label for="kis">Upload KIS :</label>
-                        <input type="file" name="kis" id="kis" accept="image/*" >
-                        <label for="suratRekomendasi">Upload surat Rekomendai sekolah :</label>
-                        <input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*">
-                    </div>
-                    <div>
-                        <label for="postIg">Upload Bukti Post IG :</label>
-                        <input type="file" name="postIg" id="postIg" accept="image/*">
-                        <label for="fotoDiri">Upload Foto Diri :</label>
-                        <input type="file" name="fotoDiri" id="fotoDiri" accept="image/*" >
-                    </div>
+ 
+                    <table>
+                        <tr>
+                            <td><label for="suratRekomendasi">Upload surat Rekomendai sekolah :</label></td>
+                            <td><input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*" ></td>
+                        </tr>
+                        <% if (user.lomba === 'nasyid') { %>
+                            <tr>
+                                <td><label for="suratRekomendasi">Upload Foto Tim :</label></td>
+                                <td><input type="file" name="fotoTim" id="fotoTim" accept="image/*" ></td>
+                            </tr>
+                        <% } %>
+
+                        <% for( let i = 1; i <= user.jumlahAnggota + 1; i++ ) { %>
+                            <tr>
+                                <td><label for="kis<%- i %> ">Upload KIS <%- i %> :</label></td>
+                                <td><input type="file" name="kis<%- i %>"  id="kis<%- i %>" accept="image/*" ></td>
+                            </tr>
+                            <tr>
+                                <td><label for="postIg<%- i %> ">Upload Bukti Post IG <%- i %>  :</label></td>
+                                <td><input type="file" name="postIg<%- i %>" id="postIg<%- i %>" accept="image/*" ></td>
+                            </tr>
+                            <tr>
+                                <td><label for="fotoDiri">Upload Foto Diri <%- i %>  :</label></td>
+                                <td><input type="file" name="fotoDiri<%- i %>" id="fotoDiri<%- i %>" accept="image/*" ></td>
+                            </tr>
+                            <% } %>
+                    </table>
+
+                        
+                    
                     <button id="op-modal" type="button">Submit</button>
                     <button id="submit-tahap2" type="submit"></button>
                 </form>
@@ -345,13 +364,13 @@
 <script>
     let cond = '<%= pesan %>'
     if (cond === 'isi') {
-        alert('upload semua Gambarnya sekaligus')
+        alert('upload semua Gambar sekaligus')
     }
     if (cond === 'extensi') {
-        alert('extensi yg anda masukkan salah')
+        alert('extensi file bukan PNG/JPG/JPEG')
     }
     if (cond === 'ukuran') {
-        alert('ukuran gambar lebih dari 15Mb')
+        alert('ukuran gambar lebih dari 20Mb')
     }
     if (cond === 'gagal') {
         alert('gagal meng-upload silahkan kirim ulang')
