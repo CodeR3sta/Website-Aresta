@@ -1,0 +1,24 @@
+@import url('../font/font.css');
+
+body {
+    background-color: rgb(0, 0, 51);
+}
+
+.utama {
+    margin: 3rem 5rem 0rem 5rem;
+    color: white;
+}
+
+.utama .header {
+    font-family: "bebas-regular";
+    font-size: 3rem;
+}
+
+.utama .keterangan .h3 {
+    font-family: "poppins";
+    font-size: 1.5rem;
+}
+
+.utama .keterangan .p {
+    font-family: "roboto-thin";
+}
