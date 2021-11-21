@@ -27,7 +27,7 @@ let createNewUser = (user) => {
 
                 let mailOption = {
                     from : 'kangcritical@gmail.com',
-                    to : 'idontwannabe3000@gmail.com',
+                    to : `${user.email}`,
                     subject : `Account Verification`,
                     html : `<h1>Halo Peserta ARESTA 17</h1><br><hr>
                     <p>kami dari panitia ARESTA17 ingin gk tau ngapain</p>

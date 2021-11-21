@@ -14,6 +14,17 @@ let validateRegister = [
     // check ANGGOTA
 ]
 
+let validateAdminLogin = [
+    check('username','invalid username').matches(/^[0-9a-zA-Z ]+$/)
+]
+
+let validateLogin = [
+    check('email','Invalid Email').isEmail().trim(),
+    check('password','email atau password salah').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/),
+]
+
 module.exports = {
-    validateRegister
+    validateRegister,
+    validateLogin,
+    validateAdminLogin
 }

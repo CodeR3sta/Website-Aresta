@@ -106,10 +106,17 @@ let anggota = (req, newUser) => {
 let verifikasiEmail = (req,res) => {
     try {
         db.query('SELECT users.verification FROM users WHERE email = ?',req.cookies.userInfo.email,(err,result) => {
-            if (err) console.log(err)
+            if (err){
+                console.log(err)
+                return res.send(`<div style="margin:50px auto;padding: 10px;width:80%;background-color: red;color:white;text-align:center;border-radius:10px;"><h1>Silahkan daftar Terlebih Dahulu</h1></div>`)
+            }
             if (req.query.verify === result[0].verification) {
                 db.query('UPDATE users SET status = 1,verification = "" WHERE email = ?',req.cookies.userInfo.email,(err, result) =>{
                     if(err)console.log(err)
+
+                    res.cookie('userInfo', '', {
+                        maxAge : 1 * 1 * 1 * 1 * 1000
+                    })
                     return res.send(`<div style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;"><h1>Akun Anda Telah Aktif</h1><a href="/login">Klik Disini Untuk Login</a></div>`)
                 })
             }else{

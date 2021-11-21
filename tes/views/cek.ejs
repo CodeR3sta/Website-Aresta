@@ -48,6 +48,11 @@
             <td>:</td>
             <td><%- obj.kategori %> </td>
         </tr>
+        <tr>
+            <td>Registered</td>
+            <td>:</td>
+            <td><%- obj.registered %> </td>
+        </tr>
     </table> 
     <table>
         <tr>
@@ -67,10 +72,19 @@
     </table>
     
     <% if (obj.status !== 1) { %>
-        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.kis %>">Kis</a>
-        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.suratRekomendasi %>">surat rekomendasi</a>
-        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.postIg %>">post IG</a>
-        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.fotoDiri %>">foto diri</a>   
+        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj.suratRekomendasi %>">surat rekomendasi</a>
+        <% if (obj.lomba === 'nasyid') { %>
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj.fotoTim %>">foto tim</a>         
+        <% } %>
+        <% kisArr.forEach((element,i) => { %>
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- element%>">Kis <%- i %></a>
+        <% }) %>
+        <% fotoDiriArr.forEach((element,i) => { %>
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- element %>">post IG <%- i %></a>
+        <% }) %>
+        <% postIgArr.forEach((element,i) => { %>
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- element %>">foto diri <%- i %></a>   
+        <% }) %>
     <% } %>
 
     <% if (obj.status === 2) { %>
@@ -102,6 +116,12 @@
         </div>
     <% } %>
 
+    <h1>DELETE GAMBAR</h1>
+    <form action="/code/resta/panitia/users/delete/<%- obj.id %>" method="post">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password delete">
+        <button type="submit">Submit</button>
+    </form>
 
 </body>
 </html>

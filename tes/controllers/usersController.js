@@ -118,7 +118,7 @@ let submitTahap2 = async (req,res) => {
             return res.redirect('/users')
         } else{
             // buat PATH Upload
-            let pathUp = path.join(__dirname,'..','upload',`${req.user.username}/`)
+            let pathUp = path.join(__dirname,'..','upload',`${req.user.username}${req.user.sekolah}/`)
 
             mkdir(pathUp,0o777,(err) => {
                 if (err) {

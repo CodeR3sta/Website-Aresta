@@ -20,7 +20,7 @@ let initWebRoutes = (app) => {
     //HOME PAGE
     router.get('/',loginController.checkLoggedOut, homeController.getHomePage)
 
-    //USERS PAGE
+    //USERS PAGE //CLEAR --- //SERTIFIKAT
     router.get('/users',loginController.checkLoggedIn, usersController.getUsersPage)
     router.post('/users',usersController.submitTahap2)
     router.post('/logout', loginController.postLogOut) //Logout
@@ -32,7 +32,7 @@ let initWebRoutes = (app) => {
 
     // LOGIN USERS//FORGET PASSWORD
     router.get('/login', loginController.checkLoggedOut, loginController.getLoginPage )
-    router.post('/login', passport.authenticate('local-user', {
+    router.post('/login', authValidation.validateLogin,loginController.loginValidate,passport.authenticate('local-user', {
         successRedirect : '/users',
         failureRedirect : '/login',
         successFlash : true,
@@ -42,23 +42,31 @@ let initWebRoutes = (app) => {
 
 
     // ADMIN
-    // ADMIN REGISTER
+
+    // ADMIN REGISTER //CLEAR
     const regis = require('../admin/register')
     router.get('/adreg', (req, res) => {res.render('adminRegis')})
     router.post('/adreg',regis.reg)
-    // ADMIN LOGIN
+
+    // ADMIN LOGIN //CLEAR --- CHALLENGE 3KALI
     app.get('/code/resta/panitia/login',adminLogin.getLogin )
-    app.post("/code/resta/panitia/login",adminLogin.postLogin)
-    // ADMIN PAGE
+    app.post("/code/resta/panitia/login",authValidation.validateAdminLogin,adminLogin.postLogin)
+    app.post('/code/resta/panitia/logout',adminLogin.logout)
+
+    // ADMIN PAGE //CLEAR
     router.get('/code/resta/panitia/users',validateToken,adminController.viewStatus) // get 
     router.post('/code/resta/panitia/users',validateToken,adminController.findUsers) // search engine
-    // DELETE USERS
-    router.get('/code/resta/panitia/users/delete/:id',validateToken,adminController.deleteUsers) // delete users page
-    // VIEW USERS DATA
+
+    // VIEW USERS DATA //CLEAR
     router.get('/code/resta/panitia/users/views/:id',validateToken,adminController.viewUsers) // lihat users data
-    // VIEW IMAGE DATA
-    router.get('/code/resta/panitia/users/gambar/:username/:gambar',validateToken,adminController.usersImage)
-    // KONFIRMASI TAHAP 2 & 3
+
+    // VIEW IMAGE DATA //CLEAR
+    router.get('/code/resta/panitia/users/gambar/:username/:sekolah/:gambar',validateToken,adminController.usersImage)
+    
+    // DELETE USERS //CLEAR
+    router.post('/code/resta/panitia/users/delete/:id',validateToken,adminController.deleteUsers) // delete users page
+    
+    // KONFIRMASI TAHAP 2 & 3 //CLEAR
     router.post('/code/resta/panitia/users/konfirmasi/tahap2/:id',validateToken,adminController.confirmTahap2)
     router.post('/code/resta/panitia/users/konfirmasi/tahap3/:id',validateToken,adminController.confirmTahap3)
 

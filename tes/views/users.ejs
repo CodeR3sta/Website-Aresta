@@ -41,19 +41,18 @@
         </div>
     </div>
     <div class="tahap1 tabcontent" id="tahap1">
-        <% if (user.status === 1 || user.status === 2) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 3) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 4) { %>
-            <div class="msg">
-                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            </div>
-        <% } %>
+        <div class="msg">
+            <% if (user.status === 1 || user.status === 2) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            <% } else if (user.status === 3) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            <% } else if (user.status === 4) { %>
+                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            <% } %>
+            <% if (user.pesan != '') { %>
+                <h2><%- user.pesan %> </h2>
+            <% } %>
+        </div>
         <div class="form">
             <h1>FORMULIR</h1>
             <div class="table">
@@ -106,19 +105,18 @@
         </div>
     </div>
     <div class="tahap2 tabcontent" id="tahap2">
-        <% if (user.status === 1 || user.status === 2) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 3) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 4) { %>
-            <div class="msg">
-                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            </div>
-        <% } %>
+        <div class="msg">
+            <% if (user.status === 1 || user.status === 2) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            <% } else if (user.status === 3) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            <% } else if (user.status === 4) { %>
+                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            <% } %>
+            <% if (user.pesan != '') { %>
+                <h2><%- user.pesan %> </h2>
+            <% } %>
+        </div>
         <div class="upload">
             <% if (user.status === 1) { %>
                 <form action="/users" method="post" enctype="multipart/form-data">
@@ -163,19 +161,18 @@
         </div>
     </div>
     <div class="tahap3 tabcontent" id="tahap3">
-        <% if (user.status === 1 || user.status === 2) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 3) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 4) { %>
-            <div class="msg">
-                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            </div>
-        <% } %>
+        <div class="msg">
+            <% if (user.status === 1 || user.status === 2) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            <% } else if (user.status === 3) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            <% } else if (user.status === 4) { %>
+                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            <% } %>
+            <% if (user.pesan != '') { %>
+                <h2><%- user.pesan %> </h2>
+            <% } %>
+        </div>
         <div class="infaq">
             <% if (user.status === 1 || user.status === 2) { %>
                 <img id="logo-pending" src="/img/usersPage/attention.png" alt="attention" width="200px" height="200px" >
@@ -198,19 +195,18 @@
     </div>
     <div class="status tabcontent" id="status">
         
-        <% if (user.status === 1 || user.status === 2) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 3) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 4) { %>
-            <div class="msg">
-                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            </div>
-        <% } %>
+        <div class="msg">
+            <% if (user.status === 1 || user.status === 2) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            <% } else if (user.status === 3) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            <% } else if (user.status === 4) { %>
+                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            <% } %>
+            <% if (user.pesan != '') { %>
+                <h2><%- user.pesan %> </h2>
+            <% } %>
+        </div>
 
         <div class="st-container">
             <div class="st-tahap1">
@@ -312,19 +308,18 @@
 
     </div>
     <div class="juknis tabcontent" id="juknis">
-        <% if (user.status === 1 || user.status === 2) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 3) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 4) { %>
-            <div class="msg">
-                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            </div>
-        <% } %>
+        <div class="msg">
+            <% if (user.status === 1 || user.status === 2) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            <% } else if (user.status === 3) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            <% } else if (user.status === 4) { %>
+                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            <% } %>
+            <% if (user.pesan != '') { %>
+                <h2><%- user.pesan %> </h2>
+            <% } %>
+        </div>
 
         <div class="pdf">
             <% if (user.lomba === 'nasyid') { %>
@@ -348,19 +343,18 @@
         </div> 
     </div>
     <div class="sertifikat tabcontent" id="sertifikat">
-        <% if (user.status === 1 || user.status === 2) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 3) { %>
-            <div class="msg">
-                <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            </div>
-        <% } else if (user.status === 4) { %>
-            <div class="msg">
-                <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            </div>
-        <% } %>
+        <div class="msg">
+            <% if (user.status === 1 || user.status === 2) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
+            <% } else if (user.status === 3) { %>
+                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
+            <% } else if (user.status === 4) { %>
+                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
+            <% } %>
+            <% if (user.pesan != '') { %>
+                <h2><%- user.pesan %> </h2>
+            <% } %>
+        </div>
 
         <div class="pdf">
             <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >

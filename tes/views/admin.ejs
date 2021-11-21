@@ -14,10 +14,11 @@
         <h1>ADMIN PAGE</h1>
         <hr>
         <h1 class="tablinks" onclick="openCity(event, 'search')" id="defaultOpen">search</h1>
-        <h1 class="tablinks" onclick="openCity(event, 'status1')">Status_1</h1>
+        <h1 class="tablinks" onclick="openCity(event, 'status0')">Status_0 (blm_aktif)</h1>
+        <h1 class="tablinks" onclick="openCity(event, 'status1')">Status_1 (sdh_verifikasi)</h1>
         <h1 class="tablinks" onclick="openCity(event, 'status2')">Status_2 (cek_foto)</h1>
         <h1 class="tablinks" onclick="openCity(event, 'status3')">Status_3 (cek_bayar)</h1>
-        <h1 class="tablinks" onclick="openCity(event, 'status4')">Status 4</h1>
+        <h1 class="tablinks" onclick="openCity(event, 'status4')">Status 4 (selesai)</h1>
         <h1 class="tablinks" onclick="openCity(event, 'sertifikat')">e-sertifikat</h1>
         <h1 class="tablinks" onclick="openCity(event, 'excel')">Excel Download</h1>
         <hr>
@@ -25,7 +26,6 @@
             <button id="logout">Logout</button>
         </form>
     </nav>
-
 
     <div class="tabcontent search" id="search">
         <div class="form">
@@ -38,27 +38,68 @@
         <table>
             <tr>
                 <th>#</th>
+                <th>username</th>
+                <th>email</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
                 <th>Tingkat</th>
                 <th>Status</th>
+                <th>jumlah Anggota</th>
+                <th>Registered</th>
                 <th>Cek</th>
-                <th>Delete</th>
             </tr>
 
             <% row.forEach((element,nomor) => { %>
                 <tr>
                     <td><%- nomor + 1 %> </td>
+                    <td><%- element.username %> </td>
+                    <td><%- element.email %> </td>
                     <td><%- element.namaUtama %> </td>
                     <td><%- element.sekolah %> </td>
                     <td><%- element.lomba %> </td>
                     <td><%- element.tingkat %> </td>
                     <td><%- element.status %> </td>
-                    <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">cek</a></td>
-                    <td><a href="/code/resta/panitia/users/delete/<%= element.id %> ">delete</a></td>
+                    <td><%- element.jumlahAnggota %> </td>
+                    <td><%- element.registered %> </td>
+                    <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                 </tr>
             <% }) %>
+
+        </table>
+    </div>
+    <div class="tabcontent status0" id="status0">
+        <table>
+            <tr>
+                <th>#</th>
+                <th>username</th>
+                <th>email</th>
+                <th>Nama Ketua</th>
+                <th>Asal Sekolah</th>
+                <th>Lomba</th>
+                <th>Tingkat</th>
+                <th>Status</th>
+                <th>jumlah Anggota</th>
+                <th>Registered</th>
+                <th>Cek</th>
+            </tr>
+            <% if (row0 != undefined) { %>
+                <% row0.forEach((element,nomor) => { %>
+                    <tr>
+                        <td><%- nomor + 1 %> </td>
+                        <td><%- element.username %> </td>
+                        <td><%- element.email %> </td>
+                        <td><%- element.namaUtama %> </td>
+                        <td><%- element.sekolah %> </td>
+                        <td><%- element.lomba %> </td>
+                        <td><%- element.tingkat %> </td>
+                        <td><%- element.status %> </td>
+                        <td><%- element.jumlahAnggota %> </td>
+                        <td><%- element.registered %> </td>
+                        <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
+                    </tr>
+                <% }) %>
+            <% } %>
 
         </table>
     </div>
@@ -67,26 +108,35 @@
         <table>
             <tr>
                 <th>#</th>
+                <th>username</th>
+                <th>email</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
                 <th>Tingkat</th>
+                <th>Status</th>
+                <th>jumlah Anggota</th>
+                <th>Registered</th>
                 <th>Cek</th>
-                <th>Delete</th>
             </tr>
             <% if (row1 != undefined) { %>
                 <% row1.forEach((element,nomor) => { %>
                     <tr>
                         <td><%- nomor + 1 %> </td>
+                        <td><%- element.username %> </td>
+                        <td><%- element.email %> </td>
                         <td><%- element.namaUtama %> </td>
                         <td><%- element.sekolah %> </td>
                         <td><%- element.lomba %> </td>
                         <td><%- element.tingkat %> </td>
-                        <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">cek</a></td>
-                        <td><a href="#">delete</a></td>
+                        <td><%- element.status %> </td>
+                        <td><%- element.jumlahAnggota %> </td>
+                        <td><%- element.registered %> </td>
+                        <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                     </tr>
                 <% }) %>
             <% } %>
+
         </table>
     </div>
     <div class="tabcontent status2" id="status2">
@@ -94,24 +144,31 @@
         <table>
             <tr>
                 <th>#</th>
+                <th>username</th>
+                <th>email</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
                 <th>Tingkat</th>
+                <th>Status</th>
+                <th>jumlah Anggota</th>
+                <th>Registered</th>
                 <th>Cek</th>
-                <th>Delete</th>
             </tr>
-
             <% if (row2 != undefined) { %>
                 <% row2.forEach((element,nomor) => { %>
                     <tr>
                         <td><%- nomor + 1 %> </td>
+                        <td><%- element.username %> </td>
+                        <td><%- element.email %> </td>
                         <td><%- element.namaUtama %> </td>
                         <td><%- element.sekolah %> </td>
                         <td><%- element.lomba %> </td>
                         <td><%- element.tingkat %> </td>
-                        <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">cek</a></td>
-                        <td><a href="#">delete</a></td>
+                        <td><%- element.status %> </td>
+                        <td><%- element.jumlahAnggota %> </td>
+                        <td><%- element.registered %> </td>
+                        <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                     </tr>
                 <% }) %>
             <% } %>
@@ -123,24 +180,31 @@
         <table>
             <tr>
                 <th>#</th>
+                <th>username</th>
+                <th>email</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
                 <th>Tingkat</th>
+                <th>Status</th>
+                <th>jumlah Anggota</th>
+                <th>Registered</th>
                 <th>Cek</th>
-                <th>Delete</th>
             </tr>
-
             <% if (row3 != undefined) { %>
                 <% row3.forEach((element,nomor) => { %>
                     <tr>
                         <td><%- nomor + 1 %> </td>
+                        <td><%- element.username %> </td>
+                        <td><%- element.email %> </td>
                         <td><%- element.namaUtama %> </td>
                         <td><%- element.sekolah %> </td>
                         <td><%- element.lomba %> </td>
                         <td><%- element.tingkat %> </td>
-                        <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">cek</a></td>
-                        <td><a href="#">delete</a></td>
+                        <td><%- element.status %> </td>
+                        <td><%- element.jumlahAnggota %> </td>
+                        <td><%- element.registered %> </td>
+                        <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                     </tr>
                 <% }) %>
             <% } %>
@@ -152,24 +216,31 @@
         <table>
             <tr>
                 <th>#</th>
+                <th>username</th>
+                <th>email</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
                 <th>Tingkat</th>
+                <th>Status</th>
+                <th>jumlah Anggota</th>
+                <th>Registered</th>
                 <th>Cek</th>
-                <th>Delete</th>
             </tr>
-
             <% if (row4 != undefined) { %>
                 <% row4.forEach((element,nomor) => { %>
                     <tr>
                         <td><%- nomor + 1 %> </td>
+                        <td><%- element.username %> </td>
+                        <td><%- element.email %> </td>
                         <td><%- element.namaUtama %> </td>
                         <td><%- element.sekolah %> </td>
                         <td><%- element.lomba %> </td>
                         <td><%- element.tingkat %> </td>
-                        <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">cek</a></td>
-                        <td><a href="#">delete</a></td>
+                        <td><%- element.status %> </td>
+                        <td><%- element.jumlahAnggota %> </td>
+                        <td><%- element.registered %> </td>
+                        <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                     </tr>
                 <% }) %>
             <% } %>

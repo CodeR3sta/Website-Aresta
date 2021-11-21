@@ -1,10 +1,12 @@
 const db = require('../configs/connectDB')
 const bcryptjs = require('bcryptjs')
+const uuid = require('uuid')
 
 let reg = (req, res) => {
-    let salt = bcryptjs.genSaltSync(10)
+    let salt = bcryptjs.genSaltSync(15)
 
     let data = {
+        id : uuid.v4(),
         username: req.body.username.toLowerCase(),
         password : bcryptjs.hashSync(req.body.password,salt),
         ubah : bcryptjs.hashSync(req.body.ubah,salt),
