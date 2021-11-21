@@ -1,14 +1,8 @@
 const {mkdir, rmdirSync} = require('fs')
 const db = require('../configs/connectDB')
-<<<<<<< HEAD
-<<<<<<< HEAD
 const path = require('path')
 const uuid = require('uuid')
 const { rmdir } = require('fs/promises')
-=======
->>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
-=======
->>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
 
 let getUsersPage = (req, res) => {res.render('users',{
     user : req.user,
@@ -104,32 +98,16 @@ let submitTahap2 = async (req,res) => {
     // FOLDER PATH
     let pathUp = path.join(__dirname , `../upload/${req.user.username}/`)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    let pathUp = `../tes/upload/${req.user.username}/`
->>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
-=======
-    let pathUp = `../tes/upload/${req.user.username}/`
->>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
     // BUAT DIRECTORY 
     mkdir(pathUp,0o777,(err) => {
         if(err){
             console.log(err)
             req.flash('tahap2', 'gagal')
-<<<<<<< HEAD
-<<<<<<< HEAD
             return res.redirect('/users')
-        }
-=======
-=======
->>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
-            return res.redirect('users')
-        } 
->>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
+        }        
 
         // HEX IMAGE NAME
-        if (suratRekomendasi.mimetype === 'image/png') {
+        if(suratRekomendasi.mimetype === 'image/png') {
             suratRekomendasi["name"] = uuid.v4() + '.png'
         }else if(suratRekomendasi === 'image/jpg'){
             suratRekomendasi["name"] = uuid.v4() + '.jpg'
@@ -146,8 +124,6 @@ let submitTahap2 = async (req,res) => {
                 fotoTim["name"] = uuid.v4() + '.jpeg'
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         for (let i = 0; i < kis.length; i++) {
             if (kis[i].mimetype === 'image/png') {
@@ -260,38 +236,15 @@ let submitTahap2 = async (req,res) => {
         }else{
             data = `status = 2,kis = '${kisData}',suratRekomendasi = '${suratRekomendasiData}',postIg = '${postIgData}',fotoDiri='${fotoDiriData}'`
         }
-=======
-=======
->>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
-        // HEX GAMBAR
-        let data = `status = 2,kis = '${arr[0]}',suratRekomendasi = '${arr[1]}',postIg = '${arr[2]}',fotoDiri='${arr[3]}'`
->>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
         db.query(`UPDATE users SET ${data} WHERE email = '${req.user.email}' `,(err,rows) => {
             if(err){
                 console.log(err)
                 req.flash('tahap2', 'gagal')
-                return res.redirect('users')
+                return res.redirect('/users')
             } 
 
-            return res.redirect('users')
+            return res.redirect('/users')
         })
-<<<<<<< HEAD
-=======
-
-        for (const key in object) {
-            if (Object.hasOwnProperty.call(object, key)) {
-                const element = object[key];
-                // UPLOAD IMAGE TO DIRECTORY
-                element.mv(pathUp + `${element.name}`, (err) => {
-                    if(err){
-                        console.log(err)
-                        req.flash('tahap2', 'gagal')
-                        return res.redirect('users')
-                    } 
-                })
-            }
-        }
->>>>>>> e549174db10280b97c4bb6db49f9dc1c6014d051
         
     })      
 
