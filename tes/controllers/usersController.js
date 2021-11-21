@@ -1,6 +1,7 @@
 const {mkdir} = require('fs')
 const db = require('../configs/connectDB')
 const path = require('path')
+const uuid = require('uuid')
 
 let getUsersPage = (req, res) => {res.render('users',{
     user : req.user,
@@ -39,81 +40,161 @@ let getUsersPage = (req, res) => {res.render('users',{
 let submitTahap2 = async (req,res) => {    
 
     // CEK ADA ISI ATAU TIDAK
-    if (!req.files || Object.keys(req.files).length < 4 || Object.keys(req.files).length > 4) {
+    if (!req.files) {
         req.flash('tahap2', 'isi')
         return res.redirect('users')
     }
-    
-    let object = req.files
 
-    for (const key in object) {
-        if (Object.hasOwnProperty.call(object, key)) {
-            const element = object[key];
-            // CEK EXTENSI PNG JPG JPEG PDF ONLY
-            if (element.mimetype === 'image/png' || element.mimetype === 'image/jpg' || element.mimetype === 'image/jpeg' || element.mimetype === 'application/pdf') {
-            }else{
-                req.flash('tahap2','extensi')
-                return res.redirect('users')
-            }
-            // CEK SIZE KURANG DARI 15MB
-            if (element.size > 15000000) {
-                req.flash('tahap2','ukuran')
-                return res.redirect('users')
-            }
-        }
+    // BUAT VARIABLE UNTUK OBJ REQ FILES
+    let suratRekomendasi = req.files["suratRekomendasi"]
+    let kis = []
+    let fotoDiri = []
+    let postIg = []
+    
+    for (let i = 1; i <= req.user.jumlahAnggota + 1; i++) {
+        kis.push(req.files[`kis${i}`])
+        fotoDiri.push(req.files[`fotoDiri${i}`])
+        postIg.push(req.files[`postIg${i}`])        
     }
 
-    let pathUp = path.join(__dirname , `../upload/${req.user.sekolah}/${req.user.username}/`)
-    // BUAT DIRECTORY 
-    mkdir(pathUp,0o777,(err) => {
+    // CEK EXTENSI DAN SIZE
+    cekExSize(suratRekomendasi)
+    cekExSizeArr(kis)
+    cekExSizeArr(fotoDiri)
+    cekExSizeArr(postIg)
+
+    // HEX IMAGE NAME
+    hexImgName(suratRekomendasi)
+    hexImgNameArr(kis)
+    hexImgNameArr(fotoDiri)
+    hexImgNameArr(postIg)
+
+    // BUAT VARIABLE UNTUK INSERT DB
+    let suratRekomendasiData = suratRekomendasi['name']
+    let kisData = []
+    let fotoDiriData = []
+    let postIgData = []
+
+    // MENG ISI DATA
+    kis.forEach(element => {
+        kisData.push(element['name'])
+    });
+
+    fotoDiri.forEach(element => {
+        fotoDiriData.push(element['name'])
+    });
+
+    postIg.forEach(element => {
+        postIgData.push(element['name'])
+    });
+
+    // sql 
+    let data = `status = 2,kis = '${kisData}',suratRekomendasi = '${suratRekomendasiData}',postIg = '${postIgData}',fotoDiri='${fotoDiriData}'`
+
+    // INSERT DATA
+    db.query(`UPDATE users SET ${data} WHERE email = '${req.user.email}' `,(err,rows) => {
         if(err){
             console.log(err)
             req.flash('tahap2', 'gagal')
             return res.redirect('/users')
-        } 
+        } else{
+            // buat PATH Upload
+            let pathUp = path.join(__dirname,'..','upload',`${req.user.username}/`)
 
-        let object = req.files
-        let arr = []
+            mkdir(pathUp,0o777,(err) => {
+                if (err) {
+                    req.flash('tahap2', 'gagal')
+                    return res.redirect('/users')
+                }else{
+                    imgUp(suratRekomendasi,pathUp)
+                    imgUpArr(kis,pathUp)
+                    imgUpArr(fotoDiri,pathUp)
+                    imgUpArr(postIg,pathUp)
 
-        for (const key in object) {
-            if (Object.hasOwnProperty.call(object, key)) {
-                const element = object[key];
-                arr.push(element.name)
-            }
+                    return res.redirect('/users')
+                }
+            })
         }
-        // HEX GAMBAR   
-        let data = `status = 2,kis = '${arr[0]}',suratRekomendasi = '${arr[1]}',postIg = '${arr[2]}',fotoDiri='${arr[3]}'`
-        db.query(`UPDATE users SET ${data} WHERE email = '${req.user.email}' `,(err,rows) => {
-            if(err){
-                console.log(err)
-                req.flash('tahap2', 'gagal')
-                return res.redirect('/users')
-            } 
-
-            return res.redirect('/users')
-        })
-
-        for (const key in object) {
-            if (Object.hasOwnProperty.call(object, key)) {
-                const element = object[key];
-                // UPLOAD IMAGE TO DIRECTORY
-                element.mv(pathUp + `${element.name}`, (err) => {
-                    if(err){
-                        console.log(err)
-                        req.flash('tahap2', 'gagal')
-                        return res.redirect('/users')
-                    } 
-                })
-            }
-        }
-        
     })
     
-       
-
 }
 
 module.exports ={
     getUsersPage,
     submitTahap2
+}
+
+let cekExSize = (vaiable) => {
+    //CEK EXTENSI PNG JPG JPEG ONLY
+    if (vaiable.mimetype === 'image/png' || vaiable.mimetype === 'image/jpg' || vaiable.mimetype === 'image/jpeg') {
+    }else{
+        req.flash('tahap2','extensi')
+        return res.redirect('/users')
+    }
+    // CEK SIZE KURANG DARI 20MB
+    if (vaiable.size > 20000000) {
+        req.flash('tahap2','ukuran')
+        return res.redirect('/users')
+    }
+}
+
+let cekExSizeArr = (array) => {
+    array.forEach(element => {
+        //CEK EXTENSI PNG JPG JPEG ONLY
+        if (element.mimetype === 'image/png' || element.mimetype === 'image/jpg' || element.mimetype === 'image/jpeg') {
+        }else{
+            req.flash('tahap2','extensi')
+            return res.redirect('/users')
+        }
+        // CEK SIZE KURANG DARI 20MB
+        if (element.size > 20000000) {
+            req.flash('tahap2','ukuran')
+            return res.redirect('/users')
+        }
+    });
+
+}
+
+let hexImgName = (variable) => {
+    if (variable.mimetype === 'image/png') {
+        variable['name'] = uuid.v4() + '.png'
+    }else if (variable.mimetype === 'image/jpg') {
+        variable['name'] = uuid.v4() + '.jpg'
+    }else if (variable.mimetype === 'image/jpeg') {
+        variable['name'] = uuid.v4() + '.jpeg'
+    }
+}
+
+let hexImgNameArr = (array) => {
+    array.forEach(element => {
+        if (element.mimetype === 'image/png') {
+            element['name'] = uuid.v4() + '.png'
+        }else if (element.mimetype === 'image/jpg') {
+            element['name'] = uuid.v4() + '.jpg'
+        }else if (element.mimetype === 'image/jpeg') {
+            element['name'] = uuid.v4() + '.jpeg'
+        }
+    });
+}
+
+let imgUp = (variable,pathUp) => {
+    variable.mv(pathUp + `${variable.name}`, (err) => {
+        if(err){
+            console.log(err)
+            req.flash('tahap2', 'gagal')
+            return res.redirect('/users')
+        }
+    })
+}
+
+let imgUpArr = (array,pathUp) => {
+    array.forEach(element => {
+        element.mv(pathUp + `${element.name}`, (err) => {
+            if(err){
+                console.log(err)
+                req.flash('tahap2', 'gagal')
+                return res.redirect('/users')
+            }
+        })
+    });
 }
