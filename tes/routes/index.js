@@ -9,6 +9,7 @@ const homeController = require('../controllers/homeController')
 const loginController = require('../controllers/loginController')
 const usersController = require('../controllers/usersController')
 const adminController = require ('../admin/adminController')
+const forgotPassController = require('../controllers/forgotPassword')
 
 const adminLogin = require('../admin/adminLogin')
 const { validateToken } = require("../admin/JWT")
@@ -30,7 +31,7 @@ let initWebRoutes = (app) => {
     router.post('/register',authValidation.validateRegister, registerController.createNewUser)// Buat Akun & kirim Verifikasi email
     router.get('/verification',registerController.verifikasiEmail) // Verifikasi email
 
-    // LOGIN USERS//FORGET PASSWORD
+    // LOGIN USERS//CLEAR
     router.get('/login', loginController.checkLoggedOut, loginController.getLoginPage )
     router.post('/login', authValidation.validateLogin,loginController.loginValidate,passport.authenticate('local-user', {
         successRedirect : '/users',
@@ -39,6 +40,11 @@ let initWebRoutes = (app) => {
         failureFlash : true
     }))
 
+    //FORGOT PASSWORD
+    router.get('/forgot-password',forgotPassController.getForgot)
+    router.post('/forgot-password',forgotPassController.postForget)
+    router.get('/reset-password/',forgotPassController.getReset)
+    router.post('/reset-password',forgotPassController.postReset)
 
 
     // ADMIN

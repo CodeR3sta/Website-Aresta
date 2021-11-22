@@ -26,7 +26,7 @@ let createNewUser = (user) => {
                 let verify = Math.floor((Math.random() * 100000000000) + 1)
 
                 let mailOption = {
-                    from : 'kangcritical@gmail.com',
+                    from : process.env.MAIL,
                     to : `${user.email}`,
                     subject : `Account Verification`,
                     html : `<h1>Halo Peserta ARESTA 17</h1><br><hr>
