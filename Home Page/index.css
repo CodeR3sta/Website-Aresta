@@ -37,7 +37,7 @@ body {
 }
 
 .topnav {
-    background-color: rgb(255, 255, 51);
+    background-color: rgb(204, 51, 153);
     overflow: hidden;
 }
 
@@ -159,7 +159,7 @@ body {
 
 .halaman-dua {
     margin-top: 10rem;
-    background-color: rgb(255, 255, 51);
+    background-color: rgb(204, 51, 153);
 }
 
 .halaman-dua .video {
@@ -209,7 +209,7 @@ body {
 }
 .tombol a {
     padding: 10px;
-    background-color: rgb(255, 255, 51);
+    background-color: rgb(204, 51, 153);
     text-align: center;
     color: rgb(0, 0, 51);
     font-family: "poppins";
@@ -281,6 +281,10 @@ ul {
     list-style: none;
 }
 
+.halaman-tiga .judul {
+    text-align: center;
+}
+
 .halaman-tiga .lomba .kolom ul li a {
     text-decoration: none;
     color: white;
@@ -291,6 +295,9 @@ ul {
     justify-content: center;
 }
 
+.halaman-tiga .lomba .kolom ul li a:hover {
+    color: rgb(255, 255, 51);
+}
 
 .halaman-tiga .lomba .kolom ul li {
     text-align: center;
@@ -353,7 +360,7 @@ a:hover {
 
 .ft-legal {
     padding: 0.9375rem 1.875rem;
-    background-color: rgb(255, 255, 51);
+    background-color: rgb(80, 1, 54);
 }
 
 .ft-legal-list {
