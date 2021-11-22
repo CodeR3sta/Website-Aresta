@@ -1,76 +1,129 @@
-@font-face {
-    font-family: "bebas-regular";
-    src: url("../font/BebasNeue\ Regular.otf");
+@import url('../font/font.css');
+
+@media only screen and (min-width: 29.8125rem) {
+    .ft-main {
+        justify-content: space-around;
+    }    
 }
-@font-face {
-    font-family: "montserrat-regular";
-    src: url("../font/Montserrat-Regular.ttf");
+
+@media only screen and (min-width: 77.5rem) {
+    .ft-main {
+        justify-content: space-evenly;
+    }
 }
-@font-face {
-    font-family: "mont-thin";
-    src: url("../font/Montserrat-Thin.ttf");
+
+* {
+    box-sizing: border-box;
 }
+
 body {
-    margin-top: 0px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
     background-color: black;
-    margin: 0%;
-    height: 1000vh;
+    height: 100rem;
 }
-.main {
-    margin-left: 18vh;
-    margin-top: 20vh;
+
+.header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 10px 10px;
 }
-.proudly{
-    font-family: "mont-thin";
-    font-size: 2vh;
-    color: white;
-    margin-bottom: -5vh;
-}
-.main h1 {
-    font-family: "bebas-regular";
-    color: white;
-}
-.Ajang {
-    font-size: 10vh;
-}
-.berprestasi {
-    margin-top: -8vh;
-    background-color: red;
-    display: block;
-    margin-right: 135vh;
-    font-size: initial;
-    font-size: 13vh;    
-    transform: rotate(-2deg);
+
+.header a {
+    float: left;
+    color: black;
     text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 20px;
+    border-radius: 4px;
 }
-.deskripsi {
-    color:white;
-    font-family: "montserrat-regular";
-    font-size: 2vh;
-    margin-right: 135vh;
-    margin-top: -5vh;
-    transform: rotate(-2deg);
+
+.header-right {
+    float: right;
 }
-.daftar {
-    font-size: 3.5vh;
-    color: white;
-    font-family: "montserrat-regular";
-    background-color: red;
-    margin-right: 145vh;
-    display: block;
-    text-align: center;
+
+.header logo {
+    font-size: 25px;
+    font-weight: bold;
 }
-.wait{
-    font-family: "mont-thin";
-    color: white;
-    font-size: 2vh;
-    transform: rotate(2deg);
-    margin-top: 5vh;
+
+.container {
+    flex: 1;
 }
-.four{
-    font-family: "montserrat-regular";
-    color: white;
-    font-size: 2vh;
-    transform: rotate(2deg);
-    margin-top: -2vh;
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+footer {
+    background-color: rgb(204, 51, 153);
+    color: #bbb;
+    line-height: 1.5;
+}
+
+footer a {
+    text-decoration: none;
+    color: #eee;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.ft-title {
+    color: #fff;
+    font-size: 1.375rem;
+    padding-bottom: 0.625rem;
+}
+
+.ft-main {
+    padding: 1.25rem 1.875rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ft-main-item {
+    padding: 1.25rem;
+    min-width: 12.5rem;
+}
+
+.ft-social {
+    padding: 0 1.875rem 1.25rem;
+}
+
+.ft-social-list {
+    display: flex;
+    justify-content: center;
+    border-top: 1px #777 solid;
+    padding-top: 1.25rem;
+}
+
+.ft-social-list li {
+    margin: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.ft-legal {
+    padding: 0.9375rem 1.875rem;
+    background-color: rgb(255, 255, 51);
+}
+
+.ft-legal-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ft-legal-list li {
+    margin: 0.125rem 0.625rem;
+    white-space: nowrap;
+}
+
+.ft-legal-list li:nth-last-child(2) {
+    flex: 1;
 }
