@@ -1,6 +1,8 @@
 const db = require('../configs/connectDB')
+const bcrypt = require('bcryptjs')
 const transporter = require('../configs/transporterMail')
 const jwt = require("jsonwebtoken");
+const {validationResult} = require("express-validator")
 require('dotenv').config()
 
 let getForgot = (req,res) => {
@@ -11,7 +13,19 @@ let getForgot = (req,res) => {
 }
 
 let postForget = (req,res) => {
-// amanin kolom input
+    // validate all required fields
+    let errorsArr = []
+    let validationErr = validationResult(req)
+    if(!validationErr.isEmpty()){
+        let errors = Object.values(validationErr.mapped())
+        errors.forEach((item) => {
+            errorsArr.push(item.msg)
+        })
+        req.flash('msgForgot', errorsArr)
+        return res.redirect('/forgot-password')
+    }
+
+
     const email = req.body.email
     db.query('SELECT * FROM users WHERE email = ?',[email],(err,result) => {
         if (err) {
@@ -67,7 +81,11 @@ let getReset = (req,res) => {
     try {
         const validToken = jwt.verify(tokenAmbil,process.env.TOKEN_FORGOTPASS)        
         if (validToken) {
-            return res.render('forgetPass',{hal : 'reset'})
+            return res.render('forgetPass',{
+                hal : 'reset',
+                token : req.query['verify'],
+                msgForgot : req.flash('msgForgot')
+            })
         }
     } catch (error) {
         console.log(error)
@@ -76,10 +94,32 @@ let getReset = (req,res) => {
 }
 
 let postReset = (req,res) => {
-// amanin kolom input
+    
     let ambil = req.query['verify']
+
+    // validate all required fields
+    let errorsArr = []
+    let validationErr = validationResult(req)
+    if(!validationErr.isEmpty()){
+        let errors = Object.values(validationErr.mapped())
+        errors.forEach((item) => {
+            errorsArr.push(item.msg)
+        })
+        req.flash('msgForgot', errorsArr)
+        return res.redirect(`/reset-password/?verify=${ambil}`)
+    }
+
     const data = jwt.verify(ambil,process.env.TOKEN_FORGOTPASS)
-// ubah password
+
+    let salt = bcrypt.genSaltSync(10)
+    let password = bcrypt.hashSync(req.body.password,salt)
+    db.query(`UPDATE users SET password = '${password}' WHERE email = '${data.email}'`,(err,result) => {
+        if (err) {
+            return res.send('Gagal Mengubah Password')
+        }else{
+            return res.send('Password Berhasil di Ubah')
+        }
+    })
 }
 
 module.exports = {getForgot,getReset,postForget,postReset}

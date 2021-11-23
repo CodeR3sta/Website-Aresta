@@ -42,9 +42,9 @@ let initWebRoutes = (app) => {
 
     //FORGOT PASSWORD
     router.get('/forgot-password',forgotPassController.getForgot)
-    router.post('/forgot-password',forgotPassController.postForget)
+    router.post('/forgot-password',authValidation.validateForgotPass,forgotPassController.postForget)
     router.get('/reset-password/',forgotPassController.getReset)
-    router.post('/reset-password',forgotPassController.postReset)
+    router.post('/reset-password',authValidation.validateResetPass,forgotPassController.postReset)
 
 
     // ADMIN

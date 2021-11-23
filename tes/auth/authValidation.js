@@ -23,8 +23,22 @@ let validateLogin = [
     check('password','email atau password salah').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/),
 ]
 
+let validateForgotPass = [
+    check('email','Invalid Email').isEmail().trim()
+]
+
+let validateResetPass = [
+    check('password','password minimal 8 karakter & memliki huruf kecil & huruf besar & angka').isLength({min: 8}).matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/),
+
+    check('passwordConfirm','password tidak cocok').custom((value,{req}) => {
+        return value === req.body.password
+    }),
+]
+
 module.exports = {
     validateRegister,
     validateLogin,
-    validateAdminLogin
+    validateAdminLogin,
+    validateForgotPass,
+    validateResetPass
 }

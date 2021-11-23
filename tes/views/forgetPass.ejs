@@ -16,9 +16,10 @@
     <% } %>
 
     <% if (hal === 'reset') { %>
-        <form action="/reset-password" method="post">
-            <input type="password" name="password" id="">
-            <input type="password" name="passwordConfirm" id="">
+        <h1><%= msgForgot %> </h1>
+        <form action="/reset-password/?verify=<%- token %>" method="post">
+            <input type="password" name="password" id="" required>
+            <input type="password" name="passwordConfirm" id="" required>
             <button type="submit">submit</button>
         </form>
 
