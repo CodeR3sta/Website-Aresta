@@ -20,6 +20,20 @@
             <a href="#">Tentang</a>
         </div>
     </div>
+
+
+
+    <div>
+        <div class="tombol-bantuan">
+            <button class="tombol-bantuan" id="toggle">Bantuan</button>
+        </div>
+        <div class="whatsapp" id="nongol">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="email"><i class="fas fa-envelope"></i></a>
+        </div>
+        
+    </div>
+
     
 
     <div class="container"></div>
@@ -62,5 +76,17 @@
             </ul>
         </section>
     </footer>
+
+    <script>
+        const targetDiv = document.getElementById("nongol")
+        const btn = document.getElementById("toggle")
+        btn.onclick = function() {
+            if (targetDiv.style.display !== "none") {
+                targetDiv.style.display = "none";
+            } else {
+                targetDiv.style.display = "block";
+            };
+        }
+    </script>
 </body>
 </html>

@@ -21,7 +21,6 @@ body {
     min-height: 100vh;
     flex-direction: column;
     margin: 0;
-    background-color: black;
     height: 100rem;
 }
 
@@ -53,6 +52,51 @@ body {
 
 .container {
     flex: 1;
+}
+
+.tombol-bantuan {
+    font-size: 2rem;
+    text-align: center;
+    background-color: blue;
+    display: float;
+    position: fixed;
+    top: 50%;
+}
+
+.tombol-bantuan button{
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+}
+.whatsapp {
+    background-color: red;
+    display: float;
+    position: fixed;
+    border-radius: 50%;
+    right: 50%;
+    padding: 1rem;
+}
+
+.whatsapp a {
+    color: white;
+    font-size: 3rem;
+    padding: 0.35rem;
+}
+
+.email {
+    background-color: red;
+    display: float;
+    position: fixed;
+    border-radius: 50%;
+    right: 50%;
+    top: 50%;
+    padding: 1rem;
+}
+
+.email a {
+    color: white;
+    font-size: 3rem;
+    padding: 0.2rem;
 }
 
 ul {
