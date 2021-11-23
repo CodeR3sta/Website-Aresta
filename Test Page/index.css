@@ -24,30 +24,125 @@ body {
     height: 100rem;
 }
 
-.header {
+.topnav {
+    height: 60px;
+    background-color: purple;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     overflow: hidden;
-    background-color: #f1f1f1;
-    padding: 10px 10px;
 }
 
-.header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
+.topnav .logo {
+    max-width: 250px;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.topnav .logo a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 60px;
+}
+
+.topnav .logo a img {
+    max-height: 60px;
+    max-width: 100%;
+}
+
+.topnav .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.topnav .navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topnav .navbar ul li a {
     text-decoration: none;
-    font-size: 18px;
-    line-height: 20px;
-    border-radius: 4px;
+    color: blue;
+    font-size: 1rem;
+    text-transform: uppercase;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+    padding: 0 10px;
 }
 
-.header-right {
-    float: right;
+.topnav .navbar ul li a:hover {
+    color: black;
+    background-color: yellow;
 }
 
-.header logo {
-    font-size: 25px;
-    font-weight: bold;
+.topnav .navbar ul .close {
+    display: none;
+    text-align: right;
+    padding: 10px;
+}
+
+.topnav .navbar ul .close span {
+    font-size: 40px;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.topnav .navbar .icon-bar {
+    padding: 18px 8px;
+    width: 50px;
+    height: 60px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.topnav .navbar .icon-bar i {
+    background-color: #ffffff;
+    height: 2px;
+}
+
+@media only screen and (max-width:650px) {
+    .topnav {justify-content: space-between;}
+    .topnav .logo {flex: 1;}
+    .topnav .navbar {flex:0;}
+    .topnav .navbar ul {
+        flex-wrap: nowrap;
+        position: fixed;
+        left: 100%;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        transition: left .3s;
+    }
+    .topnav .navbar ul li a {
+        padding: 10px;
+        font-size: 16px;
+        height: auto;
+        line-height: normal;
+        color: #555555;
+    }
+    .topnav .navbar ul .close {
+        display: block;
+    }
+    .topnav .navbar .icon-bar {
+        display: flex;
+    }
+    .topnav .navbar ._Menus-show {
+        left: 0;
+    }
 }
 
 .container {

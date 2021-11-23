@@ -11,13 +11,26 @@
 </head>
 
 <body>
-    <div class="header">
-        <a href="#" class="logo">Company Logo</a>
-        <div class="header-right">
-            <a class="active" href="#home">Home</a>
-            <a href="#">Lomba</a>
-            <a href="#">Informasi</a>
-            <a href="#">Tentang</a>
+    <div class="topnav">
+        <div class="logo">
+            <a href="#"><img src="../resources/logo.png" alt="logo"></a>
+        </div>
+        <div class="navbar">
+            <div class="icon-bar" onclick="Show()">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+            <ul class="nav-lists">
+                <li class="close"><span onclick="Hide()">x</span></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Lomba</a></li>
+                <li><a href="#">Informasi</a></li>
+            </ul>
+            <ul class="nav-login">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
         </div>
     </div>
 
@@ -88,5 +101,15 @@
             };
         }
     </script>
+    <script>
+        var navList = document.getElementById("nav-lists");
+        function Show() {
+        navList.classList.add("_Menus-show");
+        }
+        
+        function Hide(){
+        navList.classList.remove("_Menus-show");
+        }
+        </script>
 </body>
 </html>
