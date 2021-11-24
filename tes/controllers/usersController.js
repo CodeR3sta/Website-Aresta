@@ -42,7 +42,7 @@ let submitTahap2 = async (req, res) => {
   // CEK ADA ISI ATAU TIDAK
   if (!req.files) {
     req.flash("tahap2", "isi");
-    return res.redirect("users");
+    return res.redirect("/users");
   }
 
   // BUAT VARIABLE UNTUK OBJ REQ FILES
