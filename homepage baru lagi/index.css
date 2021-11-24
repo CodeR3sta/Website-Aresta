@@ -1,3 +1,8 @@
+@import url('../font/font.css');
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     height: 100rem;
     margin: 0 auto;
@@ -6,7 +11,7 @@ body {
 }
 
 .page-one {
-    min-height: 30rem;
+    min-height: 50rem;
     text-align: center;
     margin-top: 10rem;
 }
@@ -23,10 +28,17 @@ body {
 
 .page-one h1 {
     color: white;
+    font-family: "oswald-semi";
+    font-size: 6rem;
+    margin: 0;
+    line-height: 130%;
 }
 
 .page-one p {
     color: #47C0B4;
+    font-family: "worksans-extra";
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
 }
 
 .page-one a {
@@ -34,6 +46,7 @@ body {
     color: white;
     padding: 10px 14px;
     background-color: #B03092;
+    font-family: "poppins";
 }
 
 .page-one a:hover {
@@ -44,6 +57,7 @@ body {
 .page-two {
     background-image: url("../resources/bg-p2-01.png");
     background-size: cover;
+    background-attachment: fixed;
     padding-top: 10rem;
     padding-bottom: 10rem;
 }
@@ -55,20 +69,45 @@ body {
 
 .page-two h1 {
     color: white;
-
+    font-family: "oswald-semi";
+    font-size: 4rem;
+    line-height: 120%;
 }
 
 .page-two p.tanggal {
     color: yellow;
+    font-family: "notosans-bold";
+    font-size: 2rem;
 }
 
 .page-two p.keterangan {
     color: purple;
+    font-family: "notosans-bold";
+    font-size: 1rem;
+    padding: 5px 20px;
 }
 
-.page-three iframe {
-    margin: 0 auto;
+.page-three {
+    min-height: 40rem;
+}
+
+.page-three .container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.page-three iframe.trailer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 70%;
     display: block;
+    margin: 0 auto;
 }
 
 .page-three p {
@@ -86,7 +125,11 @@ body {
 }
 
 .page-four h1 {
-    color: white;
+    color: yellow;
+    margin: 0 auto;
+    width: 65%;
+    font-family: "notosans-bold";
+    font-size: 5rem;
 }
 
 .list-lomba {
@@ -100,3 +143,19 @@ body {
     list-style: none;
 }
 
+.page-four .list-lomba ul li {
+    display: flex;
+    justify-content: center;
+    padding: 6rem 2rem 6rem 2rem;
+}
+
+.page-four .list-lomba ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: "worksans-bold";
+    font-size: 1.5rem;
+}
+
+.page-four .list-lomba ul li a:hover {
+    color: yellow;
+}

@@ -63,3 +63,23 @@
     font-display: swap;
 
 }
+@font-face {
+    font-family: "oswald-semi";
+    src: url('./Oswald-SemiBold.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: "worksans-extra";
+    src: url('./WorkSans-ExtraBold.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: "notosans-bold";
+    src: url('./NotoSans-Bold.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: "worksans-bold";
+    src: url('./WorkSans-Bold.ttf');
+    font-display: swap;
+}
