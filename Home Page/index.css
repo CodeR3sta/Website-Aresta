@@ -14,7 +14,7 @@
         right: 0;
         top: 0;
     }    
-    .topnav.responsive .topnav-right a {
+    .topnav.responsive a {
         float: none;
         display: block;
         text-align: left;
@@ -41,12 +41,11 @@ body {
     overflow: hidden;
 }
 
-.topnav-right {
-    float: right;
-    display: flex;
+.topnav a {
+    padding: 0;
 }
 
-.topnav  a, .topnav a img {
+.topnav a, .topnav a img {
     float: left;
     display: block;
     color: rgb(0, 0, 51);

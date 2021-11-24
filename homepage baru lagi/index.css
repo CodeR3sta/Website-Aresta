@@ -1,0 +1,102 @@
+body {
+    height: 100rem;
+    margin: 0 auto;
+    background-color: #14042D;
+
+}
+
+.page-one {
+    min-height: 30rem;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+
+.page-one .circle {
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: 0 auto;
+    padding: 10px 10px;
+}
+
+.page-one h1 {
+    color: white;
+}
+
+.page-one p {
+    color: #47C0B4;
+}
+
+.page-one a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 14px;
+    background-color: #B03092;
+}
+
+.page-one a:hover {
+    background-color: yellow;
+    color: black;
+}
+
+.page-two {
+    background-image: url("../resources/bg-p2-01.png");
+    background-size: cover;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.page-two h1, .page-two p {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.page-two h1 {
+    color: white;
+
+}
+
+.page-two p.tanggal {
+    color: yellow;
+}
+
+.page-two p.keterangan {
+    color: purple;
+}
+
+.page-three iframe {
+    margin: 0 auto;
+    display: block;
+}
+
+.page-three p {
+    position: absolute;
+    left: 30%;
+    transform: rotate(-90deg);
+}
+
+.page-three p span.kuning {
+    color: yellow;
+}
+
+.page-three p.putih {
+    color: white;
+}
+
+.page-four h1 {
+    color: white;
+}
+
+.list-lomba {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page-four .list-lomba ul {
+    list-style: none;
+}
+

@@ -1,3 +1,5 @@
-User-agent: googlebot
-sitemap: http://www.aresta17.com/sitemap.xml
-Disallow: /test/
+User-agent: *
+Disallow: /tests
+Disallow: /faralha
+
+Sitemap: https://www.aresta17.com/sitemap.xml
