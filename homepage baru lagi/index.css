@@ -158,10 +158,17 @@ header ul li a:hover {
 
 .page-three {
     min-height: 40rem;
+<<<<<<< Updated upstream
     background-image: url('../resources/laptop-01.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #14042D;
+=======
+    background-image: url('../resources/Untitled-4-01.svg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+>>>>>>> Stashed changes
 }
 
 .page-three .container {
