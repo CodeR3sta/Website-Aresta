@@ -21,13 +21,6 @@ header {
     align-items: center;
 }
 
-header .logo {
-    color: white;
-    text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-}
-
 header ul {
     display: flex;
     justify-content: center;
@@ -37,6 +30,7 @@ header ul {
 header ul li {
     list-style: none;
     margin-left: 0.5rem;
+    margin-right: 4rem;
     display: flex;
     flex-direction: row;
 }
