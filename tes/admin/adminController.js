@@ -1,7 +1,7 @@
 const db = require("../configs/connectDB");
 const path = require("path");
 const bcrypt = require("bcryptjs");
-const { rmdirSync } = require("fs");
+const fs = require("fs");
 
 // HOME status 1, 2, 3, 4 //CLEAR
 let viewStatus = (req, res) => {
@@ -62,41 +62,8 @@ let viewUsers = (req, res) => {
 
       let obj = results[0];
 
-      let kisArr = obj["kis"].split(",");
-      let fotoDiriArr = obj["fotoDiri"].split(",");
-      let postIgArr = obj["postIg"].split(",");
-
       return res.render("cek", {
         obj,
-        kisArr,
-        fotoDiriArr,
-        postIgArr,
-        anggota: [
-          obj.anggota1,
-          obj.anggota2,
-          obj.anggota3,
-          obj.anggota4,
-          obj.anggota5,
-          obj.anggota6,
-          obj.anggota7,
-          obj.anggota8,
-          obj.anggota9,
-          obj.anggota10,
-          obj.anggota11,
-          obj.anggota12,
-          obj.anggota13,
-          obj.anggota14,
-          obj.anggota15,
-          obj.anggota16,
-          obj.anggota17,
-          obj.anggota18,
-          obj.anggota19,
-          obj.anggota20,
-          obj.anggota21,
-          obj.anggota22,
-          obj.anggota23,
-          obj.anggota24,
-        ],
       });
     }
   );
@@ -123,11 +90,34 @@ let deleteUsers = async (req, res) => {
       console.log("username salah");
       return res.redirect(`/code/resta/panitia/users/views/${req.params.id}`);
     }
+    let match = await comparePassword(user.hapus, req.body.password);
 
     if (user) {
-      let match = await comparePassword(user.hapus, req.body.password);
-
       if (match === true) {
+        db.query(
+          `SELECT * FROM users WHERE id = ${req.params.id}`,
+          (err, result) => {
+            if (err) {
+              console.log(err);
+            } else {
+              let us = result[0];
+
+              let pathUp = path.join(
+                __dirname,
+                "..",
+                "upload",
+                `${us.username}${us.sekolah}`
+              );
+
+              fs.rmdir(pathUp, { recursive: true }, (err) => {
+                if (err) {
+                  console.log(err);
+                }
+              });
+            }
+          }
+        );
+
         db.query(
           "DELETE FROM users WHERE id = ?",
           [req.params.id],
@@ -164,9 +154,10 @@ let confirmTahap2 = async (req, res) => {
       let match = await comparePassword(user.ubah, req.body.password);
 
       if (match === true) {
+        let pesan1 = req.body.pesan;
         if (req.body.hasil === "benar") {
           db.query(
-            "UPDATE users SET status = 3 WHERE id = ?",
+            `UPDATE users SET status = 3, pesan = '${pesan1}' WHERE id = ?`,
             [req.params.id],
             (err, results) => {
               if (err) console.log(err);
@@ -176,42 +167,29 @@ let confirmTahap2 = async (req, res) => {
           );
         } else {
           let pesan = req.body.pesan;
+          const directory = path.join(
+            __dirname,
+            "..",
+            "upload",
+            `${req.user.username}${req.user.sekolah}`
+          );
+
+          fs.readdir(directory, (err, files) => {
+            if (err) throw err;
+
+            for (const file of files) {
+              fs.unlink(path.join(directory, file), (err) => {
+                if (err) throw err;
+              });
+            }
+          });
           db.query(
-            `UPDATE users SET status = 1, pesan = '${pesan}',kis = '',suratRekomendasi = '',fotoTim = '',postIg = '', fotoDiri = '' WHERE id = ?`,
+            `UPDATE users SET status = 1, pesan = '${pesan}',suratRekomendasi = '',fotoTim = '',kis1 = '',postIg1 = '', fotoDiri1 = '',kis2 = '',postIg2 = '', fotoDiri2 = '',kis3 = '',postIg3 = '', fotoDiri3 = '',kis4 = '',postIg4 = '', fotoDiri4 = '',kis5 = '',postIg5 = '', fotoDiri5 = '',kis6 = '',postIg6 = '', fotoDiri6 = '',kis7 = '',postIg7 = '', fotoDiri7 = '',kis8 = '',postIg8 = '', fotoDiri8 = '',kis9 = '',postIg9 = '', fotoDiri9 = '',kis10 = '',postIg10 = '', fotoDiri10 = '',kis11 = '',postIg11 = '', fotoDiri11 = '',kis12 = '',postIg12 = '', fotoDiri12 = '',kis13 = '',postIg13 = '', fotoDiri13 = '',kis14 = '',postIg14 = '', fotoDiri14 = '',kis15 = '',postIg15 = '', fotoDiri15 = '',kis16 = '',postIg16 = '', fotoDiri16 = '',kis17 = '',postIg17 = '', fotoDiri17 = '',kis18 = '',postIg18 = '', fotoDiri18 = '',kis19 = '',postIg19 = '', fotoDiri19 = '',kis20 = '',postIg20 = '', fotoDiri20 = '',kis21 = '',postIg21 = '', fotoDiri21 = '',kis22 = '',postIg22 = '', fotoDiri22 = '',kis23 = '',postIg23 = '', fotoDiri23 = '',kis24 = '',postIg24 = '', fotoDiri24 = '',kis25 = '',postIg25 = '', fotoDiri25 = '' WHERE id = ?`,
             [req.params.id],
             (err, results) => {
-              if (err) {
-                console.log(err);
-                return res.redirect("/code/resta/panitia/users");
-              }
-              // hapus directory
-              db.query(
-                "SELECT * FROM users WHERE id = ?",
-                [req.params.id],
-                (err, results) => {
-                  if (err) {
-                    console.log(err);
-                    return res.redirect("/code/resta/panitia/users");
-                  }
-                  rmdirSync(
-                    path.join(
-                      __dirname,
-                      "..",
-                      "upload",
-                      `${results[0].username}${results[0].sekolah}`
-                    ),
-                    { recursive: true },
-                    (err) => {
-                      if (err) {
-                        console.log(err);
-                        return res.redirect("/code/resta/panitia/users");
-                      }
-                      return res.redirect("/code/resta/panitia/users");
-                    }
-                  );
-                  return res.redirect("/code/resta/panitia/users");
-                }
-              );
+              if (err) console.log(err);
+              console.log("berhasil di Update");
+              return res.redirect("/code/resta/panitia/users");
             }
           );
         }
@@ -237,10 +215,10 @@ let confirmTahap3 = async (req, res) => {
 
     if (user) {
       let match = await comparePassword(user.ubah, req.body.password);
-
+      let pesan3 = req.body.pesan3;
       if (match === true) {
         db.query(
-          "UPDATE users SET status = 4 WHERE id = ?",
+          `UPDATE users SET status = 4,pesan = '${pesan3}' WHERE id = ?`,
           [req.params.id],
           (err, results) => {
             if (err) console.log(err);

@@ -87,15 +87,15 @@
                         <td>:</td>
                         <td id="3"><%= user.namaUtama %></td>
                     </tr>
-                    <% for( let i = 1; i <= user.jumlahAnggota; i++ ) { %>
-                        <% if (user[`anggota${i}`] != '') { %>
+                    <% anggota.forEach(element => { %>
+                        <% if (element != '') { %>
                             <tr>
                                 <td id="1">Anggota</td>
                                 <td>:</td>
-                                <td id="3"><%= user[`anggota${i}`] %></td>
+                                <td id="3"><%= element %></td>
                             </tr>
                         <% } %>
-                    <% } %>
+                    <% }) %>
                 </table>
             </div>
         </div>
@@ -119,93 +119,37 @@
         </div>
         <div class="upload">
             <% if (user.status === 1) { %>
-                <table>
-                    <% if (user[`suratRekomendasi`] === '') { %>
-                        <tr>
-                            <form action="/users/suratRekomendasi" method="post" enctype="multipart/form-data">
-                                <td><label for="suratRekomendasi">Upload surat Rekomendai sekolah :</label></td>
-                                <td><input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*" required></td>
-                                <td><button type="submit">submit</button></td>
-                            </form>
-                        </tr>
-                    <% } else { %>
+                <form action="/users" method="post" enctype="multipart/form-data">
+                    <table>
                         <tr>
                             <td><label for="suratRekomendasi">Upload surat Rekomendai sekolah :</label></td>
-                            <td>:</td>
-                            <td>Terkirim</td>
+                            <td><input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*" required></td>
                         </tr>
-                    <% } %>
- 
-                    <% if (user.lomba === 'nasyid') { %>
-                        <% if (user[`fotoTim`] === '') { %>
+                        <% if (user.lomba === 'nasyid') { %>
                             <tr>
-                                <form action="/users/fotoTim" method="post" enctype="multipart/form-data">
-                                    <td><label for="fotoTim">Upload Foto Tim :</label></td>
-                                    <td><input type="file" name="fotoTim" id="fotoTim" accept="image/*" required></td>
-                                    <td><button type="submit">submit</button></td>
-                                </form>
-                            </tr>
-                        <% } else { %>
-                             <tr>
                                 <td><label for="fotoTim">Upload Foto Tim :</label></td>
-                                <td>:</td>
-                                <td>Terkirim</td>                                 
-                             </tr>
-                        <% } %>
-                    <% } %>
-                    <% for( let i = 1; i <= user.jumlahAnggota + 1; i++ ) { %>
-                        <% if (user[`kis${i}`] === '') { %>
-                            <tr>
-                                <form action="/users/kis<%- i %>" method="post" enctype="multipart/form-data">
-                                    <td><label for="kis<%- i %>">Upload KIS <%- i %> :</label></td>
-                                    <td><input type="file" name="kis<%- i %>" id="kis<%- i %>" accept="image/*" required></td>
-                                    <td><button type="submit">submit</button></td>
-                                </form>
-                            </tr>
-                        <% } else { %>
-                            <tr>
-                                <td><label for="kis<%- i %>">Upload KIS <%- i %> :</label></td>
-                                <td>:</td>
-                                <td>Terkirim</td>
+                                <td><input type="file" name="fotoTim" id="fotoTim" accept="image/*" required></td>
                             </tr>
                         <% } %>
-
-                        <% if (user[`postIg${i}`] === '') { %>
+                        <% for( let i = 1; i <= user.jumlahAnggota + 1; i++ ) { %>
                             <tr>
-                                <form action="/users/postIg<%- i %>" method="post" enctype="multipart/form-data">
-                                    <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
-                                    <td><input type="file" name="postIg<%- i %>" id="postIg<%- i %>" accept="image/*" required></td>
-                                    <td><button type="submit">submit</button></td>
-                                </form>
+                                <td><label for="kis<%- 1 %>">Upload KIS <%- i %> :</label></td>
+                                <td><input type="file" name="kis<%- i %>" id="kis<%- i %>" accept="image/*" required></td>
                             </tr>
-                        <% } else { %>
                             <tr>
                                 <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
-                                <td>:</td>
-                                <td>Terkirim</td>
+                                <td><input type="file" name="postIg<%- i %>" id="postIg<%- i %>" accept="image/*" required></td>
                             </tr>
-                        <% } %>
-                        <% if (user[`fotoDiri${i}`] === '') { %>
-                            <tr>
-                                <form action="/users/fotoDiri<%- i %>" method="post" enctype="multipart/form-data">
-                                    <td><label for="fotoDiri<%- i %>">Upload Foto Diri <%- i %> :</label></td>
-                                    <td><input type="file" name="fotoDiri<%- i %>" id="fotoDiri<%- i %>" accept="image/*" required></td>
-                                    <td><button type="submit">submit</button></td>
-                                </form>
-                            </tr>
-                        <% } else { %>
                             <tr>
                                 <td><label for="fotoDiri<%- i %>">Upload Foto Diri <%- i %> :</label></td>
-                                <td>:</td>
-                                <td>Terkirim</td>
+                                <td><input type="file" name="fotoDiri<%- i %>" id="fotoDiri<%- i %>" accept="image/*" required></td>
                             </tr>
                         <% } %>
-                     
-                    <% } %>
-                </table>
-                
-                <!-- <button id="op-modal" type="button">Submit</button>
-                <button id="submit-tahap2" type="submit"></button> -->
+                    </table>
+                    
+                    <button id="op-modal" type="button">Submit</button>
+                    <button id="submit-tahap2" type="submit"></button>
+                </form>
             <% } else if (user.status === 2) { %>
                 <img id="logo-pending" src="/img/usersPage/attention.png" alt="attention" width="200px" height="200px" >
                 <h1>Sedang di Check Panitia ARESTA17</h1>
@@ -237,7 +181,7 @@
                 <h1>Pembayaran</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore aut corporis dolore, asperiores delectus deleniti quidem consequuntur aspernatur molestias voluptatum omnis fuga aliquid sapiente sint amet eaque id blanditiis cumque quas, doloribus odio quod. Odit, at blanditiis beatae earum consequuntur provident dignissimos, distinctio quisquam doloremque nihil, quis illo magni ipsum?</p>
                 <div class="chat">
-                    <a class="chatWA" href="https://api.whatsapp.com/send?phone=6281295278127&text=nama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor%20Hp%20%3A">
+                    <a class="chatWA" href="https://api.whatsapp.com/send?phone=6281295278127&text=nama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor Hp%20%3A">
                         <img src="/img/usersPage/logoWa.png" alt="">
                         <div>chat</div>
                     </a>
@@ -379,7 +323,7 @@
 
         <div class="pdf">
             <% if (user.lomba === 'nasyid') { %>
-                <iframe src="https://drive.google.com/file/d/1_4PtkkY4uiXzD5Drgz0MhhOQDN8BOu-z/preview" width="640" height="480" allow="autoplay"></iframe>
+                <iframe src="https://drive.google.com/file/d/1_4PtkkY4uiXzD5Drgz0MhhOQDN8BOu-z/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
             <% } else if (user.lomba === 'videoKreatif') { %>
                 <iframe src="https://drive.google.com/file/d/1INvnItn1RwLcHqcJdZ1eTMAayiHQfQiq/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
             <% } else if (user.lomba === 'ldbi') { %>
@@ -393,6 +337,9 @@
             <% } else if (user.lomba === 'businessPlan') { %>
                 <iframe src="https://drive.google.com/file/d/1yjYYsAUeGKoYWc8MpxaZVsee0m_i7b3s/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
             <% } %>
+
+            <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
+            <h1>Ketentuan Umum Lomba Belum Tersedia</h1>
         </div> 
     </div>
     <div class="sertifikat tabcontent" id="sertifikat">
@@ -420,7 +367,7 @@
 <script>
     let cond = '<%= pesan %>'
     if (cond === 'isi') {
-        alert('pilih gambar')
+        alert('upload semua Gambar sekaligus')
     }
     if (cond === 'extensi') {
         alert('Extensi Anda Bukan png/jpg/jpeg')

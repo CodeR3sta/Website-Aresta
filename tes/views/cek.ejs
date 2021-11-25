@@ -60,15 +60,15 @@
             <td>:</td>
             <td><%- obj.namaUtama %> </td>
         </tr>
-        <% anggota.forEach(element => { %>
-            <% if (element != '') { %>
+        <% for( let i = 1; i <= 24; i++ ) { %>
+            <% if (obj[`anggota${i}`] != '') { %>
                 <tr>
                     <td>Anggota</td>
                     <td>:</td>
-                    <td><%- element %> </td>
+                    <td><%- obj[`anggota${i}`] %></td>
                 </tr>
             <% } %>
-        <% }) %>
+        <% } %>
     </table>
     
     <% if (obj.status !== 1) { %>
@@ -76,15 +76,11 @@
         <% if (obj.lomba === 'nasyid') { %>
             <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj.fotoTim %>">foto tim</a>         
         <% } %>
-        <% kisArr.forEach((element,i) => { %>
-            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- element%>">Kis <%- i %></a>
-        <% }) %>
-        <% fotoDiriArr.forEach((element,i) => { %>
-            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- element %>">post IG <%- i %></a>
-        <% }) %>
-        <% postIgArr.forEach((element,i) => { %>
-            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- element %>">foto diri <%- i %></a>   
-        <% }) %>
+        <% for( let i = 1; i <= obj.jumlahAnggota + 1 ; i++ ) { %>
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj[`kis${i}`] %>">Kis <%- i %></a>         
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj[`postIg${i}`] %>">Post Ig<%- i %></a>         
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj[`fotoDiri${i}`] %>">Foto Diri<%- i %></a>         
+        <% } %>
     <% } %>
 
     <% if (obj.status === 2) { %>
@@ -109,6 +105,7 @@
         <div class="form">
             <h1>Konfirmasi Pembayaran</h1>
             <form action="/code/resta/panitia/users/konfirmasi/tahap3/<%- obj.id %>" method="post">
+                <input type="text" name="pesan3" placeholder="pesan">
                 <input type="text" name="username" placeholder="username">
                 <input type="password" name="password" placeholder="password Konfirmasi">
                 <button type="submit">Submit</button>
