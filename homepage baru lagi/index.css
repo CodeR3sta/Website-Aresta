@@ -120,7 +120,9 @@ header ul li a:hover {
     background-size: cover;
     /*background-attachment: fixed;*/
     padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-bottom: 20rem;
+    background-color: #14042D;
+
 }
 
 .page-two h1, .page-two p {
@@ -156,8 +158,10 @@ header ul li a:hover {
 
 .page-three {
     min-height: 40rem;
-    background-image: url('../resources/Untitled-4-01.svg');
-    background-size: cover;
+    background-image: url('../resources/laptop-01.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #14042D;
 }
 
 .page-three .container {
