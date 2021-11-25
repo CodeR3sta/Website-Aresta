@@ -116,7 +116,7 @@ header ul li a:hover {
 
 .page-two {
     /*background-image: url("../resources/bg-p2-01.png");*/
-    background-image: url('../resources/Untitled-4-01.svg');
+    background-image: url('../resources/Garis-garis\ ungu-01.svg');
     background-size: cover;
     /*background-attachment: fixed;*/
     padding-top: 10rem;
@@ -195,6 +195,12 @@ header ul li a:hover {
 
 .page-three p.putih {
     color: white;
+}
+
+.page-four {
+    background-color: #14042D;
+    padding-top: 30rem;
+    padding-bottom: 20rem;
 }
 
 .page-four h1 {
