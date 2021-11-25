@@ -162,6 +162,8 @@ header ul li a:hover {
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #14042D;
+    display: flex;
+    flex-wrap: wrap;
     
 }
 
@@ -169,8 +171,7 @@ header ul li a:hover {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%;
-    
+    padding-top: 56.25%;   
 }
 
 .page-three iframe.trailer {
