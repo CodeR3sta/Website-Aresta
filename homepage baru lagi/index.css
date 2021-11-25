@@ -185,16 +185,9 @@ header ul li a:hover {
 
 .page-three p {
     position: absolute;
-<<<<<<< Updated upstream
-    left: 30px;
-    transform: rotate(-90deg);
-    font-family: "notosans-bold";
-    
-=======
     transform: rotate(-90deg);
     margin-left: 5px;
     font-family: "notosans-bold";
->>>>>>> Stashed changes
 }
 
 .page-three p span.kuning {
