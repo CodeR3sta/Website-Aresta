@@ -6,7 +6,7 @@ html {
 body {
     height: 100rem;
     margin: 0 auto;
-    background-color: #14042D;
+    background-color: #080211;
 
 }
 
@@ -60,8 +60,9 @@ header ul li a:hover {
     min-height: 50rem;
     text-align: center;
     margin-top: 10rem;
-    background-image: url('..//resources/lines-01.png');
+    background-image: url('..//resources/lines\ yellow-01.svg');
     background-size: cover;
+    background-color: #080211;
 }
 
 
@@ -83,19 +84,24 @@ header ul li a:hover {
 }
 
 .page-one p {
-    color: #47C0B4;
+    color: rgb(80, 1, 54);
     font-family: "worksans-extra";
     font-size: 1.4rem;
     margin-bottom: 3rem;
-    mix-blend-mode: exclusion;
+    background-color: white;
+    padding: 10px 14px;
+    display: inline-block;
+    text-transform: uppercase;
 }
-
 .page-one a {
     text-decoration: none;
     color: white;
     padding: 10px 14px;
     background-color: #B03092;
     font-family: "poppins";
+    width: 80px;
+    display: block;
+    margin: auto;
 }
 
 .page-one a:hover {
@@ -103,10 +109,14 @@ header ul li a:hover {
     color: black;
 }
 
+.transisi-linear {
+    background-image: linear-gradient(#080211,#14042D);
+    min-height: 30rem;
+}
+
 .page-two {
     /*background-image: url("../resources/bg-p2-01.png");*/
-    background-color: yellow;
-    background-image: url('../resources/second-01.png');
+    background-image: url('../resources/Untitled-4-01.svg');
     background-size: cover;
     /*background-attachment: fixed;*/
     padding-top: 10rem;
@@ -125,6 +135,12 @@ header ul li a:hover {
     line-height: 120%;
 }
 
+.page-two p {
+    color: white;
+    font-family: "notosans-bold";
+    font-size: 2rem;
+}
+
 .page-two p.tanggal {
     color: yellow;
     font-family: "notosans-bold";
@@ -132,7 +148,7 @@ header ul li a:hover {
 }
 
 .page-two p.keterangan {
-    color: purple;
+    color: yellow;
     font-family: "notosans-bold";
     font-size: 1rem;
     padding: 5px 20px;
@@ -140,7 +156,7 @@ header ul li a:hover {
 
 .page-three {
     min-height: 40rem;
-    background-image: url('../resources/third-01.png');
+    background-image: url('../resources/Untitled-4-01.svg');
     background-size: cover;
 }
 
@@ -289,7 +305,7 @@ a:hover {
 }
 
 .ft-legal-list {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
 }
