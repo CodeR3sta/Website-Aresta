@@ -162,6 +162,7 @@ header ul li a:hover {
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #14042D;
+    
 }
 
 .page-three .container {
@@ -169,6 +170,7 @@ header ul li a:hover {
     overflow: hidden;
     width: 100%;
     padding-top: 56.25%;
+    
 }
 
 .page-three iframe.trailer {
@@ -185,8 +187,10 @@ header ul li a:hover {
 
 .page-three p {
     position: absolute;
-    left: 30%;
+    left: 30px;
     transform: rotate(-90deg);
+    font-family: "notosans-bold";
+    
 }
 
 .page-three p span.kuning {
