@@ -173,14 +173,16 @@ header ul li a:hover {
 
 .page-three iframe.trailer {
     position: absolute;
+    align-items: center;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    width: 40%;
-    height: 40%;
+    width: 53%;
+    height: 477px;
     display: block;
     margin: 0 auto;
+    margin-top: 23px;
 }
 
 .page-three p {
