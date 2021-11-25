@@ -11,10 +11,10 @@ body {
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 92%;
+    width: 100%;
     padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
@@ -78,7 +78,7 @@ header ul li a:hover {
 .page-one h1 {
     color: white;
     font-family: "oswald-semi";
-    font-size: 6rem;
+    font-size: 8vw;
     margin: 0;
     line-height: 130%;
 }
@@ -133,33 +133,35 @@ header ul li a:hover {
 .page-two h1 {
     color: white;
     font-family: "oswald-semi";
-    font-size: 4rem;
+    font-size: vw;
     line-height: 120%;
 }
 
 .page-two p {
     color: white;
     font-family: "notosans-bold";
-    font-size: 2rem;
+    font-size: 2vw;
 }
 
 .page-two p.tanggal {
     color: yellow;
     font-family: "notosans-bold";
-    font-size: 2rem;
+    font-size: 3vw;
 }
 
 .page-two p.keterangan {
     color: yellow;
     font-family: "notosans-bold";
-    font-size: 1rem;
+    font-size: 2vw;
     padding: 5px 20px;
 }
 
 .page-three {
     min-height: 40rem;
     background-image: url('../resources/laptop-01.svg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #14042D;
     display: flex;
     align-items: center;
 }
