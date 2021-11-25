@@ -130,14 +130,11 @@ let verifikasiEmail = (req, res) => {
               console.log(err);
             } else {
               db.query(
-                'UPDATE users SET status = 1,verification = "" WHERE email = ?',
+                'UPDATE users SET status = 1 WHERE email = ?',
                 req.cookies.userInfo.email,
                 (err, result) => {
                   if (err) console.log(err);
 
-                  res.cookie("userInfo", "", {
-                    maxAge: 1 * 1 * 1 * 1 * 1000,
-                  });
                   return res.send(
                     `<div style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;"><h1>Akun Anda Telah Aktif</h1><a href="/login">Klik Disini Untuk Login</a></div>`
                   );
