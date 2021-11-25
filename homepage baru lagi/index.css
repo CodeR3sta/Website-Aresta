@@ -158,17 +158,27 @@ header ul li a:hover {
 
 .page-three {
     min-height: 40rem;
+<<<<<<< Updated upstream
     background-image: url('../resources/laptop-01.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #14042D;
+    display: flex;
+    flex-wrap: wrap;
+    
+=======
+    background-image: url('../resources/Untitled-4-01.svg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+>>>>>>> Stashed changes
 }
 
 .page-three .container {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%;
+    padding-top: 56.25%;   
 }
 
 .page-three iframe.trailer {
@@ -185,16 +195,26 @@ header ul li a:hover {
 
 .page-three p {
     position: absolute;
-    left: 30%;
+<<<<<<< Updated upstream
+    left: 30px;
     transform: rotate(-90deg);
+    font-family: "notosans-bold";
+    
+=======
+    transform: rotate(-90deg);
+    margin-left: 5px;
+    font-family: "notosans-bold";
+>>>>>>> Stashed changes
 }
 
 .page-three p span.kuning {
     color: yellow;
+    font-size: 40px;
 }
 
 .page-three p.putih {
     color: white;
+    font-size: 40px;
 }
 
 .page-four {
