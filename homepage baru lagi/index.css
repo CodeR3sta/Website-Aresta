@@ -21,6 +21,18 @@ header {
     align-items: center;
 }
 
+header input{
+    display: none;
+}
+
+header label{
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 100;
+}
+
 header ul {
     display: flex;
     justify-content: center;
