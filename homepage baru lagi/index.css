@@ -376,6 +376,20 @@ a:hover {
     html{
         font-size: 55%;
     }
+    .page-three iframe.trailer {
+        position: absolute;
+        align-items: center;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 638px;
+        height: 424px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-left: 280px;
+    }
 
 }
 
