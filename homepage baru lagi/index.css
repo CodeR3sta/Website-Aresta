@@ -19,6 +19,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 3000;
+}
+
+header input{
+    display: none;
+}
+
+header label{
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 100;
 }
 
 header ul {
@@ -174,11 +187,12 @@ header ul li a:hover {
     left: 0;
     bottom: 0;
     right: 0;
-    width: 54%;
+    width: 717px;
     height: 477px;
     display: block;
     margin: 0 auto;
     margin-top: 23px;
+    margin-left: 315px;
 }
 
 .page-three p {
@@ -299,7 +313,7 @@ a:hover {
 .ft-social-list {
     display: flex;
     justify-content: center;
-    border-top: 1px #777 solid;
+    border-top: 1.5px white solid;
     padding-top: 1.25rem;
 }
 
@@ -333,4 +347,58 @@ a:hover {
 
 .ft-main-item ul li, .ft-social ul li {
     list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:1200px){
+    
+    html{
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width:991px){
+    
+
+
+}
+
+@media (max-width:768px){
+
+    header label{
+        visibility: visible;
+        opacity: 1;
+    }
+
+}
+
+@media (max-width:450px){
+    
+    html{
+        font-size: 50%;
+    }
+
+    
 }
