@@ -1,0 +1,43 @@
+body {
+  margin-top: 0px;
+  background-color: #080211;
+}
+.tabel1 {
+  margin: 50px auto 0px auto;
+  text-align: center;
+  padding: 8px;
+  border-collapse: separate;
+  border-spacing: 0px 20px;
+  width: 50%;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.tabel1 tr {
+  background-color: #B03092;
+  color: white;
+  font-weight: normal;
+  padding: 10px;
+  position: relative;
+}
+.tabel1 tr:link {
+  color: pink;
+}
+.tabel1 tr:hover a {
+  color: pink;
+  font-family: arial;
+}
+.tabel1 tr:hover {
+  color: pink;
+  font-family: Arial;
+  font-size: 30px;
+}
+.tabel1 tr:active {
+  font-style: oblique;
+}
+.tabel1 a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
