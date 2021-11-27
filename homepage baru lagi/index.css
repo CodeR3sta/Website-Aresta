@@ -116,7 +116,7 @@ header ul li a:hover {
 
 .transisi-linear {
   background-image: linear-gradient(#080211, #14042d);
-  min-height: 30rem;
+  min-height: 20rem;
 }
 
 .page-two {
