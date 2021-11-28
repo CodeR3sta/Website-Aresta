@@ -43,9 +43,10 @@ body {
 
 }
 
-.navbar a {
+.navbar ul li a {
   text-decoration: none;
   color: inherit;
+  font-family: 'Noto Sans';
 }
 
 .navbar-logo {
@@ -314,7 +315,7 @@ a:hover {
 }
 
 .ft-legal-list {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
