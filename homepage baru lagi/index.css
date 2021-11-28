@@ -1,4 +1,26 @@
 @import url("../font/font.css");
+
+@media (max-width:600px) {
+  .navbar ul {
+    flex-wrap: wrap;
+  }
+  li.navbar-toggle {
+    display: block;
+  }
+  .navbar-links {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+  .active {
+    display: block;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -9,57 +31,44 @@ body {
   background-color: #080211;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 3rem;
+.navbar ul {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
   align-items: center;
-  z-index: 3000;
+  background-color: inherit;
+  color: white;
 }
 
-header input {
+.navbar li {
+  list-style-type: none;
+  padding: 1rem;
+
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-logo {
+  flex: 1;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+.navbar-toggle {
   display: none;
 }
 
-header label {
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
-  visibility: hidden;
-  opacity: 100;
-}
-
-header ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header ul li {
-  list-style: none;
-  margin-left: 0.5rem;
-  margin-right: 4rem;
-  display: flex;
-  flex-direction: row;
-}
-
-header ul li a {
-  text-decoration: none;
-  padding: 6px 15px;
-  color: white;
-  border-radius: 20px;
-  text-transform: uppercase;
-  font-family: "notosans-bold";
-}
-
-header ul li a:hover {
+.navbar-links:hover {
   background-color: yellow;
   color: black;
-  text-decoration: none;
+
+}
+
+img.responsive-images {
+  width: 100%;
+  height: autp;
 }
 
 .page-one {

@@ -8,29 +8,24 @@
     <link rel="icon" href="../resources/logo-icon.png" type="image/x-icon" sizes="13x20">
     <script src="https://kit.fontawesome.com/78ac0bed3f.js" crossorigin="anonymous"></script>
     <meta name="description" content="
-    Website tempat dimana sebuah ajang paling bergengsi sedunia diadakan.">
+    Website tempat dimana sebuah ajang paling bergengsi se-Indonesia diadakan. Buruan daftar sekarang!">
     <title>Beranda - Aresta 17</title>
 </head>
 
 <body>
-    <header>
-        <a href="https://aresta17.com" class="logo">
-            <img src="../resources/logo.webp" alt="Logo Aresta 17" width="70" height="auto">
-        </a>
-
-        <input type="checkbox" id="menu-bar">
-        <label for="menu-bar" class="fas fa-bars"></label>
-        
+    <nav class="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Lomba</a></li>
-            <li><a href="#">Informasi</a></li>
-            <li><a href="#">Login</a></li>
+            <li class="navbar-logo"><img src="../resources/logo.webp" width="auto" height="50rem" alt="logo aresta 17"></li>
+            <li class="navbar-toggle"><i class="fas fa-bars"></i></li>
+            <li class="navbar-links"><a href="/home">Home</a></li>
+            <li class="navbar-links"><a href="/lomba">Lomba</a></li>
+            <li class="navbar-links"><a href="/informasi">Informasi</a></li>
+            <li class="navbar-links"><a href="/login">Login</a></li>
         </ul>
-    </header>
+    </nav>
 
     <div class="page-one">
-        <div class="circle"><img src="../resources/logo-circle-01.webp" width="40px" height="40px" alt="logo aresta 17"></div>
+        <div class="circle"><img src="../resources/logo-circle-01.webp" class="responsive-image" alt="logo aresta 17"></div>
         <h1>AJANG REMAJA<br>BEPRESTASI KE-17</h1>
         <p>Sebuah Ajang Bergengsi Se-Indonesia</p>
         <a class="tombol-daftar" href="/register">DAFTAR</a>
@@ -127,5 +122,13 @@
             </ul>
         </section>
     </footer>
+    <script>
+        const toggleButton = document.getElementsByClassName('navbar-toggle')[0];
+        const navbarLinks = document.getElementsByClassName('navbar-links');
+        toggleButton.addEventListener('click', function() {
+            for(var i=0; i<navbarLinks.length; i++)
+            navbarLinks[i].classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
