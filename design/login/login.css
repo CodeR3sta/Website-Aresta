@@ -15,7 +15,14 @@ body {
 
 .img-login {
   width: 50%;
-  height: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img-login img {
+  margin-left: 40%;
 }
 
 .form-login {
@@ -120,7 +127,7 @@ body {
   color: rgba(255, 255, 255, 0.61);
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1200px) {
   body {
     flex-direction: row;
     justify-content: center;
