@@ -11,6 +11,8 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   background-color: rgb(0, 0, 51);
+  background-image: url("./buat\ web\ login.svg");
+  background-size: cover;
 }
 
 .img-login {
