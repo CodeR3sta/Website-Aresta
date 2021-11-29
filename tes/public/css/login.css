@@ -1,90 +1,210 @@
-body{
-    margin: 0px;
+@import url("../font/font.css");
+
+body {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  position: absolute;
+  font-family: "poppins-regular";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgb(0, 0, 51);
 }
 
-.card{
-    width: 350px;
-    min-height: 500px;
-    border-radius:20px;
-    text-align: center;
-    margin: 50px auto;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.img-login {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.card h1{
-    margin: 0px;
-    padding: 15px ;
+.img-login img {
+  margin-left: 40%;
 }
 
-.card .input{
-    margin: 30px 0px 10px 0px;
+.form-login {
+  width: 50%;
+  color: white;
 }
 
-.card .atas{
-    margin-top: 30px;
+.form-login form {
+  width: 300px;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.card .input input{
-    font-size: 20px;
-    padding: 10px;
-    width: 80%;
+.form-login form h1 {
+  margin: 5px auto;
+  font-family: "poppins";
 }
 
-.card .show{
-    margin-left: 10%;
-    text-align: left;
+.form-login form .em-pass input {
+  width: 95%;
+  display: block;
+  margin: 30px auto;
+  padding: 13px;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgba(5, 4, 4, 0.432);
+  border-style: none;
+  color: white;
+  outline: none;
+  border-radius: 20px;
 }
+
+.form-login form .em-pass input:focus {
+  border: 2px solid yellow;
+}
+
+.form-login form .show {
+  text-align: left;
+}
+
 /* MESSAGE */
-.card .message {
-    width: 80%;
-    margin: auto;
-    text-align: left;
-    background-color: rgba(255, 0, 55, 0.5);
-    border-radius: 6px;
+
+.form-login .message {
+  background-color: red;
+  width: 90%;
+  margin: 0px auto;
+  text-align: left;
 }
 
-.card .message p{
-    font-weight: bold;
-    color: red;
-    margin: 0px;
-    padding: 0px 10px;
+.form-login .message p {
+  margin: 0px;
 }
 
-.card .button {
-    margin: 20px;
+.form-login .btn-container {
+  margin: 15px;
 }
 
-.card .button .login{
-    margin-top: 20px;
-    font-size: 20px;
-    color: white;
-    padding: 7px 70px;
-    border-style: none;
-    border-radius: 5px;
-    background-color: rgb(0, 122, 255);
-    cursor: pointer;
+.form-login .btn-container .btn-login {
+  width: 180px;
+  height: 50px;
+  background-color: yellow;
+  color: rgb(0, 0, 51);
+  border-style: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-family: "poppins";
+  cursor: pointer;
 }
 
-.card .button h5{
-    margin: 15px;
-    font-size: 15px;
-    color: rgb(48, 45, 45);
+.form-login .btn-container h4 {
+  margin: 10px;
 }
 
-.card .button .daftar{
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    font-size: 19px;
-    padding: 7px 68px;
-    border-style: none;
-    border-radius: 5px;
-    background-color: rgb(0, 122, 255);
-    cursor: pointer;
+.form-login .btn-container .daftar {
+  display: inline-block;
+  width: 180px;
+  padding: 10px 0px;
+  background-color: yellow;
+  color: rgb(0, 0, 51);
+  border-radius: 20px;
+  font-size: 20px;
+  font-family: "poppins";
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.card .lupa{
-    display: block;
-    padding-bottom: 15px;
+.form-login .btn-container .daftar:hover {
+  background-color: rgb(255, 0, 204);
+  color: white;
+}
+
+.form-login .btn-container .btn-login:hover {
+  background-color: rgb(255, 0, 204);
+  color: white;
+}
+
+.form-login a {
+  color: rgba(255, 255, 255, 0.61);
+}
+
+@media (max-width: 1200px) {
+  body {
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(0, 0, 51);
+  }
+
+  .img-login {
+    display: none;
+  }
+
+  .form-login .btn-container .btn-login {
+    width: 200px;
+    height: 50px;
+  }
+
+  .form-login .btn-container .daftar {
+    width: 200px;
+    padding: 10px 0px;
+  }
+}
+
+@media (max-width: 670px) {
+  .form-login {
+    width: 300px;
+  }
+
+  .form-login form {
+    width: 100%;
+  }
+
+  .form-login .btn-container .btn-login {
+    width: 200px;
+    height: 50px;
+  }
+
+  .form-login .btn-container .daftar {
+    width: 200px;
+    padding: 10px 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-login {
+    width: 250px;
+  }
+
+  .form-login form {
+    width: 100%;
+  }
+
+  .form-login .btn-container .btn-login {
+    width: 200px;
+    height: 50px;
+  }
+
+  .form-login .btn-container .daftar {
+    width: 200px;
+    padding: 10px 0px;
+  }
+}
+
+@media (max-width: 300px) {
+  .form-login {
+    width: 200px;
+  }
+
+  .form-login form {
+    width: 100%;
+  }
+
+  .form-login .btn-container .btn-login {
+    width: 150px;
+    height: 50px;
+  }
+
+  .form-login .btn-container .daftar {
+    width: 150px;
+    padding: 10px 0px;
+  }
 }
