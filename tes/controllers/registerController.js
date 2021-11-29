@@ -116,7 +116,6 @@ let verifikasiEmail = (req, res) => {
             `<div style="margin:50px auto;padding: 10px;width:80%;background-color: red;color:white;text-align:center;border-radius:10px;"><h1>Silahkan daftar Terlebih Dahulu</h1></div>`
           );
         }
-        console.log(result);
         if (req.query.verify === result[0].verification) {
           let pathUp = path.join(
             __dirname,
@@ -128,9 +127,14 @@ let verifikasiEmail = (req, res) => {
           mkdir(pathUp, 0o777, (err) => {
             if (err) {
               console.log(err);
+              if (err.code === "EEXIST") {
+                return res.send(
+                  `<div style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;"><h1>Akun Anda Sudah Aktif</h1><a href="/login">Klik Disini Untuk Login</a></div>`
+                );
+              }
             } else {
               db.query(
-                'UPDATE users SET status = 1 WHERE email = ?',
+                "UPDATE users SET status = 1 WHERE email = ?",
                 req.cookies.userInfo.email,
                 (err, result) => {
                   if (err) console.log(err);
