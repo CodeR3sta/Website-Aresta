@@ -28,9 +28,14 @@ let createNewUser = (user) => {
           from: process.env.MAIL,
           to: `${user.email}`,
           subject: `Account Verification`,
-          html: `<h1>Halo Peserta ARESTA 17</h1><br><hr>
-                    <p>kami dari panitia ARESTA17 ingin gk tau ngapain</p>
-                    <a href="http://localhost:3000/verification/?verify=${verify}">KLIK DI SINI UNTUK KONFIRMASI AKUN</a>`,
+          html: `    <h1>Halo, ${user.namaUtama} </h1>
+          <h2>Alamat Email anda, ${user.email} , telah ditambahkan untuk akun Aresta.</h2>
+          <br>
+          <hr>
+          <div style="background-color: rgb(255, 0, 204);text-align: center;padding: 10px;">
+              <p>Verifikasi Email diperlukan untuk mengaktifkan akun anda. <br> Klik tombol dibawah untuk verifikasi :</p>
+              <a href="http://localhost:3000/verification/?verify=${verify}" style="text-decoration: none;background-color: yellow; display: inline-block;padding: 10px;border-radius: 15px;">Verifikasi Email</a>
+          </div>`,
         };
 
         let data = {
