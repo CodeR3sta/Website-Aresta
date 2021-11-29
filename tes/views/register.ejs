@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <form action="/register" method="post">
+    <form action="/register" method="post" id="formID">
         <div class="detail">
             <div class="asalSekolah">
                 <input type="text" name="asalSekolah" id="asalSekolah" placeholder="Asal Sekolah" required>
@@ -85,7 +85,8 @@
     </form>
 </body>
 <script src="/js/register.js"></script>
-<script src="js/usersModal.js"></script>
+<script src="/js/usersModal.js"></script>
+<script src="/js/registerSubmit.js"></script>
 <script>
     let cond = '<%= message %>'
     if (cond !== '') {
