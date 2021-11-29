@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
-    <h1>Isi Formulir & Daftar Akun</h1>
+    <h1>Register Page</h1>
 
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -16,8 +16,10 @@
             <hr>
             <h1>data tidak dapat di ubah setelah di SUBMIT</h1>
             <hr>
-            <label for="submit-tahap2" id="submit-modal">Submit</label>
-            <button class="closeb" type="button">close</button>
+            <div class="btn-modal">
+                <label for="submit-tahap2" id="submit-modal">Submit</label>
+                <button class="closeb" type="button">close</button>
+            </div>
         </div>
     </div>
 
@@ -29,7 +31,7 @@
     
             <div class="jenjang">
                 <select name="sekolah" id="sekolah" required>
-                    <option value="" disabled selected>--jenjang sekolah--</option>
+                    <option value="" disabled selected>--Tingkat sklh sekolah--</option>
                     <option value="sd">SD / Sederajatnya</option>
                     <option value="smp">SMP / Sederajatnya</option>
                     <option value="sma">SMA / Sederajatnya</option>
@@ -39,7 +41,7 @@
             <div class="listLomba">
                 <select name="lomba" id="lomba" required>
                     <option value="" selected disabled>--pilih lomba--</option>
-                    <option value="" disabled>pilih jenjang sekolah terlebih dahulu</option>
+                    <option value="" disabled>pilih Tingkat sklh</option>
                 </select>
             </div>
     
@@ -60,12 +62,17 @@
         <div class="akun">
             <input type="text" name="phone" required placeholder="No Hp Pembimbing">
             <input class="tambah" type="email" name="email" required placeholder="email" autocomplete="off">
-            <input class="pass" type="password" name="password" required placeholder="password">
+            <input class="pass" type="password" name="password" id="pass" required placeholder="password">
+
+            <div class="pass-req">
+                <p>-> minimal 8 karakter</p>
+                <p>-> harus memiliki huruf besar, huruf kecil, dan angka</p>
+            </div>
             <input class="pass" type="password" name="passwordConfirm" required placeholder="Confirm Password">
 
             <div class="show">
                 <input type="checkbox" name="show" id="show" >
-                <label for="show">show password</label>
+                <label for="show">show</label>
             </div>
 
             <div class="message">
@@ -73,12 +80,14 @@
                     <p>* <%- element %> </p>
                 <% }) %>
             </div>
-            
-            <button id="op-modal" class="daftar" type="button">Daftar</button>
-            <h5>atau</h5>
+            <div class="btn">
+                <button id="op-modal" class="daftar" type="button">Daftar</button>
+                <h5>atau</h5>
+                <a class="login" href="/login">Login</a>
+            </div>
+
 
             <button id="submit-tahap2" type="submit"></button>
-            <a class="login" href="/login">Login</a>
 
             <a class="balik" href="/">Home</a>
         </div>
