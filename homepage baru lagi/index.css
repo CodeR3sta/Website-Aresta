@@ -1,6 +1,4 @@
-@import url("../font/font.css");
-
-@media (max-width:600px) {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Oswald:wght@600&family=Poppins:wght@600&family=Work+Sans:wght@800&display=swap');@media (max-width:600px) {
   .navbar ul {
     flex-wrap: wrap;
   }
@@ -45,9 +43,10 @@ body {
 
 }
 
-.navbar a {
+.navbar ul li a {
   text-decoration: none;
   color: inherit;
+  font-family: 'Noto Sans';
 }
 
 .navbar-logo {
@@ -91,7 +90,7 @@ img.responsive-images {
 
 .page-one h1 {
   color: white;
-  font-family: "oswald-semi";
+  font-family: 'Oswald';
   font-size: 8vw;
   margin: 0;
   line-height: 130%;
@@ -99,7 +98,7 @@ img.responsive-images {
 
 .page-one p {
   color: rgb(80, 1, 54);
-  font-family: "worksans-extra";
+  font-family: 'Work Sans';
   font-size: 1.4rem;
   margin-bottom: 3rem;
   background-color: white;
@@ -112,7 +111,7 @@ img.responsive-images {
   color: white;
   padding: 10px 14px;
   background-color: #b03092;
-  font-family: "poppins";
+  font-family: 'Poppins';
   width: 80px;
   display: block;
   margin: auto;
@@ -146,26 +145,26 @@ img.responsive-images {
 
 .page-two h1 {
   color: white;
-  font-family: "oswald-semi";
+  font-family: 'Oswald';
   font-size: vw;
   line-height: 120%;
 }
 
 .page-two p {
   color: white;
-  font-family: "notosans-bold";
+  font-family: 'Noto Sans';
   font-size: 2vw;
 }
 
 .page-two p.tanggal {
   color: yellow;
-  font-family: "notosans-bold";
+  font-family: 'Noto Sans';
   font-size: 3vw;
 }
 
 .page-two p.keterangan {
   color: yellow;
-  font-family: "notosans-bold";
+  font-family: 'Noto Sans';
   font-size: 2vw;
   padding: 5px 20px;
 }
@@ -198,7 +197,7 @@ img.responsive-images {
   position: absolute;
   transform: rotate(-90deg);
   right: 75%;
-  font-family: "notosans-bold";
+  font-family: 'Noto Sans';
 }
 
 .page-three p span.kuning {
@@ -221,7 +220,7 @@ img.responsive-images {
   color: yellow;
   margin: 0 auto;
   width: 65%;
-  font-family: "notosans-bold";
+  font-family: 'Noto Sans';
   font-size: 5rem;
 }
 
@@ -234,6 +233,8 @@ img.responsive-images {
 
 .page-four .list-lomba ul {
   list-style: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .page-four .list-lomba ul li {
@@ -245,16 +246,13 @@ img.responsive-images {
 .page-four .list-lomba ul li a {
   color: white;
   text-decoration: none;
-  font-family: "worksans-bold";
+  font-family: 'Noto Sans';
+  text-transform: uppercase;
   font-size: 1.5rem;
 }
 
 .page-four .list-lomba ul li a:hover {
   color: yellow;
-}
-
-div#preload {
-  display: none;
 }
 
 footer {
@@ -264,13 +262,13 @@ footer {
 }
 
 footer h2 {
-  font-family: "notosans-bold";
+  font-family: 'Noto Sans';
 }
 
 footer a {
   text-decoration: none;
   color: #eee;
-  font-family: "opensans-regular";
+  font-family: 'Open Sans';
 }
 
 a:hover {
@@ -317,7 +315,7 @@ a:hover {
 }
 
 .ft-legal-list {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -417,6 +415,15 @@ a:hover {
 
   .page-three p.putih {
     font-size: 20px;
+  }
+
+  .page-four .list-lomba ul.kolom li {
+    flex: 1;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  .kolom, .kedua, .ketiga {
+    flex: 100%;
   }
 }
 
