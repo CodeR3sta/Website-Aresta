@@ -240,6 +240,8 @@ body {
 
   .navbar ul .navbar-text {
     display: inline-block;
+    flex: 100%;
+    padding: 0;
   }
 
   .navbar ul .navbar-toggle {
