@@ -14,3 +14,14 @@ info.addEventListener("click", () => {
     aboutCon.style.display = "block";
   }
 });
+
+// SCROLL
+window.addEventListener("scroll", () => {
+  let navbar = document.getElementById("navbar");
+  let scrollValue = window.scrollY;
+  if (scrollValue < 150) {
+    navbar.classList.remove("nav-color");
+  } else {
+    navbar.classList.add("nav-color");
+  }
+});
