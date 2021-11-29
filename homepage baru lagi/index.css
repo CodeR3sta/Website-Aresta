@@ -231,6 +231,11 @@ img.responsive-images {
   justify-content: center;
 }
 
+.page-four .list-lomba ul li img {
+  padding: 0;
+  margin: 0;
+}
+
 .page-four .list-lomba ul {
   list-style: none;
   padding-left: 2rem;
