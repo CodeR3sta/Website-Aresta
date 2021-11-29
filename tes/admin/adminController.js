@@ -157,7 +157,7 @@ let confirmTahap2 = async (req, res) => {
         let pesan1 = req.body.pesan;
         if (req.body.hasil === "benar") {
           db.query(
-            `UPDATE users SET status = 3, pesan = '${pesan1}' WHERE id = ?`,
+            `UPDATE users SET status = 3, pesan = '${pesan1}', imgVerified = '${new Date().toLocaleString()}' WHERE id = ?`,
             [req.params.id],
             (err, results) => {
               if (err) console.log(err);
@@ -218,7 +218,7 @@ let confirmTahap3 = async (req, res) => {
       let pesan3 = req.body.pesan3;
       if (match === true) {
         db.query(
-          `UPDATE users SET status = 4,pesan = '${pesan3}' WHERE id = ?`,
+          `UPDATE users SET status = 4,pesan = '${pesan3}', endRegist = '${new Date().toLocaleString()}' WHERE id = ?`,
           [req.params.id],
           (err, results) => {
             if (err) console.log(err);

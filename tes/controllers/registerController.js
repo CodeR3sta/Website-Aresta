@@ -57,7 +57,7 @@ let createNewUser = async (req, res) => {
       httpOnly: true,
     });
     return res.send(
-      `<h1 style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;">Berhasil Registrasi, Silahkan Cek email Anda Untuk Mengaktifkan Akun Anda</h1>`
+      `<h1 style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;">Berhasil Registrasi, link konfirmasi telah dikirim ke ${req.body.email}</h1>`
     );
   } catch (e) {
     req.flash("msg", e);
@@ -134,7 +134,7 @@ let verifikasiEmail = (req, res) => {
               }
             } else {
               db.query(
-                "UPDATE users SET status = 1 WHERE email = ?",
+                `UPDATE users SET status = 1, verified = '${new Date().toLocaleString()}' WHERE email = ?`,
                 req.cookies.userInfo.email,
                 (err, result) => {
                   if (err) console.log(err);
