@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="img-login">
+        <img src="./buat login web .png" alt="gambar orang" width="50%" >
+    </div>
+    <div class="form-login">
+        <form action="/" method="post">
+            <h1>LOG IN</h1>
+            <div class="em-pass">
+                <input type="email" name="email" placeholder="email  " required autocomplete="off">
+                <input type="password" name="password" id="password" placeholder="password" required>
+            </div>
+
+            <div class="show">
+                <input type="checkbox" name="show" id="show" >
+                <label for="show">show</label>
+            </div>
+            
+            <div class="message">
+            </div>
+
+            <div class="btn-container">
+                <button class="btn-login" type="submit">LOG IN</button>
+                <h4>atau</h4>
+                <a class="daftar" href="/register">Daftar</a>
+            </div>
+
+            <a href="/forget-password">forget password?</a>
+        </form>
+    </div>
+</body>
+<script src="login.js"></script>
+</html>
