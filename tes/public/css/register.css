@@ -9,6 +9,11 @@ body {
   color: white;
 }
 
+h1 {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
 form {
   display: flex;
   flex-direction: row;
@@ -186,14 +191,6 @@ form .akun {
 .akun .btn .login:hover {
   background-color: yellow;
   color: rgb(255, 0, 204);
-}
-
-.akun .balik {
-  margin: 10px;
-  color: rgba(35, 35, 240, 0.418);
-  font-size: 23px;
-  display: block;
-  text-decoration: underline;
 }
 
 .akun button#submit-tahap2 {
