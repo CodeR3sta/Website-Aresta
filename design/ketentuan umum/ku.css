@@ -1,6 +1,9 @@
+@import url("/font/font.css");
+
 body {
-  margin-top: 0px;
-  background-color: #080211;
+  margin: 0px;
+  background-color: rgb(0, 0, 51);
+  font-family: "poppins";
 }
 .tabel1 {
   margin: 50px auto 0px auto;
@@ -14,7 +17,7 @@ body {
 }
 
 .tabel1 tr {
-  background-color: #b03092;
+  background-color: rgb(255, 0, 204);
   color: white;
   font-weight: normal;
   padding: 10px;

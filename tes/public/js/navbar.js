@@ -19,7 +19,7 @@ info.addEventListener("click", () => {
 window.addEventListener("scroll", () => {
   let navbar = document.getElementById("navbar");
   let scrollValue = window.scrollY;
-  if (scrollValue < 150) {
+  if (scrollValue < 80) {
     navbar.classList.remove("nav-color");
   } else {
     navbar.classList.add("nav-color");
