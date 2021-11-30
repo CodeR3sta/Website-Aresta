@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Oswald:wght@600&family=Poppins:wght@600&family=Work+Sans:wght@800&display=swap');@media (max-width:600px) {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Oswald:wght@600&family=Poppins:wght@600&family=Work+Sans:wght@800&display=swap');
+@media screen and (max-width:600px) {
   .navbar ul {
     flex-wrap: wrap;
   }
@@ -29,42 +30,6 @@ body {
   background-color: #080211;
 }
 
-.navbar ul {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  background-color: inherit;
-  color: white;
-}
-
-.navbar li {
-  list-style-type: none;
-  padding: 1rem;
-
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: inherit;
-  font-family: 'Noto Sans';
-}
-
-.navbar-logo {
-  flex: 1;
-  font-size: 1.5rem;
-  user-select: none;
-}
-
-.navbar-toggle {
-  display: none;
-}
-
-.navbar-links:hover {
-  background-color: yellow;
-  color: black;
-
-}
-
 img.responsive-images {
   width: 100%;
   height: autp;
@@ -73,7 +38,7 @@ img.responsive-images {
 .page-one {
   min-height: 50rem;
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 5rem;
   background-image: url("..//resources/lines\ yellow-01.svg");
   background-size: cover;
   background-color: #080211;
@@ -109,7 +74,7 @@ img.responsive-images {
 .page-one a {
   text-decoration: none;
   color: white;
-  padding: 10px 14px;
+  padding: 0.5rem 1.5rem;
   background-color: #b03092;
   font-family: 'Poppins';
   width: 80px;
@@ -146,7 +111,7 @@ img.responsive-images {
 .page-two h1 {
   color: white;
   font-family: 'Oswald';
-  font-size: vw;
+  font-size: 5vw;
   line-height: 120%;
 }
 
@@ -342,7 +307,7 @@ a:hover {
 
 /* media queries  */
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   html {
     font-size: 55%;
   }
@@ -356,23 +321,47 @@ a:hover {
     width: 900px;
   }
 }
+@media screen and (max-width:900px), (orientation:portrait) {
+  .page-one {
+    margin-top: 35rem;
+  }
+}
 
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .page-three .container iframe {
     width: 399px;
     height: 266px;
     margin: 12px auto 0px auto;
   }
-
   .page-three .imgContain img {
     width: 750px;
   }
   .page-three p {
     right: 70%;
   }
+  .page-two h1 {
+    font-size: 5rem;
+  }
+  .page-two p {
+    font-size: 3rem;
+  }
+  .page-two p.tanggal {
+    font-size: 3rem;
+  }
+  .page-two p.keterangan {
+    font-size: 1.5rem;
+  }
+  .page-four h1.lomba {
+    text-align: center;
+    font-size: 5rem;
+  }
+  .page-one h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
 }
 
-@media (max-width: 752px) {
+@media screen and (max-width: 752px) {
   .page-three .container iframe {
     width: 293px;
     height: 194.4px;
@@ -395,7 +384,7 @@ a:hover {
   }
 }
 
-@media (max-width: 551px) {
+@media screen and (max-width: 551px) {
   header label {
     visibility: visible;
     opacity: 1;
@@ -432,7 +421,7 @@ a:hover {
   }
 }
 
-@media (max-width: 450px) {
+@media screen and (max-width: 450px) {
   html {
     font-size: 50%;
   }
