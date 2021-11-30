@@ -6,7 +6,7 @@ body {
   height: 100%;
   margin: 0px;
   position: absolute;
-  font-family: "poppins-regular";
+  font-family: "poppins";
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

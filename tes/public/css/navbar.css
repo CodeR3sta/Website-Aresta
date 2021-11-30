@@ -197,6 +197,7 @@ html {
     color: white;
     overflow: auto;
     background-color: rgb(255, 0, 204);
+    z-index: 1;
   }
 
   .mb-nav li {
