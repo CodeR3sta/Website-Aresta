@@ -52,10 +52,10 @@ let postForget = (req, res) => {
         let mailOption = {
           from: process.env.MAIL,
           to: `${req.body.email}`,
-          subject: `Account Verification`,
-          html: `<h1>Halo Peserta ARESTA 17</h1><br><hr>
-                    <p>kami dari panitia ARESTA17 ingin gk tau ngapain</p>
-                    <a href="http://localhost:3000/reset-password/?verify=${token}">KLIK DI SINI UNTUK KONFIRMASI AKUN</a>`,
+          subject: `Reset Password`,
+          html: `<h1>Reset Password</h1><br><hr>
+                    <p>klik link di bawah ini untuk ubah password</p>
+                    <a href="http://localhost:3000/reset-password/?verify=${token}">reset-account</a>`,
         };
 
         transporter.sendMail(mailOption, (err, info) => {
