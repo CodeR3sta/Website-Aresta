@@ -63,7 +63,7 @@
         <form action="/login" method="post">
             <h1>LOG IN</h1>
             <div class="em-pass">
-                <input type="email" name="email" placeholder="email  " required autocomplete="off">
+                <input type="email" name="email" placeholder="email  " required>
                 <input type="password" name="password" id="password" placeholder="password" required>
             </div>
 
@@ -73,6 +73,9 @@
             </div>
             
             <div class="message">
+                <% message.forEach(element => { %>
+                    <p>* <%- element %> </p>
+                <% }) %>
             </div>
 
             <div class="btn-container">

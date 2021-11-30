@@ -10,9 +10,27 @@
     <link rel="stylesheet" href="/css/usersPage/tahap3.css">
     <link rel="stylesheet" href="/css/usersPage/status.css">
     <title>Users Page</title>
+    <script src="https://kit.fontawesome.com/78ac0bed3f.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+    <div class="mb-nav-users" id="mb-nav-users">
+        <h2 id="daftar">Pendaftaran &#709</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap2')" id="defaultOpen">Tahap 2</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
+        <form action="/logout" method="post">
+            <button id="logout">Logout</button>
+        </form>
+    </div>
     <nav>
+        <ul>
+            <li>ARESTA 17</li>
+            <li class="navbar-toggle"><i class="fas fa-bars" id="op-nav"></i></li>
+        </ul>
         <img src="/img/usersPage/logoAresta.png" alt="logo-aresta">
         <hr>
         <h4><%= user.namaUtama %></h4>
@@ -30,27 +48,11 @@
             <button id="logout">Logout</button>
         </form>
     </nav>
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <hr>
-            <h1>data tidak dapat di ubah setelah di SUBMIT</h1>
-            <hr>
-            <label for="submit-tahap2" id="submit-modal">Submit</label>
-            <button class="closeb" type="button">close</button>
-        </div>
-    </div>
+
     <div class="tahap1 tabcontent" id="tahap1">
-        <div class="msg">
-            <% if (user.status === 1 || user.status === 2) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            <% } else if (user.status === 3) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            <% } else if (user.status === 4) { %>
-                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            <% } %>
+        <div class="msg" style="margin-top: 0px;">
             <% if (user.pesan != '') { %>
-                <h2><%- user.pesan %> </h2>
+                <h1><%- user.pesan %> </h1>
             <% } %>
         </div>
         <div class="form">
@@ -99,113 +101,82 @@
                 </table>
             </div>
         </div>
-        <div class="footer">
-            <h1 style="color: #0db02b;">Tahap 1 Pendaftaran Telah Di Selesaikan</h1>
-            <h1>Data Tidak bisa di Ubah lagi !</h1>
-        </div>
+
     </div>
     <div class="tahap2 tabcontent" id="tahap2">
-        <div class="msg">
-            <% if (user.status === 1 || user.status === 2) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            <% } else if (user.status === 3) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            <% } else if (user.status === 4) { %>
-                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            <% } %>
+        <div class="msg" style="margin-top: 0px;">
             <% if (user.pesan != '') { %>
-                <h2><%- user.pesan %> </h2>
+                <h1><%- user.pesan %> </h1>
             <% } %>
         </div>
         <div class="upload">
             <% if (user.status === 1) { %>
-                <table>
                     <% if (user[`suratRekomendasi`] === '') { %>
-                        <tr>
                             <form action="/users/suratRekomendasi" method="post" enctype="multipart/form-data">
-                                <td><label for="suratRekomendasi">Upload surat Rekomendai sekolah :</label></td>
+                                <td><label for="suratRekomendasi">Upload surat Rekomendai sekolah:</label></td>
                                 <td><input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*" required></td>
                                 <td><button type="submit">submit</button></td>
                             </form>
-                        </tr>
                     <% } else { %>
-                        <tr>
-                            <td><label for="suratRekomendasi">Upload surat Rekomendai sekolah :</label></td>
+                            <td><label for="suratRekomendasi">Upload surat Rekomendai sekolah:</label></td>
                             <td>:</td>
                             <td>Terkirim</td>
-                        </tr>
                     <% } %>
- 
+                    <hr>
                     <% if (user.lomba === 'nasyid') { %>
                         <% if (user[`fotoTim`] === '') { %>
-                            <tr>
                                 <form action="/users/fotoTim" method="post" enctype="multipart/form-data">
-                                    <td><label for="fotoTim">Upload Foto Tim :</label></td>
+                                    <td><label for="fotoTim">Upload Foto Tim:</label></td>
                                     <td><input type="file" name="fotoTim" id="fotoTim" accept="image/*" required></td>
                                     <td><button type="submit">submit</button></td>
                                 </form>
-                            </tr>
                         <% } else { %>
-                             <tr>
-                                <td><label for="fotoTim">Upload Foto Tim :</label></td>
+                                <td><label for="fotoTim">Upload Foto Tim:</label></td>
                                 <td>:</td>
                                 <td>Terkirim</td>                                 
-                             </tr>
                         <% } %>
+                        <hr>
                     <% } %>
                     <% for( let i = 1; i <= user.jumlahAnggota + 1; i++ ) { %>
                         <% if (user[`kis${i}`] === '') { %>
-                            <tr>
                                 <form action="/users/kis<%- i %>" method="post" enctype="multipart/form-data">
-                                    <td><label for="kis<%- i %>">Upload KIS <%- i %> :</label></td>
+                                    <td><label for="kis<%- i %>">Upload Kartu Pelajar <%- i %> :</label></td>
                                     <td><input type="file" name="kis<%- i %>" id="kis<%- i %>" accept="image/*" required></td>
                                     <td><button type="submit">submit</button></td>
                                 </form>
-                            </tr>
                         <% } else { %>
-                            <tr>
                                 <td><label for="kis<%- i %>">Upload KIS <%- i %> :</label></td>
                                 <td>:</td>
                                 <td>Terkirim</td>
-                            </tr>
                         <% } %>
-
+                            <hr>
                         <% if (user[`postIg${i}`] === '') { %>
-                            <tr>
                                 <form action="/users/postIg<%- i %>" method="post" enctype="multipart/form-data">
                                     <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
                                     <td><input type="file" name="postIg<%- i %>" id="postIg<%- i %>" accept="image/*" required></td>
                                     <td><button type="submit">submit</button></td>
                                 </form>
-                            </tr>
                         <% } else { %>
-                            <tr>
                                 <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
                                 <td>:</td>
                                 <td>Terkirim</td>
-                            </tr>
                         <% } %>
+                        <hr>
                         <% if (user[`fotoDiri${i}`] === '') { %>
-                            <tr>
                                 <form action="/users/fotoDiri<%- i %>" method="post" enctype="multipart/form-data">
                                     <td><label for="fotoDiri<%- i %>">Upload Foto Diri <%- i %> :</label></td>
                                     <td><input type="file" name="fotoDiri<%- i %>" id="fotoDiri<%- i %>" accept="image/*" required></td>
                                     <td><button type="submit">submit</button></td>
                                 </form>
-                            </tr>
                         <% } else { %>
-                            <tr>
                                 <td><label for="fotoDiri<%- i %>">Upload Foto Diri <%- i %> :</label></td>
                                 <td>:</td>
                                 <td>Terkirim</td>
-                            </tr>
                         <% } %>
                      
                     <% } %>
-                </table>
                 
-                <!-- <button id="op-modal" type="button">Submit</button>
-                <button id="submit-tahap2" type="submit"></button> -->
+
             <% } else if (user.status === 2) { %>
                 <img id="logo-pending" src="/img/usersPage/attention.png" alt="attention" width="200px" height="200px" >
                 <h1>Sedang di Check Panitia ARESTA17</h1>
@@ -217,16 +188,9 @@
         </div>
     </div>
     <div class="tahap3 tabcontent" id="tahap3">
-        <div class="msg">
-            <% if (user.status === 1 || user.status === 2) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            <% } else if (user.status === 3) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            <% } else if (user.status === 4) { %>
-                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            <% } %>
+        <div class="msg" style="margin-top: 0px;">
             <% if (user.pesan != '') { %>
-                <h2><%- user.pesan %> </h2>
+                <h1><%- user.pesan %> </h1>
             <% } %>
         </div>
         <div class="infaq">
@@ -235,10 +199,9 @@
                 <h1>Selesaikan Tahap 2 Pendaftaran</h1>
             <% } else if (user.status === 3) { %>
                 <h1>Pembayaran</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore aut corporis dolore, asperiores delectus deleniti quidem consequuntur aspernatur molestias voluptatum omnis fuga aliquid sapiente sint amet eaque id blanditiis cumque quas, doloribus odio quod. Odit, at blanditiis beatae earum consequuntur provident dignissimos, distinctio quisquam doloremque nihil, quis illo magni ipsum?</p>
+                <p>melakukan pembayaran dengan nominal bebas, untuk info lebih lanjut hubungi whatsapp berikut</p>
                 <div class="chat">
-                    <a class="chatWA" href="https://api.whatsapp.com/send?phone=6281295278127&text=nama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor%20Hp%20%3A">
-                        <img src="/img/usersPage/logoWa.png" alt="">
+                    <a class="chatWA" target="_blink" href="https://api.whatsapp.com/send?phone=(nomor)&text=nama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor%20Hp%20%3A">
                         <div>chat</div>
                     </a>
                 </div>
@@ -250,17 +213,10 @@
         </div>
     </div>
     <div class="status tabcontent" id="status">
-        
-        <div class="msg">
-            <% if (user.status === 1 || user.status === 2) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            <% } else if (user.status === 3) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            <% } else if (user.status === 4) { %>
-                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            <% } %>
+    
+        <div class="msg" style="margin-top: 0px;">
             <% if (user.pesan != '') { %>
-                <h2><%- user.pesan %> </h2>
+                <h1><%- user.pesan %> </h1>
             <% } %>
         </div>
 
@@ -351,72 +307,74 @@
         </div>
         <div class="detail-tahap">
             <h2>Tahap 1  -  Formulir</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, aspernatur ducimus! Totam, vitae nulla explicabo voluptatum, beatae molestiae odio dicta, dolore nesciunt pariatur suscipit. Enim, nam iusto doloribus id natus a dolorum fugiat, necessitatibus aut aliquid nulla accusantium dignissimos sequi. Repudiandae magnam asperiores voluptatibus, distinctio sunt voluptatum repellendus nobis suscipit.</p>
+            <p>Mengisi formulir digital sekaligus membuat akun peserta</p>
         </div>
         <div class="detail-tahap">
             <h2>Tahap 2  -  Upload Foto</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, aspernatur ducimus! Totam, vitae nulla explicabo voluptatum, beatae molestiae odio dicta, dolore nesciunt pariatur suscipit. Enim, nam iusto doloribus id natus a dolorum fugiat, necessitatibus aut aliquid nulla accusantium dignissimos sequi. Repudiandae magnam asperiores voluptatibus, distinctio sunt voluptatum repellendus nobis suscipit.</p>
+            <p>meng upload foto foto yang telah di tentukan sebagai syarat</p>
         </div>
         <div class="detail-tahap">
             <h2>Tahap 3  -  Pembayaran</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, aspernatur ducimus! Totam, vitae nulla explicabo voluptatum, beatae molestiae odio dicta, dolore nesciunt pariatur suscipit. Enim, nam iusto doloribus id natus a dolorum fugiat, necessitatibus aut aliquid nulla accusantium dignissimos sequi. Repudiandae magnam asperiores voluptatibus, distinctio sunt voluptatum repellendus nobis suscipit.</p>
+            <p>melakukan pembayaran dengan nominal bebas sebagai bentuk infaq</p>
         </div>
 
     </div>
     <div class="juknis tabcontent" id="juknis">
-        <div class="msg">
-            <% if (user.status === 1 || user.status === 2) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            <% } else if (user.status === 3) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            <% } else if (user.status === 4) { %>
-                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            <% } %>
+ 
+        <div class="msg" style="margin-top: 0px;">
             <% if (user.pesan != '') { %>
-                <h2><%- user.pesan %> </h2>
+                <h1><%- user.pesan %> </h1>
             <% } %>
         </div>
 
         <div class="pdf">
             <% if (user.lomba === 'nasyid') { %>
-                <iframe src="https://drive.google.com/file/d/1_4PtkkY4uiXzD5Drgz0MhhOQDN8BOu-z/preview" width="640" height="480" allow="autoplay"></iframe>
+                <iframe src="https://drive.google.com/file/d/1rAnF4TWeavHP-Cy-OHOTkxAs-8Wz1YSM/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'storyTelling') { %>
+                <iframe src="https://drive.google.com/file/d/1rDzCSdYoJ5Sp34unoKqvsarviAA0Rf9a/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'olimpiadeArab') { %>
+                <iframe src="https://drive.google.com/file/d/1kkvI3LnLNe70OsQ5v2LDTV5x_sX27kOn/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'daiCilik') { %>
+                <iframe src="https://drive.google.com/file/d/1AUyPSovFa2ljbKKGnF6SCiVSPm-fdzQk/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'mhqSd') { %>
+                <iframe src="https://drive.google.com/file/d/1S0FCZ-ccKjyiKKktF97EOjhwKzRZXdFe/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'mhqSmp') { %>
+                <iframe src="https://drive.google.com/file/d/1NHz49-LylacQIB3GVaHOkx6yW5L9hgD3/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'mhqSma') { %>
+                <iframe src="https://drive.google.com/file/d/1SNnLWAlEQ3sseUS3l8_PzOoLG2VJRPfq/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'arestaSurvivalCamp') { %>
+                <iframe src="https://drive.google.com/file/d/1QSJj5B_m0PU85LhBKhwbM2DKX2TdSoZ5/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'dramatisasiPuisi') { %> 
+                <iframe src="https://drive.google.com/file/d/1GpxfZTNwslLxG4wS8PPeWEf0phokAIf2/preview" width="80%" height="480" allow="autoplay"></iframe>
             <% } else if (user.lomba === 'videoKreatif') { %>
-                <iframe src="https://drive.google.com/file/d/1INvnItn1RwLcHqcJdZ1eTMAayiHQfQiq/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
+                <iframe src="https://drive.google.com/file/d/1qJ-57CFZjipe9UU4AYtuSVcvSgMvdsIF/preview" width="80%" height="480" allow="autoplay"></iframe>
             <% } else if (user.lomba === 'ldbi') { %>
-                <iframe src="https://drive.google.com/file/d/1U6kCOMkjMcWkaX6wLWN5iJ0MK45CcD6X/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
+                <iframe src="https://drive.google.com/file/d/1IOYQ4w2EuSQrHdEbo4huDg5mSaK6FA0A/preview" width="80%" height="480" allow="autoplay"></iframe>
             <% } else if (user.lomba === 'khitobah') { %>
-                <iframe src="https://drive.google.com/file/d/1ohWDwl0WWS2fkuxrP3KPBbrFR3pCc0Ii/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
+                <iframe src="https://drive.google.com/file/d/1vuE7rFkR4XlaEtJ3nrMR0IRpWpbh7JkI/preview" width="80%" height="480" allow="autoplay"></iframe>
             <% } else if (user.lomba === 'fotografi') { %>
-                <iframe src="https://drive.google.com/file/d/12HC3x_wmgsmCWRLWh-MwdHO0HcxuiIuz/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
+                <iframe src="https://drive.google.com/file/d/1A2vjO5fCRbli1WJFzb_GL6Fe_cophTcI/preview" width="80%" height="480" allow="autoplay"></iframe>
             <% } else if (user.lomba === 'designPoster') { %>
-                <iframe src="https://drive.google.com/file/d/1hdY1avcK0hNLguO_joyvoK7Nig3n-cPI/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
+                <iframe src="https://drive.google.com/file/d/1Vc2-5u8-nQrs1juK5O1Kn1IWOtKcoijN/preview" width="80%" height="480" allow="autoplay"></iframe>
             <% } else if (user.lomba === 'businessPlan') { %>
-                <iframe src="https://drive.google.com/file/d/1yjYYsAUeGKoYWc8MpxaZVsee0m_i7b3s/view?usp=sharing" frameborder="0" width="80%" height="500px"></iframe>        
+                <iframe src="https://drive.google.com/file/d/1sTnRsLyHJrI45ERCaGZkt8mA_m9hsiEj/preview" width="80%" height="480" allow="autoplay"></iframe>
             <% } %>
         </div> 
     </div>
     <div class="sertifikat tabcontent" id="sertifikat">
-        <div class="msg">
-            <% if (user.status === 1 || user.status === 2) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 2 PENDAFTARAN</h1>
-            <% } else if (user.status === 3) { %>
-                    <h1>SEGERA SELESAIKAN TAHAP 3 PENDAFTARAN</h1>
-            <% } else if (user.status === 4) { %>
-                    <h1 style="color: #0db02b;">Pendaftaran Selesai. Silahkan persiapkan diri untuk lomba</h1>
-            <% } %>
+        <div class="msg" style="margin-top: 0px;">
             <% if (user.pesan != '') { %>
-                <h2><%- user.pesan %> </h2>
+                <h1><%- user.pesan %> </h1>
             <% } %>
         </div>
-
         <div class="pdf">
             <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
             <h1>E-Sertifikat Belum Tersedia</h1>
         </div> 
     </div>
 </body>
+<script src="/js/navUsers.js"></script>
 <script src="/js/users.js"></script>
-<script src="/js/usersModal.js"></script>
 <script>
     let cond = '<%= pesan %>'
     if (cond === 'isi') {
