@@ -12,6 +12,7 @@ html {
 }
 
 .navbar {
+  font-family: "Poppins";
   top: 0px;
   position: fixed;
   width: 100%;
@@ -20,6 +21,7 @@ html {
   flex-direction: column;
   justify-content: center;
   z-index: 1;
+  transition: 1s;
 }
 
 .nav-color {
@@ -164,11 +166,11 @@ html {
   .navbar {
     height: 50px;
     width: 100%;
-    text-align: left;
+    text-align: initial;
   }
 
   .navbar .mobile {
-    justify-content: end;
+    justify-content: space-around;
   }
 
   .navbar .desktop {
@@ -182,6 +184,7 @@ html {
   }
 
   .mb-nav {
+    font-family: "Poppins";
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;

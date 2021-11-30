@@ -1,28 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/img/home/logo-icon.png" type="image/x-icon" sizes="13x20">
+    <script src="https://kit.fontawesome.com/78ac0bed3f.js" crossorigin="anonymous"></script>
+    <meta name="description" content="
+    Website tempat dimana sebuah ajang paling bergengsi se-Indonesia diadakan. Buruan daftar sekarang!">
+    <title>Beranda - Aresta 17</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <script src="https://kit.fontawesome.com/78ac0bed3f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <nav>
-        <h4>NODE MYSQL</h4>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">Register</a></li> 
+    <input type="checkbox" name="" id="cek">
+    <div class="mb-nav" id="mb-nav">
+            <li class="navbar-links"><a href="/">Home</a></li>
+            <li class="navbar-links" id="mb-about">About &#11167</li>
+            <div class="about-content" id="ab-con">
+                <a id="_1" href="#apaitu">aresta 17?</a>
+                <a id="_2" href="#trailer">trailer</a>
+                <a id="_3" href="#lomba">lomba</a>
+                <a id="_4" href="#kontak">contact</a>
+            </div>
+            <li class="navbar-links"><a href="/merchandise">Merch</a></li>
+            <li class="navbar-links" id="mb-info">info  &#11167</li>
+            <div class="info-content" id="in-con">
+                <a href="/cara-daftar">cara daftar</a>
+                <a href="/ketentuan-umum">K U lomba</a>
+                <!-- <a href="/jadwal-acara">jadwal acara</a> -->
+            </div>
+            <li class="navbar-login"><a href="/login">Login</a></li>
+            <li class="navbar-links"><a href="/register">Daftar</a></li>
+    </div>
+    <nav class="navbar" id="navbar">
+        <ul class="mobile">
+            <li class="navbar-text">ARESTA 17</li>
+            <li class="navbar-toggle"><label for="cek"><i class="fas fa-bars"></i></label></li>
+        </ul>
+        <ul class="desktop">
+            <li class="navbar-logo"><img src="/img/logoAresta1.png" height="50px" alt="logo aresta 17"></li>
+            <li class="navbar-links"><a href="/">Home</a></li>
+            <li class="navbar-links" id="about">About &#11167</li>
+            <div class="about-content">
+                <a href="#apaitu">aresta 17?</a>
+                <a href="#trailer">trailer</a>
+                <a href="#lomba">lomba</a>
+                <a href="#kontak">contact</a>
+            </div>
+            <li class="navbar-links"><a href="/merchandise">Merch</a></li>
+            <li class="navbar-links" id="info">info  &#11167</li>
+            <div class="info-content">
+                <a href="/cara-daftar">cara daftar</a>
+                <a href="/ketentuan-umum">K U lomba</a>
+                <!-- <a href="/jadwal-acara">jadwal acara</a> -->
+            </div>
+            <li class="navbar-login"><a href="/login">Login</a></li>
         </ul>
     </nav>
 
-    <h1>Home</h1>
-
-    <div>
-        <form action="/logout" method="post">
-            <button>log out</button>
-        </form>
+    <div class="page-one">
+        <div class="circle"><img src="/img/home/logo-circle-01.webp" class="responsive-image" alt="logo aresta 17"></div>
+        <h1>AJANG REMAJA<br>BEPRESTASI KE-17</h1>
+        <p>Sebuah Ajang Bergengsi Se-Indonesia</p>
+        <a class="tombol-daftar" href="/register">DAFTAR</a>
     </div>
+    <div class="transisi-linear">
+        
+    </div>
+    <div class="page-two" id="apaitu">
+        <p><i class="fas fa-chevron-right"></i> Issue</p>
+        <h1>MODERNISASI :<br>MEMBAWA PERUBAHAN,<br>MEMAJUKAN PERADABAN.</h1>
+        <p class="tanggal">27-29 Januari 2022</p>
+        <p class="keterangan">15 Lomba, Ratusan Juta Hadiah, Ribuan Peserta!</p>
+    </div>
+    <div class="page-three" id="trailer">
+        <p class="putih">TRAILER<span class="kuning">ARESTA</span></p>
+
+        <div class="container">
+            <iframe class="trailer" src="https://www.youtube.com/embed/JY9oAuE8HHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        
+
+        <div class="imgContain">
+            <img src="/img/home/laptop-01-01.svg" alt="gambar laptop aresta made">
+        </div>
+    </div>
+    <div class="page-four" id="lomba">
+        <h1 class="lomba">Lomba</h1>
+        <div class="list-lomba">
+            <ul class="kolom">
+                <li><a href="https://drive.google.com/file/d/1Vc2-5u8-nQrs1juK5O1Kn1IWOtKcoijN/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/desain-poster.svg" width="auto" height="200"></a></li>
+                <li><a href="https://drive.google.com/file/d/1A2vjO5fCRbli1WJFzb_GL6Fe_cophTcI/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/fotografi.svg" width="auto" height="200"></a></li>
+                <li><a href="https://drive.google.com/file/d/1sTnRsLyHJrI45ERCaGZkt8mA_m9hsiEj/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/business-plan.svg" width="auto" height="200"></a></li>
+                <li><a href="https://drive.google.com/file/d/1vuE7rFkR4XlaEtJ3nrMR0IRpWpbh7JkI/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/khitobah.svg" width="auto" height="200"></a></li>
+                <li><a href="https://drive.google.com/file/d/1IOYQ4w2EuSQrHdEbo4huDg5mSaK6FA0A/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/LDBI.svg" width="auto" height="200"></a></li>
+            </ul>
+            <ul class="kedua">
+                <li><a href="https://drive.google.com/file/d/1qJ-57CFZjipe9UU4AYtuSVcvSgMvdsIF/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/video-kreatif.svg" width="auto" height="200"></a></li>
+                <li><a href="https://drive.google.com/file/d/1AUyPSovFa2ljbKKGnF6SCiVSPm-fdzQk/view?usp=sharing" rel="noopener" target="_blank">Dai Cilik</a></li>
+                <li><a href="https://drive.google.com/file/d/1kkvI3LnLNe70OsQ5v2LDTV5x_sX27kOn/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/arab.svg" width="auto" height="200"></a></li>
+                <li><a href="https://drive.google.com/file/d/1rDzCSdYoJ5Sp34unoKqvsarviAA0Rf9a/view?usp=sharing" rel="noopener" target="_blank">Story Telling</a></li>
+                <li><a href="https://drive.google.com/file/d/1rAnF4TWeavHP-Cy-OHOTkxAs-8Wz1YSM/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/nasyid.svg" width="auto" height="200"></a></li>
+            </ul>
+            <ul class="ketiga">
+                <li><a href="https://drive.google.com/file/d/1QSJj5B_m0PU85LhBKhwbM2DKX2TdSoZ5/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/survival-camp.svg" width="auto" height="200"></a></li>
+                <li><a href="https://drive.google.com/file/d/1GpxfZTNwslLxG4wS8PPeWEf0phokAIf2/view?usp=sharing" rel="noopener" target="_blank"><img src="../resources/dramatisasi-puisi.svg" width="auto" height="200"></a></li>
+                <li><a href="https://drive.google.com/file/d/1S0FCZ-ccKjyiKKktF97EOjhwKzRZXdFe/view?usp=sharing" rel="noopener" target="_blank">MHQ SD</a></li>
+                <li><a href="https://drive.google.com/file/d/1NHz49-LylacQIB3GVaHOkx6yW5L9hgD3/view?usp=sharing" rel="noopener" target="_blank">MHQ SMP</a></li>
+                <li><a href="https://drive.google.com/file/d/1SNnLWAlEQ3sseUS3l8_PzOoLG2VJRPfq/view?usp=sharing" rel="noopener" target="_blank">MHQ SMA</a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+
+
+
+
+    <footer id="kontak">
+        <section class="ft-main">
+            <div class="ft-main-item">
+                <h2 class="ft-title">Tentang Kami</h2>
+                <ul>
+                    <li><a href="#" target="_blank">Aresta Tahun ke Tahun</a></li>
+                    <li><a href="https://husnulkhotimah.sch.id" target="_blank" rel="noreferrer">Pondok Pesantren Husnul Khotimah</a></li>
+                    <li><a href="https://www.instagram.com/officialoshk/" target="_blank" rel="noopener">Organisasi Santri Husnul Khotimah</a></li>
+                    <li><a href="#" target="_blank">Coderesta, divisi dari Media Digital Aresta 17</a></li>
+                </ul>
+            </div>
+            <div class="ft-main-item">
+                <h2 class="ft-title">Kontak</h2>
+                <ul>
+                    <li><a href="https://goo.gl/maps/fkRbehSFMPoXnjLf7" target="_blank" rel="noopener">Kantor Pusat</a></li>
+                    <li><a href="https://wa.me/6281355538777?text=Saya%20ingin%20bertanya%20perihal%20Aresta" target="_blank" rel="noopener">0858 6370 4512 (Whatsapp)</a></li>
+                    <li><a href="mailto:aresta.husnulkhotimah@gmail.com" target="_blank">aresta.husnulkhotimah@gmail.com</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="ft-social">
+            <ul class="ft-social-list">
+                <li><a href="https://www.instagram.com/aresta.official/" target="_blank" rel="noreferrer"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCxVd47Eg4QKb_ENe7EGx8rw" target="_blank" rel="noreferrer"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.tiktok.com/@official.aresta?" target="_blank" rel="noreferrer"><i class="fab fa-tiktok"></i></a></li>
+                <li><a href="mailto:aresta.husnulkhotimah@gmail.com" target="_blank" rel="noreferrer"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=6281&text=nama%20lengkap%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor%20Hp%20%3A" target="_blank" rel="noreferrer"><i class="fab fa-whatsapp" rel="noreferrer"></i></a></li>
+            </ul>
+        </section>
+
+        <section class="ft-legal">
+            <ul class="ft-legal-list">
+                <li><a href="#" target="_blank">Terms &amp; Conditions</a></li>
+                <li><a href="#" target="_blank">Privacy Policy</a></li>
+                <li>&copy; 2021 Coderesta, Husnul Khotimah IBS</li>
+            </ul>
+        </section>
+    </footer>
 </body>
+<script src="/js/navbar.js"></script>
 </html>
