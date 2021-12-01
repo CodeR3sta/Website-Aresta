@@ -48,8 +48,7 @@ app.use(passport.session());
 initWebRoutes(app);
 
 app.use("/", (req, res) => {
-  res.status(404);
-  res.send(`NOT FOUND`);
+  res.status(404).render("404");
 });
 
 const port = 3000;

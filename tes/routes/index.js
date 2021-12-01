@@ -24,7 +24,9 @@ let initWebRoutes = (app) => {
   router.get("/ketentuan-umum", loginController.checkLoggedOut, (req, res) => {
     res.render("ku");
   });
-  // router.get("/merchandise");
+  router.get("/merchandise", loginController.checkLoggedOut, (req, res) => {
+    res.render("merch");
+  });
   // router.get('/jadwal-acara')
 
   //USERS PAGE //CLEAR --- //SERTIFIKAT
