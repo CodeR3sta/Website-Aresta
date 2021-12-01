@@ -89,7 +89,7 @@ img.responsive-images {
 
 .transisi-linear {
   background-image: linear-gradient(#080211, #14042d);
-  min-height: 20rem;
+  min-height: 10rem;
 }
 
 .page-two {
@@ -327,7 +327,7 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 800px) {
   .page-three .container iframe {
     width: 399px;
     height: 266px;
@@ -358,6 +358,9 @@ a:hover {
   .page-one h1 {
     font-size: 5rem;
     margin-bottom: 1rem;
+  }
+  .list-lomba {
+    display: block;
   }
 }
 
