@@ -92,14 +92,16 @@ nav button#logout:hover {
 /* MASSGE */
 .msg {
   width: 80%;
-  margin: auto;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
 }
-.msg h1 {
-  font-size: 30px; /*  */
-  margin: 50px auto;
+.msg h1,
+.msg p {
+  margin: auto;
   color: red;
   padding: 20px;
 }
@@ -107,7 +109,7 @@ nav button#logout:hover {
 /* Juknis & E-Sertifikat*/
 .pdf {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .pdf embed {
@@ -148,6 +150,7 @@ nav button#logout:hover {
   nav ul li {
     list-style: none;
     margin: 0px 15px;
+    cursor: pointer;
   }
 
   nav img,
@@ -180,6 +183,10 @@ nav button#logout:hover {
     font-size: 15px;
   }
 
+  .mb-nav-users h2 {
+    cursor: pointer;
+  }
+
   .mb-nav-users form button {
     color: white;
     background-color: transparent;
@@ -189,5 +196,6 @@ nav button#logout:hover {
     border-radius: 20px;
     font-size: 15px;
     padding: 5px 10px;
+    cursor: pointer;
   }
 }

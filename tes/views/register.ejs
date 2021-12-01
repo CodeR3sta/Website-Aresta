@@ -73,16 +73,17 @@
 
     <form action="/register" method="post" id="formID">
         <div class="detail">
+            <h3>Formulir</h3>
             <div class="asalSekolah">
                 <input type="text" name="asalSekolah" id="asalSekolah" placeholder="Asal Sekolah" required>
             </div>
     
             <div class="jenjang">
                 <select name="sekolah" id="sekolah" required>
-                    <option value="" disabled selected>--Tingkat sklh sekolah--</option>
-                    <option value="sd">SD / Sederajatnya</option>
-                    <option value="smp">SMP / Sederajatnya</option>
-                    <option value="sma">SMA / Sederajatnya</option>
+                    <option value="" disabled selected>--Tingkat Sekolah--</option>
+                    <option value="sd">SD / Sederajat</option>
+                    <option value="smp">SMP / Sederajat</option>
+                    <option value="sma">SMA / Sederajat</option>
                 </select>
             </div>
     
@@ -108,6 +109,7 @@
         </div>
 
         <div class="akun">
+            <h3>Buat Akun</h3>
             <input type="text" name="phone" required placeholder="Nomor Hp">
             <input class="tambah" type="email" name="email" required placeholder="email" autocomplete="off">
             <input class="pass" type="password" name="password" id="pass" required placeholder="password">

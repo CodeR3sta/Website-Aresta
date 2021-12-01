@@ -1,7 +1,7 @@
 .tahap2 .upload {
   margin: 50px auto;
   width: 80%;
-  margin: auto;
+  margin: 15px auto;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3),
@@ -14,6 +14,10 @@
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.tahap2 .upload .msg {
+  box-shadow: none;
 }
 
 .tahap2 .upload table td input {

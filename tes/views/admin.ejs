@@ -38,8 +38,8 @@
         <table>
             <tr>
                 <th>#</th>
-                <th>username</th>
                 <th>email</th>
+                <th>nomor hp</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
@@ -47,14 +47,17 @@
                 <th>Status</th>
                 <th>jumlah Anggota</th>
                 <th>Registered</th>
+                <th>verified</th>
+                <th>image verified</th>
+                <th>selesai daftar</th>
                 <th>Cek</th>
             </tr>
 
             <% row.forEach((element,nomor) => { %>
                 <tr>
                     <td><%- nomor + 1 %> </td>
-                    <td><%- element.username %> </td>
-                    <td><%- element.email %> </td>
+                <td><%- element.email %> </td>
+                <td><%- element.phone %> </td>    
                     <td><%- element.namaUtama %> </td>
                     <td><%- element.sekolah %> </td>
                     <td><%- element.lomba %> </td>
@@ -62,6 +65,9 @@
                     <td><%- element.status %> </td>
                     <td><%- element.jumlahAnggota %> </td>
                     <td><%- element.registered %> </td>
+                    <td><%- element.verified %> </td>
+                    <td><%- element.imgVerified %> </td>
+                    <td><%- element.endRegist %> </td>
                     <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                 </tr>
             <% }) %>
@@ -72,8 +78,8 @@
         <table>
             <tr>
                 <th>#</th>
-                <th>username</th>
                 <th>email</th>
+                <th>nomor hp</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
@@ -81,14 +87,17 @@
                 <th>Status</th>
                 <th>jumlah Anggota</th>
                 <th>Registered</th>
+                <th>verified</th>
+                <th>image verified</th>
+                <th>selesai daftar</th>
                 <th>Cek</th>
             </tr>
             <% if (row0 != undefined) { %>
                 <% row0.forEach((element,nomor) => { %>
                     <tr>
                         <td><%- nomor + 1 %> </td>
-                        <td><%- element.username %> </td>
                         <td><%- element.email %> </td>
+                        <td><%- element.phone %> </td>
                         <td><%- element.namaUtama %> </td>
                         <td><%- element.sekolah %> </td>
                         <td><%- element.lomba %> </td>
@@ -96,6 +105,9 @@
                         <td><%- element.status %> </td>
                         <td><%- element.jumlahAnggota %> </td>
                         <td><%- element.registered %> </td>
+                        <td><%- element.verified %> </td>
+                        <td><%- element.imgVerified %> </td>
+                        <td><%- element.endRegist %> </td>
                         <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                     </tr>
                 <% }) %>
@@ -108,8 +120,8 @@
         <table>
             <tr>
                 <th>#</th>
-                <th>username</th>
                 <th>email</th>
+                <th>nomor hp</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
@@ -117,14 +129,17 @@
                 <th>Status</th>
                 <th>jumlah Anggota</th>
                 <th>Registered</th>
+                <th>verified</th>
+                <th>image verified</th>
+                <th>selesai daftar</th>
                 <th>Cek</th>
             </tr>
             <% if (row1 != undefined) { %>
                 <% row1.forEach((element,nomor) => { %>
                     <tr>
                         <td><%- nomor + 1 %> </td>
-                        <td><%- element.username %> </td>
                         <td><%- element.email %> </td>
+                        <td><%- element.phone %> </td>
                         <td><%- element.namaUtama %> </td>
                         <td><%- element.sekolah %> </td>
                         <td><%- element.lomba %> </td>
@@ -132,6 +147,9 @@
                         <td><%- element.status %> </td>
                         <td><%- element.jumlahAnggota %> </td>
                         <td><%- element.registered %> </td>
+                        <td><%- element.verified %> </td>
+                        <td><%- element.imgVerified %> </td>
+                        <td><%- element.endRegist %> </td>
                         <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                     </tr>
                 <% }) %>
@@ -144,8 +162,8 @@
         <table>
             <tr>
                 <th>#</th>
-                <th>username</th>
                 <th>email</th>
+                <th>nomor hp</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
@@ -153,14 +171,17 @@
                 <th>Status</th>
                 <th>jumlah Anggota</th>
                 <th>Registered</th>
+                <th>verified</th>
+                <th>image verified</th>
+                <th>selesai daftar</th>
                 <th>Cek</th>
             </tr>
             <% if (row2 != undefined) { %>
                 <% row2.forEach((element,nomor) => { %>
                     <tr>
                         <td><%- nomor + 1 %> </td>
-                        <td><%- element.username %> </td>
                         <td><%- element.email %> </td>
+                        <td><%- element.phone %> </td>
                         <td><%- element.namaUtama %> </td>
                         <td><%- element.sekolah %> </td>
                         <td><%- element.lomba %> </td>
@@ -168,6 +189,9 @@
                         <td><%- element.status %> </td>
                         <td><%- element.jumlahAnggota %> </td>
                         <td><%- element.registered %> </td>
+                        <td><%- element.verified %> </td>
+                        <td><%- element.imgVerified %> </td>
+                        <td><%- element.endRegist %> </td>
                         <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                     </tr>
                 <% }) %>
@@ -180,8 +204,8 @@
         <table>
             <tr>
                 <th>#</th>
-                <th>username</th>
                 <th>email</th>
+                <th>nomor hp</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
@@ -189,14 +213,17 @@
                 <th>Status</th>
                 <th>jumlah Anggota</th>
                 <th>Registered</th>
+                <th>verified</th>
+                <th>image verified</th>
+                <th>selesai daftar</th>
                 <th>Cek</th>
             </tr>
             <% if (row3 != undefined) { %>
                 <% row3.forEach((element,nomor) => { %>
                     <tr>
                         <td><%- nomor + 1 %> </td>
-                        <td><%- element.username %> </td>
                         <td><%- element.email %> </td>
+                        <td><%- element.phone %> </td>
                         <td><%- element.namaUtama %> </td>
                         <td><%- element.sekolah %> </td>
                         <td><%- element.lomba %> </td>
@@ -204,6 +231,9 @@
                         <td><%- element.status %> </td>
                         <td><%- element.jumlahAnggota %> </td>
                         <td><%- element.registered %> </td>
+                        <td><%- element.verified %> </td>
+                        <td><%- element.imgVerified %> </td>
+                        <td><%- element.endRegist %> </td>
                         <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                     </tr>
                 <% }) %>
@@ -216,8 +246,8 @@
         <table>
             <tr>
                 <th>#</th>
-                <th>username</th>
                 <th>email</th>
+                <th>nomor hp</th>
                 <th>Nama Ketua</th>
                 <th>Asal Sekolah</th>
                 <th>Lomba</th>
@@ -225,14 +255,17 @@
                 <th>Status</th>
                 <th>jumlah Anggota</th>
                 <th>Registered</th>
+                <th>verified</th>
+                <th>image verified</th>
+                <th>selesai daftar</th>
                 <th>Cek</th>
             </tr>
             <% if (row4 != undefined) { %>
                 <% row4.forEach((element,nomor) => { %>
                     <tr>
                         <td><%- nomor + 1 %> </td>
-                        <td><%- element.username %> </td>
                         <td><%- element.email %> </td>
+                        <td><%- element.phone %> </td>
                         <td><%- element.namaUtama %> </td>
                         <td><%- element.sekolah %> </td>
                         <td><%- element.lomba %> </td>
@@ -240,6 +273,9 @@
                         <td><%- element.status %> </td>
                         <td><%- element.jumlahAnggota %> </td>
                         <td><%- element.registered %> </td>
+                        <td><%- element.verified %> </td>
+                        <td><%- element.imgVerified %> </td>
+                        <td><%- element.endRegist %> </td>
                         <td><a href="/code/resta/panitia/users/views/<%= element.id %> ">detail</a></td>
                     </tr>
                 <% }) %>

@@ -50,7 +50,7 @@
     </nav>
 
     <div class="tahap1 tabcontent" id="tahap1">
-        <div class="msg" style="margin-top: 0px;">
+        <div class="msg" >
             <% if (user.pesan != '') { %>
                 <h1><%- user.pesan %> </h1>
             <% } %>
@@ -104,13 +104,23 @@
 
     </div>
     <div class="tahap2 tabcontent" id="tahap2">
-        <div class="msg" style="margin-top: 0px;">
+        <div class="msg">
             <% if (user.pesan != '') { %>
                 <h1><%- user.pesan %> </h1>
             <% } %>
         </div>
+
         <div class="upload">
             <% if (user.status === 1) { %>
+                <div class="msg" style="text-align: left;">
+                    <p>
+                        *format file : png / jpg / jpeg <br>
+                        *file size : kurang dari 20Mb <br>
+                        *post Ig : <a target="_blink" href="https://twb.nz/aresta17">buat twibon</a> <br>
+                        *upload file satu per satu dan internet stabil <br>
+                    </p>
+                </div>
+                <hr>
                     <% if (user[`suratRekomendasi`] === '') { %>
                             <form action="/users/suratRekomendasi" method="post" enctype="multipart/form-data">
                                 <td><label for="suratRekomendasi">Upload surat Rekomendai sekolah:</label></td>
@@ -188,7 +198,7 @@
         </div>
     </div>
     <div class="tahap3 tabcontent" id="tahap3">
-        <div class="msg" style="margin-top: 0px;">
+        <div class="msg" >
             <% if (user.pesan != '') { %>
                 <h1><%- user.pesan %> </h1>
             <% } %>
@@ -199,9 +209,12 @@
                 <h1>Selesaikan Tahap 2 Pendaftaran</h1>
             <% } else if (user.status === 3) { %>
                 <h1>Pembayaran</h1>
-                <p>melakukan pembayaran dengan nominal bebas, untuk info lebih lanjut hubungi whatsapp berikut</p>
-                <div class="chat">
-                    <a class="chatWA" target="_blink" href="https://api.whatsapp.com/send?phone=081807091197&text=nama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor%20Hp%20%3A%0Asaya%20ingin%20melakukan%20pembayaran">
+                <p>-Melakukan pembayaran dengan nominal bebas sebagai bentuk infaq ke:</p>
+                <p>REKENING : 7104501154   (Ali Muchtar QQ ARESTA BANK BSI)</p>
+                <hr>
+                <p>-Mengirim bukti pembayaran ke:</p>
+                <p>0858-6370-4512 (whatsapp)</p>                <div class="chat">
+                    <a class="chatWA" target="_blink" href="https://api.whatsapp.com/send?phone=085863704512&text=(kirim bukti pembayaran)%0Anama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor%20Hp%20%3A">
                         <div>chat</div>
                     </a>
                 </div>
@@ -214,7 +227,7 @@
     </div>
     <div class="status tabcontent" id="status">
     
-        <div class="msg" style="margin-top: 0px;">
+        <div class="msg" >
             <% if (user.pesan != '') { %>
                 <h1><%- user.pesan %> </h1>
             <% } %>
@@ -311,17 +324,20 @@
         </div>
         <div class="detail-tahap">
             <h2>Tahap 2  -  Upload Foto</h2>
-            <p>meng upload foto foto yang telah di tentukan sebagai syarat</p>
+            <p>Mengupload foto foto yang telah di tentukan di dalam ketentuan umum</p>
         </div>
         <div class="detail-tahap">
             <h2>Tahap 3  -  Pembayaran</h2>
-            <p>melakukan pembayaran dengan nominal bebas sebagai bentuk infaq</p>
+            <p>-Melakukan pembayaran dengan nominal bebas sebagai bentuk infaq ke:</p>
+            <p>REKENING : 7104501154  (Ali Muchtar QQ ARESTA BANK BSI)</p>
+            <p>-Mengirim bukti pembayaran ke:</p>
+            <p>0858-6370-4512 (whatsapp)</p>
         </div>
 
     </div>
     <div class="juknis tabcontent" id="juknis">
  
-        <div class="msg" style="margin-top: 0px;">
+        <div class="msg" >
             <% if (user.pesan != '') { %>
                 <h1><%- user.pesan %> </h1>
             <% } %>
@@ -362,7 +378,7 @@
         </div> 
     </div>
     <div class="sertifikat tabcontent" id="sertifikat">
-        <div class="msg" style="margin-top: 0px;">
+        <div class="msg" >
             <% if (user.pesan != '') { %>
                 <h1><%- user.pesan %> </h1>
             <% } %>
