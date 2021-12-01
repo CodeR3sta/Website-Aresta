@@ -43,6 +43,7 @@ let findUsers = (req, res) => {
 
       return res.render("admin", {
         row: results,
+        row0: undefined,
         row1: undefined,
         row2: undefined,
         row3: undefined,
