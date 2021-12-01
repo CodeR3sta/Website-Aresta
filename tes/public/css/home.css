@@ -63,7 +63,7 @@ img.responsive-images {
   text-decoration: none;
   color: white;
   padding: 0.5rem 1.5rem;
-  background-color: #b03092;
+  background-color: rgb(255, 0, 204);
   font-family: "Poppins";
   width: 80px;
   display: block;
@@ -72,7 +72,7 @@ img.responsive-images {
 
 .page-one a:hover {
   background-color: yellow;
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -352,6 +352,12 @@ a:hover {
   .page-one h1 {
     font-size: 5rem;
     margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .list-lomba {
+    display: block;
   }
 }
 

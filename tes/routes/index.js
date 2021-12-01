@@ -18,10 +18,14 @@ initPassportLocal();
 
 let initWebRoutes = (app) => {
   //HOME PAGE
-  router.get("/", loginController.checkLoggedOut, homeController.getHomePage);
-  router.get("/ketentuan-umum", (req, res) => {
+  router.get("/", loginController.checkLoggedOut, (req, res) => {
+    return res.render("home");
+  });
+  router.get("/ketentuan-umum", loginController.checkLoggedOut, (req, res) => {
     res.render("ku");
   });
+  // router.get("/merchandise");
+  // router.get('/jadwal-acara')
 
   //USERS PAGE //CLEAR --- //SERTIFIKAT
   router.get(
