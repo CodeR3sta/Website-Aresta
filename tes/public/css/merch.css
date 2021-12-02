@@ -1,0 +1,16 @@
+@import url("/font/font.css");
+
+body {
+  font-family: "poppins";
+  background-image: url("/img/pc-merch.svg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0px;
+}
+
+@media (max-width: 800px) {
+  body {
+    background-image: url("/img/mb-merch.svg");
+  }
+}
