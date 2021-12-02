@@ -167,30 +167,36 @@ let confirmTahap2 = async (req, res) => {
             }
           );
         } else {
-          let pesan = req.body.pesan;
-          const directory = path.join(
-            __dirname,
-            "..",
-            "upload",
-            `${req.user.username}${req.user.sekolah}`
-          );
-
-          fs.readdir(directory, (err, files) => {
-            if (err) throw err;
-
-            for (const file of files) {
-              fs.unlink(path.join(directory, file), (err) => {
-                if (err) throw err;
-              });
-            }
-          });
           db.query(
-            `UPDATE users SET status = 1, pesan = '${pesan}',suratRekomendasi = '',fotoTim = '',kis1 = '',postIg1 = '', fotoDiri1 = '',kis2 = '',postIg2 = '', fotoDiri2 = '',kis3 = '',postIg3 = '', fotoDiri3 = '',kis4 = '',postIg4 = '', fotoDiri4 = '',kis5 = '',postIg5 = '', fotoDiri5 = '',kis6 = '',postIg6 = '', fotoDiri6 = '',kis7 = '',postIg7 = '', fotoDiri7 = '',kis8 = '',postIg8 = '', fotoDiri8 = '',kis9 = '',postIg9 = '', fotoDiri9 = '',kis10 = '',postIg10 = '', fotoDiri10 = '',kis11 = '',postIg11 = '', fotoDiri11 = '',kis12 = '',postIg12 = '', fotoDiri12 = '',kis13 = '',postIg13 = '', fotoDiri13 = '',kis14 = '',postIg14 = '', fotoDiri14 = '',kis15 = '',postIg15 = '', fotoDiri15 = '',kis16 = '',postIg16 = '', fotoDiri16 = '',kis17 = '',postIg17 = '', fotoDiri17 = '',kis18 = '',postIg18 = '', fotoDiri18 = '',kis19 = '',postIg19 = '', fotoDiri19 = '',kis20 = '',postIg20 = '', fotoDiri20 = '',kis21 = '',postIg21 = '', fotoDiri21 = '',kis22 = '',postIg22 = '', fotoDiri22 = '',kis23 = '',postIg23 = '', fotoDiri23 = '',kis24 = '',postIg24 = '', fotoDiri24 = '',kis25 = '',postIg25 = '', fotoDiri25 = '' WHERE id = ?`,
-            [req.params.id],
-            (err, results) => {
+            `SELECT * FROM users WHERE id = ${req.params.id}`,
+            (err, result) => {
               if (err) console.log(err);
-              console.log("berhasil di Update");
-              return res.redirect("/code/resta/panitia/users");
+              let pesan = req.body.pesan;
+              const directory = path.join(
+                __dirname,
+                "..",
+                "upload",
+                `${result[0].username}${result[0].sekolah}`
+              );
+
+              fs.readdir(directory, (err, files) => {
+                if (err) throw err;
+
+                for (const file of files) {
+                  fs.unlink(path.join(directory, file), (err) => {
+                    if (err) throw err;
+                  });
+                }
+              });
+              db.query(
+                `UPDATE users SET status = 1, pesan = '${pesan}',suratRekomendasi = '',fotoTim = '',kis1 = '',postIg1 = '', fotoDiri1 = '',kis2 = '',postIg2 = '', fotoDiri2 = '',kis3 = '',postIg3 = '', fotoDiri3 = '',kis4 = '',postIg4 = '', fotoDiri4 = '',kis5 = '',postIg5 = '', fotoDiri5 = '',kis6 = '',postIg6 = '', fotoDiri6 = '',kis7 = '',postIg7 = '', fotoDiri7 = '',kis8 = '',postIg8 = '', fotoDiri8 = '',kis9 = '',postIg9 = '', fotoDiri9 = '',kis10 = '',postIg10 = '', fotoDiri10 = '',kis11 = '',postIg11 = '', fotoDiri11 = '',kis12 = '',postIg12 = '', fotoDiri12 = '',kis13 = '',postIg13 = '', fotoDiri13 = '',kis14 = '',postIg14 = '', fotoDiri14 = '',kis15 = '',postIg15 = '', fotoDiri15 = '',kis16 = '',postIg16 = '', fotoDiri16 = '',kis17 = '',postIg17 = '', fotoDiri17 = '',kis18 = '',postIg18 = '', fotoDiri18 = '',kis19 = '',postIg19 = '', fotoDiri19 = '',kis20 = '',postIg20 = '', fotoDiri20 = '',kis21 = '',postIg21 = '', fotoDiri21 = '',kis22 = '',postIg22 = '', fotoDiri22 = '',kis23 = '',postIg23 = '', fotoDiri23 = '',kis24 = '',postIg24 = '', fotoDiri24 = '',kis25 = '',postIg25 = '', fotoDiri25 = '' WHERE id = ?`,
+                [req.params.id],
+                (err, results) => {
+                  if (err) console.log(err);
+                  console.log("berhasil di Update");
+                  return res.redirect("/code/resta/panitia/users");
+                }
+              );
             }
           );
         }
