@@ -450,3 +450,27 @@ a:hover {
     font-size: 15px;
   }
 }
+
+@media (max-width: 350px) {
+  .page-three .container iframe {
+    width: 159.8px;
+    height: 106.6px;
+    margin: 4.5px auto 0px auto;
+  }
+
+  .page-three .imgContain img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 300px) {
+  .page-three .container iframe {
+    width: 133px;
+    height: 89px;
+    margin: 4px auto 0px auto;
+  }
+
+  .page-three .imgContain img {
+    width: 250px;
+  }
+}

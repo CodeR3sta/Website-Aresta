@@ -27,6 +27,9 @@ let initWebRoutes = (app) => {
   router.get("/merchandise", loginController.checkLoggedOut, (req, res) => {
     res.render("merch");
   });
+  router.get("/cara-daftar", loginController.checkLoggedOut, (req, res) => {
+    res.render("caraDaftar");
+  });
   // router.get('/jadwal-acara')
 
   //USERS PAGE //CLEAR --- //SERTIFIKAT
