@@ -49,15 +49,15 @@ let createNewUser = async (req, res) => {
 
     let chat = await registerService.createNewUser(newUsers, res);
     req.flash("msg", chat);
-    let userData = {
-      email: `${req.body.email}`,
-    };
-    res.cookie("userInfo", userData, {
-      maxAge: 1 * 24 * 60 * 60 * 1000,
-      httpOnly: true,
-    });
+    // let userData = {
+    //   email: `${req.body.email}`,
+    // };
+    // res.cookie("userInfo", userData, {
+    //   maxAge: 1 * 24 * 60 * 60 * 1000,
+    //   httpOnly: true,
+    // });
     return res.send(
-      `<h1 style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;">Berhasil Registrasi, link konfirmasi telah dikirim ke ${req.body.email}</h1>`
+      `<div style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;"><h1>Berhasil Menyelesaikan Tahap 1 pendaftaran, klik link dibawah utk menyelesaikan tahap berikutnya</h1><a href="/login">Click disini untuk Login</a></div>`
     );
   } catch (e) {
     req.flash("msg", e);
@@ -103,64 +103,64 @@ let anggota = (req, newUser) => {
   return newUser;
 };
 
-// VERIFICATION
-let verifikasiEmail = (req, res) => {
-  try {
-    db.query(
-      "SELECT * FROM users WHERE email = ?",
-      req.cookies.userInfo.email,
-      (err, result) => {
-        if (err) {
-          console.log(err);
-          return res.send(
-            `<div style="margin:50px auto;padding: 10px;width:80%;background-color: red;color:white;text-align:center;border-radius:10px;"><h1>Silahkan daftar Terlebih Dahulu</h1></div>`
-          );
-        }
-        if (req.query.verify === result[0].verification) {
-          let pathUp = path.join(
-            __dirname,
-            "..",
-            "upload",
-            `${result[0].username}${result[0].sekolah}/`
-          );
+// // VERIFICATION
+// let verifikasiEmail = (req, res) => {
+//   try {
+//     db.query(
+//       "SELECT * FROM users WHERE email = ?",
+//       req.cookies.userInfo.email,
+//       (err, result) => {
+//         if (err) {
+//           console.log(err);
+//           return res.send(
+//             `<div style="margin:50px auto;padding: 10px;width:80%;background-color: red;color:white;text-align:center;border-radius:10px;"><h1>Silahkan daftar Terlebih Dahulu</h1></div>`
+//           );
+//         }
+//         if (req.query.verify === result[0].verification) {
+//           let pathUp = path.join(
+//             __dirname,
+//             "..",
+//             "upload",
+//             `${result[0].username}${result[0].sekolah}/`
+//           );
 
-          mkdir(pathUp, 0o777, (err) => {
-            if (err) {
-              console.log(err);
-              if (err.code === "EEXIST") {
-                return res.send(
-                  `<div style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;"><h1>Akun Anda Sudah Aktif</h1><a href="/login">Klik Disini Untuk Login</a></div>`
-                );
-              }
-            } else {
-              db.query(
-                `UPDATE users SET status = 1, verified = '${new Date().toLocaleString()}' WHERE email = ?`,
-                req.cookies.userInfo.email,
-                (err, result) => {
-                  if (err) console.log(err);
+//           mkdir(pathUp, 0o777, (err) => {
+//             if (err) {
+//               console.log(err);
+//               if (err.code === "EEXIST") {
+//                 return res.send(
+//                   `<div style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;"><h1>Akun Anda Sudah Aktif</h1><a href="/login">Klik Disini Untuk Login</a></div>`
+//                 );
+//               }
+//             } else {
+//               db.query(
+//                 `UPDATE users SET status = 1, verified = '${new Date().toLocaleString()}' WHERE email = ?`,
+//                 req.cookies.userInfo.email,
+//                 (err, result) => {
+//                   if (err) console.log(err);
 
-                  return res.send(
-                    `<div style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;"><h1>Akun Anda Telah Aktif</h1><a href="/login">Klik Disini Untuk Login</a></div>`
-                  );
-                }
-              );
-            }
-          });
-        } else {
-          return res.send(
-            `<div style="margin:50px auto;padding: 10px;width:80%;background-color: red;color:white;text-align:center;border-radius:10px;"><h1>Gagal Verifikasi Akun</h1></div>`
-          );
-        }
-      }
-    );
-  } catch (error) {
-    return res.send(
-      `<div style="margin:50px auto;padding: 10px;width:80%;background-color: red;color:white;text-align:center;border-radius:10px;"><h1>Silahkan daftar Terlebih Dahulu</h1></div>`
-    );
-  }
-};
+//                   return res.send(
+//                     `<div style="margin:50px auto;padding: 10px;width:80%;background-color: #0db02b;color:white;text-align:center;border-radius:10px;"><h1>Akun Anda Telah Aktif</h1><a href="/login">Klik Disini Untuk Login</a></div>`
+//                   );
+//                 }
+//               );
+//             }
+//           });
+//         } else {
+//           return res.send(
+//             `<div style="margin:50px auto;padding: 10px;width:80%;background-color: red;color:white;text-align:center;border-radius:10px;"><h1>Gagal Verifikasi Akun</h1></div>`
+//           );
+//         }
+//       }
+//     );
+//   } catch (error) {
+//     return res.send(
+//       `<div style="margin:50px auto;padding: 10px;width:80%;background-color: red;color:white;text-align:center;border-radius:10px;"><h1>Silahkan daftar Terlebih Dahulu</h1></div>`
+//     );
+//   }
+// };
 module.exports = {
   registerGet,
   createNewUser,
-  verifikasiEmail,
+  // verifikasiEmail,
 };

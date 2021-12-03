@@ -52,7 +52,7 @@ let initWebRoutes = (app) => {
     authValidation.validateRegister,
     registerController.createNewUser
   ); // Buat Akun & kirim Verifikasi email
-  router.get("/verification", registerController.verifikasiEmail); // Verifikasi email
+  // router.get("/verification", registerController.verifikasiEmail); // Verifikasi email
 
   // LOGIN USERS//CLEAR
   router.get(

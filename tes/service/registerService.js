@@ -1,6 +1,8 @@
 const db = require("../configs/connectDB");
 const bcryptjs = require("bcryptjs");
-const transporter = require("../configs/transporterMail");
+const path = require("path");
+const { mkdir } = require("fs");
+// const transporter = require("../configs/transporterMail");
 
 let createNewUser = (user) => {
   return new Promise(async (resolve, reject) => {
@@ -22,34 +24,34 @@ let createNewUser = (user) => {
         let salt = bcryptjs.genSaltSync(10);
 
         // verify code
-        let verify = Math.floor(Math.random() * 100000000000 + 1);
+        // let verify = Math.floor(Math.random() * 100000000000 + 1);
 
-        let mailOption = {
-          from: process.env.MAIL,
-          to: `${user.email}`,
-          subject: `Account Verification`,
-          html: `    <h1>Halo, ${user.namaUtama} </h1>
-          <h2>Alamat Email anda, ${user.email} , telah ditambahkan untuk akun Aresta.</h2>
-          <br>
-          <hr>
-          <div style="background-color: rgb(255, 0, 204);text-align: center;padding: 10px;">
-              <p>Verifikasi Email diperlukan untuk mengaktifkan akun anda. <br> Klik tombol dibawah untuk verifikasi :</p>
-              <a href="http://localhost:3000/verification/?verify=${verify}" style="text-decoration: none;background-color: yellow; display: inline-block;padding: 10px;border-radius: 15px;">Verifikasi Email</a>
-          </div>`,
-        };
+        // let mailOption = {
+        //   from: process.env.MAIL,
+        //   to: `${user.email}`,
+        //   subject: `Account Verification`,
+        //   html: `    <h1>Halo, ${user.namaUtama} </h1>
+        //   <h2>Alamat Email anda, ${user.email} , telah ditambahkan untuk akun Aresta.</h2>
+        //   <br>
+        //   <hr>
+        //   <div style="background-color: rgb(255, 0, 204);text-align: center;padding: 10px;">
+        //       <p>Verifikasi Email diperlukan untuk mengaktifkan akun anda. <br> Klik tombol dibawah untuk verifikasi :</p>
+        //       <a href="http://localhost:3000/verification/?verify=${verify}" style="text-decoration: none;background-color: yellow; display: inline-block;padding: 10px;border-radius: 15px;">Verifikasi Email</a>
+        //   </div>`,
+        // };
 
         let data = {
           username: tes,
           phone: user.phone,
           email: user.email,
           password: bcryptjs.hashSync(user.password, salt),
-          status: 0,
+          status: 1,
           sekolah: user.sekolah,
           tingkat: user.tingkat,
           lomba: user.lomba,
           kategori: user.kategori,
           registered: new Date().toLocaleString(),
-          verification: verify,
+          // verification: verify,
           namaUtama: user.namaUtama,
           jumlahAnggota: user.jumlahAnggota,
           anggota1: user.anggota1,
@@ -81,19 +83,34 @@ let createNewUser = (user) => {
         db.query("INSERT INTO users set ?", data, (error, row) => {
           if (error) {
             reject("GAGAL Daftar, Silahkan Daftar Kembali");
-          }
+          } else {
+            let pathUp = path.join(
+              __dirname,
+              "..",
+              "upload",
+              `${tes}${user.sekolah}/`
+            );
 
-          transporter.sendMail(mailOption, (err, info) => {
-            if (err) {
-              console.log("gagal kirim email", err);
-              db.query(`DELETE FROM users WHERE email = '${user.email}'`);
-              reject(
-                "GAGAL mengirim email konfirmasi, Silahkan Daftar Kembali"
-              );
-            } else {
-              resolve();
-            }
-          });
+            mkdir(pathUp, 0o777, (err) => {
+              if (err) {
+                db.query(`DELETE FROM users WHERE email = '${user.email}'`);
+                reject("GAGAL Daftar, Silahkan Daftar Kembali");
+              } else {
+                resolve();
+              }
+            });
+          }
+          // transporter.sendMail(mailOption, (err, info) => {
+          //   if (err) {
+          //     console.log("gagal kirim email", err);
+          //     db.query(`DELETE FROM users WHERE email = '${user.email}'`);
+          //     reject(
+          //       "GAGAL mengirim email konfirmasi, Silahkan Daftar Kembali"
+          //     );
+          //   } else {
+          //     resolve();
+          //   }
+          // });
         });
       }
     } catch (e) {
