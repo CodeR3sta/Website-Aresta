@@ -33,13 +33,13 @@ let submitTahap2 = async (req, res, next) => {
 
     if (req.user.lomba === "nasyid") {
       // karena file terakhir yg mau di upload jadi + 2
-      if (fix === (req.user.jumlahAnggota + 1) * 3 + 1) {
+      if (fix === (req.user.jumlahAnggota + 1) * 2 + 1) {
         dataInsert = `status = 2,${req.params.data} = '${hexName}'`;
       } else {
         dataInsert = `status = 1,${req.params.data} = '${hexName}'`;
       }
     } else {
-      if (fix === (req.user.jumlahAnggota + 1) * 3) {
+      if (fix === (req.user.jumlahAnggota + 1) * 2) {
         dataInsert = `status = 2,${req.params.data} = '${hexName}'`;
       } else {
         dataInsert = `status = 1,${req.params.data} = '${hexName}'`;

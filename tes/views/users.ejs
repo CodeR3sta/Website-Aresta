@@ -148,18 +148,7 @@
                         <hr>
                     <% } %>
                     <% for( let i = 1; i <= user.jumlahAnggota + 1; i++ ) { %>
-                        <% if (user[`kis${i}`] === '') { %>
-                                <form action="/users/kis<%- i %>" method="post" enctype="multipart/form-data">
-                                    <td><label for="kis<%- i %>">Upload Kartu Pelajar <%- i %> :</label></td>
-                                    <td><input type="file" name="kis<%- i %>" id="kis<%- i %>" accept="image/*" required></td>
-                                    <td><button type="submit">submit</button></td>
-                                </form>
-                        <% } else { %>
-                                <td><label for="kis<%- i %>">Upload KIS <%- i %> :</label></td>
-                                <td>:</td>
-                                <td>Terkirim</td>
-                        <% } %>
-                            <hr>
+
                         <% if (user[`postIg${i}`] === '') { %>
                                 <form action="/users/postIg<%- i %>" method="post" enctype="multipart/form-data">
                                     <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
