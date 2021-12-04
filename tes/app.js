@@ -17,6 +17,7 @@ const publicDirectory = path.join(__dirname, "./public");
 app.use(express.static(publicDirectory));
 
 // parse Url encoded bodies (as sent by HTML forms)
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // use Cookie Parser
@@ -29,7 +30,7 @@ app.use(
     resave: true,
     saveUninitialized: false,
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24,
+      maxAge: 86400000,
     },
   })
 );

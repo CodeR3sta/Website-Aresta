@@ -15,7 +15,6 @@ let initPassportLocal = () => {
       },
       async (req, email, password, done) => {
         try {
-          console.log(email);
           let user = await loginService.findUserByEmail(email);
           if (!user) {
             return done(
@@ -25,13 +24,13 @@ let initPassportLocal = () => {
             );
           }
 
-          if (user.status === 0) {
-            return done(
-              null,
-              false,
-              req.flash("msg", "akun anda blm di verifikasi")
-            );
-          }
+          // if (user.status === 0) {
+          //   return done(
+          //     null,
+          //     false,
+          //     req.flash("msg", "akun anda blm di verifikasi")
+          //   );
+          // }
 
           if (user) {
             // compare password

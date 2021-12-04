@@ -1,7 +1,6 @@
 const db = require("../configs/connectDB");
 const path = require("path");
 const uuid = require("uuid");
-const { TIMEOUT } = require("dns");
 
 let getUsersPage = (req, res) => {
   return res.render("users", {
