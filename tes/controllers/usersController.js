@@ -1,6 +1,7 @@
 const db = require("../configs/connectDB");
 const path = require("path");
 const uuid = require("uuid");
+const { TIMEOUT } = require("dns");
 
 let getUsersPage = (req, res) => {
   return res.render("users", {
@@ -55,21 +56,26 @@ let submitTahap2 = async (req, res, next) => {
           req.flash("tahap2", "gagal");
           return res.redirect("/users");
         } else {
-          // buat PATH Upload
-          let pathUp = path.join(
-            __dirname,
-            "..",
-            "upload",
-            `${req.user.username}${req.user.sekolah}/`
-          );
+          try {
+            // buat PATH Upload
+            let pathUp = path.join(
+              __dirname,
+              "..",
+              "upload",
+              `${req.user.username}${req.user.sekolah}/`
+            );
 
-          await imgUp(req, file, pathUp);
-          console.log("nicee");
-          return res.redirect("/users");
+            await imgUp(req, file, pathUp);
+            return res.redirect("/users");
+          } catch (error) {
+            req.flash("tahap2", error);
+            return res.redirect("/users");
+          }
         }
       }
     );
   } catch (error) {
+    console.log("error");
     req.flash("tahap2", error);
     return res.redirect("/users");
   }
@@ -131,16 +137,15 @@ let imgUp = (req, variable, pathUp) => {
       variable.mv(pathUp + `${variable.name}`, (err) => {
         if (err) {
           db.query(
-            `DELETE users.${req.params.data} FROM users WHERE email = '${req.user.email}'`,
+            `UPDATE users SET ${req.params.data} = '' WHERE email = '${req.user.email}'`,
             (err, results) => {
               if (err) {
-                console.log(err);
+                reject("gagal");
               } else {
                 reject("gagal");
               }
             }
           );
-          reject("gagal");
         } else {
           resolve();
         }
