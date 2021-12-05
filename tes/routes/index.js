@@ -5,7 +5,6 @@ const passport = require("passport");
 const registerController = require("../controllers/registerController");
 const authValidation = require("../auth/authValidation");
 const initPassportLocal = require("../controllers/passportLocalController");
-const homeController = require("../controllers/homeController");
 const loginController = require("../controllers/loginController");
 const usersController = require("../controllers/usersController");
 const adminController = require("../admin/adminController");
