@@ -3,9 +3,11 @@ const flash = require("connect-flash");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const MySQLStore = require("express-mysql-session")(session);
 const passport = require("passport");
 const { initWebRoutes } = require("./routes/index");
 const fileUpload = require("express-fileupload");
+require("dotenv").config();
 
 const app = express();
 
@@ -23,15 +25,30 @@ app.use(express.urlencoded({ extended: true }));
 // use Cookie Parser
 app.use(cookieParser("secret"));
 
+let sessionStore = new MySQLStore({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_SESI,
+  createDatabaseTable: true,
+  expiration: 86400000,
+  schema: {
+    tableName: "sessiontb1",
+    columnNames: {
+      session_id: "session_id",
+      expires: "expires",
+      data: "data",
+    },
+  },
+});
+
 // config session
 app.use(
   session({
     secret: "secret",
-    resave: true,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 86400000,
-    },
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: true,
   })
 );
 
