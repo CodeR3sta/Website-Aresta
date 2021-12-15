@@ -9,17 +9,20 @@
     <script src="https://kit.fontawesome.com/78ac0bed3f.js" crossorigin="anonymous"></script>
     <meta name="description" content="
     Website tempat dimana sebuah ajang paling bergengsi se-Indonesia diadakan. Buruan daftar sekarang!">
-    <title>Beranda - Aresta 17</title>
+    <script src="../modules/anime-master/anime-master/lib/anime.min.js"></script>
+    <title>document</title>
 </head>
 
 <body>
-
+    <section class="tag">
     <div class="page-one">
         <div class="circle"><img src="../resources/logo-circle-01.webp" class="responsive-image" alt="logo aresta 17"></div>
         <h1>AJANG REMAJA<br>BERPRESTASI KE-17</h1>
         <p>Sebuah Ajang Bergengsi Se-Indonesia</p>
-        <a class="tombol-daftar" href="/register">DAFTAR</a>
+        <a onmouseover="anime(this)" class="tombol-daftar" href="/register">DAFTAR</a>
     </div>
+    </section>
+
     <div class="transisi-linear">
         
     </div>
@@ -93,6 +96,9 @@
                     <li><a href="mailto:aresta.husnulkhotimah@gmail.com" target="_blank">aresta.husnulkhotimah@gmail.com</a></li>
                 </ul>
             </div>
+            <div class="ft-oshk">
+                <img src="../resources/LOGO_TRACE.svg" height="100" width=auto>
+            </div>
         </section>
 
         <section class="ft-social">
@@ -113,5 +119,43 @@
             </ul>
         </section>
     </footer>
+    <script>
+        $(document).on("scroll", function() {
+            var pageTop =
+            $(document).scrollTop();
+            var pageBottom = pageTop + $(window).height();
+            $(window).height();
+            var tags = $("tag");
+            
+            for (var i = 0; i < tags.length; i++) {
+                var tag = tags[i]
+            }
+
+            if($(tag).position().top < pageBottom) {
+                $(tag).addClass("visible")
+            } else {
+                $(tag).removeClass("visible");
+            }
+        })
+    </script>
+    <script src="../modules/anime-master/anime-master/lib/anime.min.js">
+
+        let anime = () => {
+            anime1({
+                targets: 'a.tombol-daftar',
+                translateX: 250,
+                easing: 'easeInOutQuad'
+            });
+        };
+
+        const daftar = document.getElementsByClassName(".tombol-daftar")
+        daftar.onMouseOver = function() {
+            anime2({
+                targets: 'a.tombol-daftar',
+                translateX: 250,
+                easing: 'easeInOutQuad'
+            });
+        };
+    </script>
 </body>
 </html>

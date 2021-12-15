@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Oswald:wght@600&family=Poppins:wght@600&family=Work+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 @media screen and (max-width:600px) {
   .navbar ul {
     flex-wrap: wrap;
@@ -32,7 +34,7 @@ body {
 
 img.responsive-images {
   width: 100%;
-  height: autp;
+  height: auto;
 }
 
 .page-one {
@@ -55,15 +57,16 @@ img.responsive-images {
 
 .page-one h1 {
   color: white;
-  font-family: 'Oswald';
+  font-family: 'Roboto Condensed';
   font-size: 8vw;
   margin: 0;
-  line-height: 130%;
+  line-height: 120%;
 }
 
 .page-one p {
   color: rgb(177, 45, 133);
-  font-family: 'Work Sans';
+  font-family: 'Poppins';
+  font-weight: 700;
   font-size: 1.4rem;
   margin-bottom: 3rem;
   background-color: white;
@@ -77,9 +80,11 @@ img.responsive-images {
   padding: 0.5rem 1.5rem;
   background-color: #df37b7;
   font-family: 'Poppins';
+  font-weight: 700;
   width: 80px;
   display: block;
   margin: auto;
+  transition: 0.3s ease all;
 }
 
 .page-one a:hover {
@@ -213,18 +218,6 @@ img.responsive-images {
   padding: 6rem 2rem 6rem 2rem;
 }
 
-.page-four .list-lomba ul li a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Noto Sans';
-  text-transform: uppercase;
-  font-size: 1.5rem;
-}
-
-.page-four .list-lomba ul li a:hover {
-  color: yellow;
-}
-
 footer {
   background-color: rgb(204, 51, 153);
   color: #bbb;
@@ -255,6 +248,14 @@ a:hover {
   padding: 1.25rem 1.875rem;
   display: flex;
   flex-wrap: wrap;
+}
+
+.ft-oshk {
+  right: 0;
+  display: flex ;
+  padding: 10px 20px;
+  justify-content: center;
+  align-content: center;
 }
 
 .ft-main-item {
