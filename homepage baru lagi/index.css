@@ -235,10 +235,6 @@ footer a {
 }
 
 a:hover {
-  text-decoration: underline;
-}
-
-.ft-title {
   color: #fff;
   font-size: 1.375rem;
   padding-bottom: 0.625rem;
