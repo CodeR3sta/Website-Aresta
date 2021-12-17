@@ -38,6 +38,7 @@ a.tombol {
     color: #FF00C3;
     padding: 15px 20px;
     outline: 2px solid;
+    text-decoration: none;
 }
 
 a.tombol:hover {
@@ -55,6 +56,53 @@ h1.perlombaan {
     text-transform: uppercase;
     font-family: 'Montserrat';
     font-weight: 900;
+    font-size: 5rem;
     color: #FF00C3;
     text-align: center;
+}
+
+p.keterangan {
+    font-family: 'Montserrat';
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FF00C3;
+    color: black;
+}
+
+p.keterangan, h1.perlombaan {
+    padding: 0;
+    margin: 0;
+}
+
+.trailer#trailer {
+    margin: auto;
+    background-image: url(../resources/trailerv2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+iframe.frame {
+    z-index: 1;
+    margin: auto;
+}
+
+#gambar {
+    width: 100vh;
+}
+
+#headline {
+    height: 100vh;
+    padding-top: 24vh;
+}
+
+#trailer {
+    height: 100vh;
+    margin: 0;
+}
+
+#lomba {
+    height: 100vh;
 }
