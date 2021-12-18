@@ -79,11 +79,40 @@ p.keterangan, h1.perlombaan {
     background-size: contain;
 }
 
-iframe.frame {
-    z-index: 1;
-    margin: auto;
+.trailer {
+    padding-top: 0.3vh;
+    position: relative;
+    overflow: hidden;
 }
 
+iframe.frame {
+    margin: auto;
+    height: 64.125vh;
+    width: 114vh;
+    display: block;
+}
+
+.list-lomba {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list-lomba ul {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.list-lomba ul li {
+    display: flex;
+    padding: 6rem 2rem 6rem 2rem;
+}
+
+.list-lomba ul li a:hover {
+    filter: sepia();
+    transition: 0.4s ease all;
+}
 
 a {
     color: inherit;
@@ -105,7 +134,7 @@ a {
 }
 
 #lomba {
-    height: 100vh;
+    height: auto;
 }
 
 /* Footer Section */
@@ -190,7 +219,7 @@ ul li a {
 .weem {
     font-family: 'Montserrat';
     font-weight: 900;
-    color: white;
+    color: black;
     text-align: center;
     font-size: 0.8rem;
     padding: 0.5rem;
@@ -198,9 +227,14 @@ ul li a {
 }
 
 /* Media Queries */
-
 @media screen and (max-width: 900px) {
     .ft-main {
         flex-direction: column;
+    }
+    .list-lomba ul {
+        display: flex;
+        flex-direction: column;
+        margin-left: 100vw;
+        margin-right: 100vw;
     }
 }
