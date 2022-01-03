@@ -4,54 +4,70 @@ body {
     background-color: black;
 }
 
+
 h1 {
+    color: #FF00C3;
     font-family: 'Montserrat';
-    color: white;
-    font-weight: 700;
-    padding-top: 10vh;
-    padding-bottom: 5vh;
+    font-weight: 800;
+    font-size: 7rem;
     text-transform: uppercase;
+    padding-top: 10vh;
 }
 
-h3 {
+.header p {
     font-family: 'Montserrat';
-    font-weight: 600;
-    color: white;
-    padding-top: 5vh;
-    padding-bottom: 1vh;
-    text-transform: upp;
-}
-
-p {
-    font-family: 'Montserrat';
+    font-size: 1.5rem;
     font-weight: 500;
-    color: white;
-    margin-bottom: 0;
-    padding-bottom: 3vh;
-    padding-top: 2vh;
+    text-transform: capitalize;
+    color: #FF00C3;
+    padding-right: 20vw;
+    padding-bottom: 2rem;
 }
 
 a {
     font-family: 'Montserrat';
-    font-weight: 200;
-    color: whitesmoke;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #FF00C3;
+    padding-right: 20vw;
+    text-decoration: none;
 }
 
 a:hover {
-    color: yellow;
+    color: #47C0B4;
+    transition: 0.4s ease all;
 }
 
-.container {
-    padding-right: 30vh;
+.isi {
+    padding-top: 2rem;
+}
+
+.isi ul {
+    padding-bottom: 5rem;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.isi ul li {
+    padding-bottom: 2.5rem;
 }
 
 @media screen and (max-width:900px) {
     .container {
-        padding-right: 5vh;
-        padding-left: 5vh;
+        padding-right: 2rem;
+        padding-left: 2rem;
     }
     h1 {
-        padding-bottom: 0;
+        font-size: 3rem;
     }
-    
+    .header p {
+        font-size: 1rem;
+        padding-right: 1.2rem;
+    }
+    a {
+        padding-right: 0;
+        font-size: 1.7rem;
+    }
 }
