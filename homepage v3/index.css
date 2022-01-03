@@ -5,6 +5,23 @@ body {
     background-color: black;
 }
 
+.prompt {
+    background-color: #FF00C3;
+}
+
+.prompt .container p {
+    color: black;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 800;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
 p.aresta {
     font-family: 'Montserrat';
     text-transform: uppercase;
