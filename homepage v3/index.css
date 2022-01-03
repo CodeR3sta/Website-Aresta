@@ -87,8 +87,8 @@ p.keterangan, h1.perlombaan {
 
 iframe.frame {
     margin: auto;
-    height: 64.125vh;
-    width: 114vh;
+    height:34vw;
+    width: 60vw;
     display: block;
 }
 
@@ -265,12 +265,14 @@ ul li a {
         font-size: 5vw;
     }
     iframe.frame {
-        width: 83vw;
-        height: 45.9vw;
+        width: 79vw;
+        height: 42vw;
     }
     .trailer#trailer {
         background-image: url("../resources/trailerv2_mobile.png");
         background-repeat: no-repeat;
         background-size: contain;
+    }
+    .ft-main-item ul li a {
     }
 }
