@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "poppins";
+  src: url("./Poppins-Bold.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "poppins-regular";
+  src: url("./Poppins-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "poppins-semi";
+  src: url("./Poppins-SemiBold.ttf");
+  font-display: swap;
+}
+/* @font-face {
+    font-family: "poppins-thin";
+    src: url('./Poppins-Thin.ttf');
+    font-display: swap;
+
+}
+@font-face {
+    font-family: "bebas-regular";
+    src: url('./BebasNeue\ Regular.otf');
+    font-display: swap;
+
+}
+@font-face {
+    font-family: "roboto-thin";
+    src: url('./Roboto-Thin.ttf');
+    font-display: swap;
+
+}
+@font-face {
+    font-family: "bebas-thin";
+    src: url('./BebasNeue\ Light.otf');
+    font-display: swap;
+
+}
+@font-face {
+    font-family: "roboto-bold";
+    src: url('./Roboto-Bold.ttf');
+    font-display: swap;
+
+}
+@font-face {
+    font-family: "roboto-italic";
+    src: url('./Roboto-LightItalic.ttf');
+    font-display: swap;
+
+}
+@font-face {
+    font-family: "roboto-medium";
+    src: url('./Roboto-Medium.ttf');
+    font-display: swap;
+
+} */
+
+/* @font-face {
+    font-family: "opensans-regular";
+    src: url('./OpenSans-Regular.ttf');
+    font-display: swap;
+
+} */
+
+/* @font-face {
+    font-family: "oswald-semi";
+    src: url('./Oswald-SemiBold.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: "worksans-extra";
+    src: url('./WorkSans-ExtraBold.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: "notosans-bold";
+    src: url('./NotoSans-Bold.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: "worksans-bold";
+    src: url('./WorkSans-Bold.ttf');
+    font-display: swap;
+} */

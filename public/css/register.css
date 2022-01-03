@@ -1,0 +1,275 @@
+@import url("/font/font.css");
+
+body {
+  margin: 0px;
+  text-align: center;
+  font-family: "poppins";
+  width: 100%;
+  background-color: rgb(0, 0, 51);
+  color: white;
+}
+
+h1 {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  /* background-color: red; */
+}
+
+form div input[type="text"],
+input[type="email"],
+input[type="password"] {
+  display: block;
+}
+
+form .detail {
+  margin: 20px 0px;
+  width: 400px;
+  text-align: center;
+  /* background-color: blue; */
+}
+
+.detail h1 {
+  margin: 15px;
+}
+
+.detail select {
+  font-size: 15px;
+  padding: 7px;
+  margin: 10px;
+  background-color: rgba(5, 4, 4, 0.432);
+  color: white;
+}
+
+.detail select:focus {
+  outline: none;
+  border: 2px solid rgb(255, 0, 204);
+}
+
+.detail input[type="text"] {
+  margin: 20px auto;
+  width: 80%;
+  font-size: 18px;
+  padding: 7px;
+  background-color: rgba(5, 4, 4, 0.432);
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+}
+
+.detail input[type="text"]:focus {
+  outline: none;
+  border: 2px solid rgb(255, 0, 204);
+}
+
+.detail .listLomba {
+  width: 80%;
+  margin: auto;
+}
+
+form .akun {
+  width: 400px;
+  margin: 20px 0px;
+  text-align: center;
+  /* background-color: green; */
+}
+
+.akun input {
+  width: 80%;
+  margin: 20px auto;
+  font-size: 20px;
+  padding: 7px;
+  background-color: rgba(5, 4, 4, 0.432);
+  border: none;
+  text-align: center;
+  color: white;
+  border-radius: 20px;
+}
+
+.akun input:focus {
+  outline: none;
+  border: 2px solid rgb(255, 0, 204);
+}
+
+/* Password required */
+.akun .pass-req {
+  display: none;
+  margin: -20px 40px;
+  position: absolute;
+  background-color: whitesmoke;
+  text-align: left;
+  color: black;
+  width: 320px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+}
+
+.akun .pass-req p {
+  margin: 1px;
+  font-size: 10px;
+}
+
+.akun input#pass:focus + .pass-req {
+  display: block;
+}
+
+.akun .show {
+  height: 25px;
+  margin-left: 10%;
+  width: 50%;
+  text-align: left;
+}
+
+.akun .show input#show {
+  width: auto;
+  margin: 0px;
+}
+
+/* message */
+.akun .message {
+  width: 70%;
+  margin: auto;
+  text-align: left;
+  background-color: rgba(247, 87, 140, 0.918);
+  border-radius: 6px;
+}
+
+.akun .message p {
+  font-weight: bold;
+  color: red;
+  margin: 0px;
+  padding: 0px 10px;
+}
+
+.akun .btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.akun .btn h5 {
+  margin: 0px;
+  font-size: 15px;
+}
+
+.akun .btn .daftar {
+  width: 50%;
+  font-family: "poppins";
+  padding: 5px 0px;
+  color: white;
+  font-size: 20px;
+  margin: 15px auto;
+  border-style: none;
+  border-radius: 5px;
+  background-color: rgb(255, 0, 204);
+  cursor: pointer;
+}
+
+.akun .btn .login {
+  width: 50%;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin: 15px auto;
+  border-style: none;
+  border-radius: 5px;
+  background-color: rgb(255, 0, 204);
+  cursor: pointer;
+}
+
+.akun .btn .daftar:hover,
+.akun .btn .login:hover {
+  background-color: yellow;
+  color: rgb(255, 0, 204);
+}
+
+.akun button#submit-tahap2 {
+  visibility: hidden;
+}
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .modal-content {
+  margin: 10% auto;
+  width: 60%;
+  text-align: center;
+  background-color: whitesmoke;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3),
+    0 6px 20px 0 rgba(240, 162, 162, 0.25);
+}
+
+.modal .modal-content .close {
+  left: 45%;
+  position: relative;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal .modal-content .btn-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.modal .modal-content .btn-modal label {
+  background-color: #0db02b;
+  cursor: pointer;
+  width: 120px;
+  margin: 10px 20px;
+  padding: 5px 5px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}
+
+.modal .modal-content .btn-modal .closeb {
+  background-color: #aaaaaa;
+  font-family: "poppins";
+  cursor: pointer;
+  padding: 5px 5px;
+  width: 120px;
+  margin: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  form .detail {
+    width: 250px;
+  }
+
+  form .akun {
+    width: 250px;
+  }
+
+  .akun .pass-req {
+    width: 200px;
+    margin: -20px 25px;
+  }
+}

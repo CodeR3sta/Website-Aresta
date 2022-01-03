@@ -1,0 +1,35 @@
+.tahap1 .form {
+  width: 80%;
+  margin: 70px auto;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.tahap1 .form h1 {
+  padding: 10px;
+}
+
+.tahap1 .form .table,
+.namaPeserta {
+  padding: 10px;
+}
+
+.tahap1 .form table {
+  width: 80%;
+  margin: auto;
+}
+
+.tahap1 .form .table tr,
+td {
+  padding: 10px;
+}
+
+.tahap1 .form td[id="1"] {
+  width: 50%;
+}
+
+.tahap1 .form td[id="3"] {
+  width: 50%;
+  text-align: left;
+}

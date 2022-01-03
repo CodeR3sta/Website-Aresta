@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Oswald:wght@600&family=Poppins:wght@600&family=Work+Sans:wght@800&display=swap");
+
+@media screen and (max-width: 800px) {
+  .page-one {
+    padding: 4rem 3rem 2rem 3rem !important;
+  }
+  * {
+    padding: 0;
+    margin: 0 auto;
+  }
+  img {
+    width: 100%;
+  }
+}
+body {
+  background-color: #080211;
+  margin: 0;
+}
+
+.page-one {
+  padding: 5rem 20rem 3rem 7rem;
+}
+
+h1 {
+  font-family: "Poppins";
+  color: white;
+  padding-bottom: 2rem;
+  padding-left: 0.5rem;
+}
+
+.page-one h2 {
+  color: white;
+  font-family: "Poppins";
+}
+
+img {
+  margin: 0 auto;
+}
+
+p {
+  padding: 1rem;
+  font-family: "Noto sans";
+  font-size: 1rem;
+  color: white;
+}
+a {
+  color: inherit;
+}

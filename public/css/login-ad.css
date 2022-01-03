@@ -1,0 +1,78 @@
+body {
+  margin: 0px;
+}
+.card {
+  width: 350px;
+  min-height: 500px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 50px auto;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card h1 {
+  margin: 0px;
+  padding: 15px;
+}
+.card .input {
+  margin: 30px 0px 10px 0px;
+}
+.card .atas {
+  margin-top: 30px;
+}
+.card .input input {
+  font-size: 20px;
+  padding: 10px;
+  width: 80%;
+}
+.card .show {
+  margin-left: 10%;
+  text-align: left;
+}
+/* MESSAGE */
+.card .message {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  background-color: rgba(255, 0, 55, 0.5);
+  border-radius: 6px;
+}
+.card .message p {
+  font-weight: bold;
+  color: red;
+  margin: 0px;
+  padding: 0px 10px;
+}
+.card .button {
+  margin: 20px;
+}
+.card .button .login {
+  margin-top: 20px;
+  font-size: 20px;
+  color: white;
+  padding: 7px 70px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: rgb(0, 122, 255);
+  cursor: pointer;
+}
+.card .button h5 {
+  margin: 15px;
+  font-size: 15px;
+  color: rgb(48, 45, 45);
+}
+.card .button .daftar {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  padding: 7px 68px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: rgb(0, 122, 255);
+  cursor: pointer;
+}
+.card .lupa {
+  display: block;
+  padding-bottom: 15px;
+}

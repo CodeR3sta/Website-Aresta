@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/usersPage/users.css">
+    <link rel="stylesheet" href="/css/usersPage/tahap1.css">
+    <link rel="stylesheet" href="/css/usersPage/tahap2.css">
+    <link rel="stylesheet" href="/css/usersPage/tahap3.css">
+    <link rel="stylesheet" href="/css/usersPage/status.css">
+    <title>Users Page</title>
+    <script src="https://kit.fontawesome.com/78ac0bed3f.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="mb-nav-users" id="mb-nav-users">
+        <h2 id="daftar">Pendaftaran &#709</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap2')" id="defaultOpen">Tahap 2</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
+        <form action="/logout" method="post">
+            <button id="logout">Logout</button>
+        </form>
+    </div>
+    <nav>
+        <ul>
+            <li>ARESTA 17</li>
+            <li class="navbar-toggle"><i class="fas fa-bars" id="op-nav"></i></li>
+        </ul>
+        <img src="/img/usersPage/logoAresta.png" alt="logo-aresta">
+        <hr>
+        <h4><%= user.namaUtama %></h4>
+        <hr>
+        <h2 id="daftar">Pendaftaran &#709</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap2')" id="defaultOpen">Tahap 2</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
+        <hr>
+        <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
+        <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
+        <hr>
+        <form action="/logout" method="post">
+            <button id="logout">Logout</button>
+        </form>
+    </nav>
+
+    <div class="tahap1 tabcontent" id="tahap1">
+        <div class="msg" >
+            <% if (user.pesan != '') { %>
+                <h1><%- user.pesan %> </h1>
+            <% } %>
+        </div>
+        <div class="form">
+            <h1>FORMULIR</h1>
+            <div class="table">
+                <table>
+                    <tr>
+                        <td id="1">Asal Sekolah</td>
+                        <td>:</td>
+                        <td id="3"><%= user.sekolah %></td>
+                    </tr>
+                    <tr>
+                        <td id="1">Tingkat</td>
+                        <td>:</td>
+                        <td id="3"><%= user.tingkat %></td>
+                    </tr>
+                    <tr>
+                        <td id="1">Lomba</td>
+                        <td>:</td>
+                        <td id="3"><%= user.lomba %></td>
+                    </tr>
+                    <tr>
+                        <td id="1">Kategori</td>
+                        <td>:</td>
+                        <td id="3"><%= user.kategori %></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="namaPeserta">
+                <table>
+                    
+                    <tr>
+                        <td id="1">Nama Ketua</td>
+                        <td>:</td>
+                        <td id="3"><%= user.namaUtama %></td>
+                    </tr>
+                    <% for( let i = 1; i <= user.jumlahAnggota; i++ ) { %>
+                        <% if (user[`anggota${i}`] != '') { %>
+                            <tr>
+                                <td id="1">Anggota</td>
+                                <td>:</td>
+                                <td id="3"><%= user[`anggota${i}`] %></td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="tahap2 tabcontent" id="tahap2">
+        <div class="msg">
+            <% if (user.pesan != '') { %>
+                <h1><%- user.pesan %> </h1>
+            <% } %>
+        </div>
+
+        <div class="upload">
+            <% if (user.status === 1) { %>
+                <div class="msg" style="text-align: left;">
+                    <p>
+                        *format file : png / jpg / jpeg <br>
+                        *file size : Kurang dari 20MB <br>
+                        *post Ig : <a target="_blink" href="https://twb.nz/aresta17">buat twibon</a> <br>
+                        *diharuskan untuk mengupload file satu-persatu dengan internet stabil <br>
+                    </p>
+                </div>
+                <hr>
+                    <% if (user[`suratRekomendasi`] === '') { %>
+                            <form action="/users/suratRekomendasi" method="post" enctype="multipart/form-data">
+                                <td><label for="suratRekomendasi">Upload surat Rekomendasi sekolah:</label></td>
+                                <td><input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*" required></td>
+                                <td><button type="submit">submit</button></td>
+                            </form>
+                    <% } else { %>
+                            <td><label for="suratRekomendasi">Upload surat Rekomendasi sekolah:</label></td>
+                            <td>:</td>
+                            <td>Terkirim</td>
+                    <% } %>
+                    <hr>
+                    <% if (user.lomba === 'nasyid') { %>
+                        <% if (user[`fotoTim`] === '') { %>
+                                <form action="/users/fotoTim" method="post" enctype="multipart/form-data">
+                                    <td><label for="fotoTim">Upload Foto Tim:</label></td>
+                                    <td><input type="file" name="fotoTim" id="fotoTim" accept="image/*" required></td>
+                                    <td><button type="submit">submit</button></td>
+                                </form>
+                        <% } else { %>
+                                <td><label for="fotoTim">Upload Foto Tim:</label></td>
+                                <td>:</td>
+                                <td>Terkirim</td>                                 
+                        <% } %>
+                        <hr>
+                    <% } %>
+                    <% for( let i = 1; i <= user.jumlahAnggota + 1; i++ ) { %>
+
+                        <% if (user[`postIg${i}`] === '') { %>
+                                <form action="/users/postIg<%- i %>" method="post" enctype="multipart/form-data">
+                                    <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
+                                    <td><input type="file" name="postIg<%- i %>" id="postIg<%- i %>" accept="image/*" required></td>
+                                    <td><button type="submit">submit</button></td>
+                                </form>
+                        <% } else { %>
+                                <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
+                                <td>:</td>
+                                <td>Terkirim</td>
+                        <% } %>
+                        <hr>
+                        <% if (user[`fotoDiri${i}`] === '') { %>
+                                <form action="/users/fotoDiri<%- i %>" method="post" enctype="multipart/form-data">
+                                    <td><label for="fotoDiri<%- i %>">Upload Foto Diri <%- i %> :</label></td>
+                                    <td><input type="file" name="fotoDiri<%- i %>" id="fotoDiri<%- i %>" accept="image/*" required></td>
+                                    <td><button type="submit">submit</button></td>
+                                </form>
+                        <% } else { %>
+                                <td><label for="fotoDiri<%- i %>">Upload Foto Diri <%- i %> :</label></td>
+                                <td>:</td>
+                                <td>Terkirim</td>
+                        <% } %>
+                     
+                    <% } %>
+                
+
+            <% } else if (user.status === 2) { %>
+                <img id="logo-pending" src="/img/usersPage/attention.png" alt="attention" width="200px" height="200px" >
+                <h1>Sedang di periksa oleh Panitia ARESTA17</h1>
+                <h2>Perkiraan Waktu pemeriksaan : < 1 x 24 jam</h2>
+            <% } else if (user.status === 3 || user.status === 4) { %>
+                <img id="logo-selesaiTahap2" src="/img/usersPage/verified.png" alt="verified" width="200px" height="200px">
+                <h1>Tahap 2 Pendaftaran Telah Selesai</h1>
+            <% } %>
+            
+        </div>
+    </div>
+    <div class="tahap3 tabcontent" id="tahap3">
+        <div class="msg" >
+            <% if (user.pesan != '') { %>
+                <h1><%- user.pesan %> </h1>
+            <% } %>
+        </div>
+        <div class="infaq">
+            <% if (user.status === 1 || user.status === 2) { %>
+                <img id="logo-pending" src="/img/usersPage/attention.png" alt="attention" width="200px" height="200px" >
+                <h1>Selesaikan dahulu Tahap Dua Pendaftaran</h1>
+            <% } else if (user.status === 3) { %>
+                <h1>Pembayaran</h1>
+                <p>-Melakukan pembayaran dengan nominal:</p>
+                <p>Individu = Rp. 25.000</p>
+                <p>Kelompok = Rp. 50.000</p>
+                <p>REKENING : 7104501154   (Ali Muchtar QQ ARESTA BANK BSI)</p>
+                <hr>
+                <p>-Dan Mengirim bukti pembayaran ke:</p>
+                <p>0858-6370-4512 (whatsapp)</p>                <div class="chat">
+                    <a class="chatWA" target="_blink" href="https://api.whatsapp.com/send?phone=085863704512&text=(kirim bukti pembayaran)%0Anama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor%20Hp%20%3A">
+                        <div>chat</div>
+                    </a>
+                </div>
+            <% } else if (user.status === 4) { %>
+                <img id="logo-selesaiTahap2" src="/img/usersPage/verified.png" alt="verified" width="200px" height="200px">
+                <h1>Tahap 3 Pendaftaran Telah Selesai</h1>
+            <% } %>
+            
+        </div>
+    </div>
+    <div class="status tabcontent" id="status">
+    
+        <div class="msg" >
+            <% if (user.pesan != '') { %>
+                <h1><%- user.pesan %> </h1>
+            <% } %>
+        </div>
+
+        <div class="st-container">
+            <div class="st-tahap1">
+                <h2>Tahap 1</h2>
+                <hr>
+                <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                <h3 style="color: #0db02b;">Selesai.</h3>
+            </div>
+            <% if (user.status === 1) { %>
+                <div class="st-tahap2">
+                    <h2>Tahap 2</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">Belum Selesai</h3>
+                </div>
+                <div class="st-tahap3">
+                    <h2>Tahap 3</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">Belum Selesai</h3>
+                </div>
+                <div class="st-selesai">
+                    <h2>Status</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">selesaikan Tahap-2</h3>
+                </div>
+            <% } else if (user.status === 2) { %>
+                <div class="st-tahap2">
+                    <h2>Tahap 2</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">Pending</h3>
+                </div>
+                <div class="st-tahap3">
+                    <h2>Tahap 3</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">Belum Selesai</h3>
+                </div>
+                <div class="st-selesai">
+                    <h2>Status</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">Sedang dicek Panitia (Tahap Kedua)</h3>
+                </div>
+            <% } else if (user.status === 3) { %>
+                <div class="st-tahap2">
+                    <h2>Tahap 2</h2>
+                    <hr>
+                    <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                    <h3 style="color: #0db02b;">Selesai</h3>
+                </div>
+                <div class="st-tahap3">
+                    <h2>Tahap 3</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">Belum Selesai</h3>
+                </div>
+                <div class="st-selesai">
+                    <h2>Status</h2>
+                    <hr>
+                    <img  src="/img/usersPage/attention.png" alt="" width="80px">
+                    <h3 style="color: #e8de12;">selesaikan Tahap-3</h3>
+                </div>
+            <% } else if (user.status === 4) { %>
+                <div class="st-tahap2">
+                    <h2>Tahap2</h2>
+                    <hr>
+                    <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                    <h3 style="color: #0db02b;">Selesai</h3>
+                </div>
+                <div class="st-tahap3">
+                    <h2>tahap3</h2>
+                    <hr>
+                    <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                    <h3 style="color: #0db02b;">Selesai</h3>
+                </div>
+                <div class="st-selesai">
+                    <h2>status</h2>
+                    <hr>
+                    <img  src="/img/usersPage/verified.png" alt="" width="80px">
+                    <h3 style="color: #0db02b;">Selesai</h3>
+                </div>
+            <% } %>          
+        </div>
+        <div class="detail-tahap">
+            <h2>Tahap 1  -  Formulir</h2>
+            <p>Mengisi formulir digital sekaligus membuat akun peserta</p>
+        </div>
+        <div class="detail-tahap">
+            <h2>Tahap 2  -  Upload Foto Dokumen</h2>
+            <p>Upload foto foto yang telah ditentukan didalam Ketentuan Umum</p>
+        </div>
+        <div class="detail-tahap">
+            <h2>Tahap 3  -  Pembayaran</h2>
+            <p>-Melakukan pembayaran dengan nominal:</p>
+            <p>Individu = Rp. 25.000</p>
+            <p>Kelompok = Rp. 50.000</p>
+            <p>REKENING : 7104501154  (Ali Muchtar QQ ARESTA BANK BSI)</p>
+            <p>-Serta Mengirim bukti pembayaran ke:</p>
+            <p>0858-6370-4512 (whatsapp)</p>
+        </div>
+
+    </div>
+    <div class="juknis tabcontent" id="juknis">
+ 
+        <div class="msg" >
+            <% if (user.pesan != '') { %>
+                <h1><%- user.pesan %> </h1>
+            <% } %>
+        </div>
+
+        <div class="pdf">
+            <% if (user.lomba === 'nasyid') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1NQIP9oWjOHLVmF89J4dKDt1X2RTIQlFK/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'storyTelling') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1DCm39GJ_nLAVme0g31gH2UvL0qYw53zW/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'olimpiadeArab') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1lLG8jcafgXSMl_shjxrIGnQXcvyDq_uv/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'daiCilik') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1RNWzpAFO_uM1awTs3yNjnjz3y7jFWm3c/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'mhqSd') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1yKwpgZ0WF78ZCaXy8Oh0yC-akIGnJ8TE/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'mhqSmp') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1StXiiTI9ZlC2E0rkl5C589ZoJ_gbWX8i/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'mhqSma') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1ZuJOAgtfuIxGms29-7THexL-HkjddevT/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'arestaSurvivalCamp') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1c7TKaf-CzYxR2dfxMbmxIlNgNm0SUCOq/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'dramatisasiPuisi') { %> 
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1gryFgel0dSWVndjR5yhOqXZleaIRnn8S/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'videoKreatif') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1H6a3TtX1awYZJCgvcCXecEaB4WeWduz5/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'ldbi') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1dje_yzcpi8glNBWkVAZeF1UrHNmn1geR/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'khitobah') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1mjmAS1o72NmWiYCgn7O352SyhmhBJq7t/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'fotografi') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/11vqKufsTSSTTzxVjkt_F5gZB0uopq2nI/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'designPoster') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1khhVzCGWxD21Xe0Xhzpc_pACtqyh6QXn/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } else if (user.lomba === 'businessPlan') { %>
+                <iframe rel="noopener" src="https://drive.google.com/file/d/1P9hIFHGyhleLwAC6pZKs2PKhflXNRsV0/preview" width="80%" height="480" allow="autoplay"></iframe>
+            <% } %>
+        </div> 
+    </div>
+    <div class="sertifikat tabcontent" id="sertifikat">
+        <div class="msg" >
+            <% if (user.pesan != '') { %>
+                <h1><%- user.pesan %> </h1>
+            <% } %>
+        </div>
+        <div class="pdf">
+            <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
+            <h1>E-Sertifikat Belum Tersedia</h1>
+        </div> 
+    </div>
+</body>
+<script src="/js/navUsers.js"></script>
+<script src="/js/users.js"></script>
+<script>
+    let cond = '<%= pesan %>'
+    if (cond === 'isi') {
+        alert('Pilih Gambar')
+    }
+    if (cond === 'extensi') {
+        alert('Format File Bukan png/jpg/jpeg')
+    }
+    if (cond === 'ukuran') {
+        alert('Ukuran Gambar Harus Lebih Kecil dari 20Mb')
+    }
+    if (cond === 'gagal') {
+        alert('Gagal Upload. Silakan Upload Ulang.')
+    }
+
+
+</script>
+
+</html>

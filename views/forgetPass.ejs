@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (hal === 'forgot') { %>
+        <h1><%= msgForgot %> </h1>
+        <form action="/forgot-password" method="post">
+            <input type="email" name="email">
+            <button type="submit">send</button>
+        </form>
+    <% } %>
+
+    <% if (hal === 'reset') { %>
+        <h1><%= msgForgot %> </h1>
+        <form action="/reset-password/?verify=<%- token %>" method="post">
+            <input type="password" name="password" id="" required>
+            <input type="password" name="passwordConfirm" id="" required>
+            <button type="submit">submit</button>
+            <h2>password:</h2>
+            <h3>- Minimal 8 karakter</h3>
+            <h3>- Memiliki huruf kecil, huruf besar, dan Angka</h3>
+        </form>
+
+    <% } %>
+
+</body>
+</html>

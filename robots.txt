@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /tests
-Disallow: /faralha
-
-Sitemap: https://www.aresta17.com/sitemap.xml

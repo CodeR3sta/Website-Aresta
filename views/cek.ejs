@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>username</td>
+            <td>:</td>
+            <td><%- obj.username %> </td>
+        </tr>
+        <tr>
+            <td>phone</td>
+            <td>:</td>
+            <td><%- obj.phone %> </td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>:</td>
+            <td><%- obj.email %> </td>
+        </tr>
+        <tr>
+            <td>status</td>
+            <td>:</td>
+            <td><%- obj.status %> </td>
+        </tr>
+        <tr>
+            <td>sekolah</td>
+            <td>:</td>
+            <td><%- obj.sekolah %> </td>
+        </tr>
+        <tr>
+            <td>tingkat</td>
+            <td>:</td>
+            <td><%- obj.tingkat %> </td>
+        </tr>
+        <tr>
+            <td>lomba</td>
+            <td>:</td>
+            <td><%- obj.lomba %> </td>
+        </tr>
+        <tr>
+            <td>kategori</td>
+            <td>:</td>
+            <td><%- obj.kategori %> </td>
+        </tr>
+        <tr>
+            <td>Registered</td>
+            <td>:</td>
+            <td><%- obj.registered %> </td>
+        </tr>
+    </table> 
+    <table>
+        <tr>
+            <td>nama Ketua</td>
+            <td>:</td>
+            <td><%- obj.namaUtama %> </td>
+        </tr>
+        <% for( let i = 1; i <= 24; i++ ) { %>
+            <% if (obj[`anggota${i}`] != '') { %>
+                <tr>
+                    <td>Anggota</td>
+                    <td>:</td>
+                    <td><%- obj[`anggota${i}`] %></td>
+                </tr>
+            <% } %>
+        <% } %>
+    </table>
+    
+    <% if (obj.status !== 0) { %>
+        <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj.suratRekomendasi %>">surat rekomendasi</a>
+        <% if (obj.lomba === 'nasyid') { %>
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj.fotoTim %>">foto tim</a>         
+        <% } %>
+        <% for( let i = 1; i <= obj.jumlahAnggota + 1 ; i++ ) { %>
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj[`postIg${i}`] %>">Post Ig<%- i %></a>         
+            <a href="/code/resta/panitia/users/gambar/<%- obj.username %>/<%- obj.sekolah %>/<%- obj[`fotoDiri${i}`] %>">Foto Diri<%- i %></a>         
+        <% } %>
+    <% } %>
+
+    <% if (obj.status === 2) { %>
+        <div class="form">
+            <h1>Konfirmasi Gambar</h1>
+            <form action="/code/resta/panitia/users/konfirmasi/tahap2/<%- obj.id %> " method="post">
+                <label for="berhasil">Benar :</label>
+                <input type="radio" name="hasil" id="berhasil" value="benar" required>
+                <label for="gagal">Salah :</label>
+                <input type="radio" name="hasil" id="gagal" value="salah" required>
+
+                <input type="text" name="pesan" placeholder="pesan">
+                <input type="text" name="username" placeholder="username">
+
+                <input type="password" name="password" placeholder="password Konfirmasi" >
+
+                <button type="submit">Submit</button>
+
+            </form>
+        </div>
+    <% } else if (obj.status === 3) { %>
+        <div class="form">
+            <h1>Konfirmasi Pembayaran</h1>
+            <form action="/code/resta/panitia/users/konfirmasi/tahap3/<%- obj.id %>" method="post">
+                <input type="text" name="pesan3" placeholder="pesan">
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password Konfirmasi">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    <% } %>
+
+    <h1>HAPUS AKUN PESERTA</h1>
+    <form action="/code/resta/panitia/users/delete/<%- obj.id %>" method="post">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password delete">
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

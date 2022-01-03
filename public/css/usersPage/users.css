@@ -1,0 +1,201 @@
+@import url("/font/font.css");
+
+body {
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  font-family: "poppins";
+}
+
+.mb-nav-users {
+  display: none;
+}
+
+nav {
+  color: #ffffff;
+  background-color: rgb(0, 0, 51);
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  font-size: 10px;
+}
+
+nav ul {
+  display: none;
+}
+
+nav img {
+  margin-top: 20px;
+  color: white;
+}
+
+nav h4 {
+  margin: 1px;
+}
+
+nav h2#daftar:hover,
+button#daftar {
+  color: white;
+  background-color: #14042d;
+  cursor: default;
+}
+
+nav h2 {
+  margin: 0px;
+  padding: 10px 5px;
+  border-radius: 0px;
+  border: none;
+  display: block;
+  cursor: pointer;
+}
+
+nav h2:hover {
+  background-color: rgba(241, 239, 239, 0.897);
+  color: #14042d;
+  border-radius: 50px 0px 0px 50px;
+}
+
+nav h2.active {
+  color: #14042d;
+  background-color: white;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+nav button {
+  width: 100%;
+  color: white;
+  font-size: 1.5em;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+nav button#logout:hover {
+  color: white;
+  background-color: red;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.tahap1,
+.tahap2,
+.tahap3,
+.status,
+.juknis,
+.sertifikat {
+  width: 100%;
+  margin-left: 200px;
+}
+
+/* MASSGE */
+.msg {
+  width: 80%;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+.msg h1,
+.msg p {
+  margin: auto;
+  color: red;
+  padding: 20px;
+}
+
+/* Juknis & E-Sertifikat*/
+.pdf {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.pdf embed {
+  height: 400px;
+  width: 700px;
+}
+
+/* NAVBAR RESPONSIVE */
+
+@media (max-width: 700px) {
+  body {
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "poppins";
+  }
+
+  nav {
+    color: #ffffff;
+    background-color: rgb(0, 0, 51);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav ul li {
+    list-style: none;
+    margin: 0px 15px;
+    cursor: pointer;
+  }
+
+  nav img,
+  nav hr,
+  nav h4,
+  nav h2,
+  nav form {
+    display: none;
+  }
+
+  .tahap1,
+  .tahap2,
+  .tahap3,
+  .status,
+  .juknis,
+  .sertifikat {
+    margin-left: 0px;
+  }
+
+  .mb-nav-users {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 0, 51);
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .mb-nav-users h2 {
+    cursor: pointer;
+  }
+
+  .mb-nav-users form button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-family: "poppins";
+    background-color: red;
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+}

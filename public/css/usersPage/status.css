@@ -1,0 +1,60 @@
+.status .st-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 70px auto;
+  text-align: center;
+}
+
+.st-container .st-tahap1,
+.st-tahap2,
+.st-tahap3,
+.st-selesai {
+  margin: 10px;
+  background-color: #14042d;
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8),
+    0 6px 20px 0 rgba(240, 162, 162, 0.7);
+  overflow: hidden;
+}
+
+.st-tahap1 h2,
+h3 {
+  margin: 7px;
+  color: white;
+  font-weight: bold;
+}
+
+.st-tahap2 h2,
+h3 {
+  margin: 7px;
+  color: white;
+  font-weight: bold;
+}
+
+.st-tahap3 h2,
+h3 {
+  margin: 7px;
+  color: white;
+  font-weight: bold;
+}
+
+.st-selesai h2,
+h3 {
+  margin: 7px;
+  color: white;
+  font-weight: bold;
+}
+
+.detail-tahap {
+  width: 80%;
+  margin: 30px auto;
+  padding: 10px;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3),
+    0 6px 20px 0 rgba(240, 162, 162, 0.25);
+}
