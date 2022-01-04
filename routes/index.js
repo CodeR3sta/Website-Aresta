@@ -19,7 +19,7 @@ initPassportLocal();
 let initWebRoutes = (app) => {
   //HOME PAGE
   router.get("/", loginController.checkLoggedOut, (req, res) => {
-    return res.render("home");
+    return res.render("index");
   });
   router.get("/ketentuan-umum", loginController.checkLoggedOut, (req, res) => {
     res.render("ku");
@@ -93,8 +93,6 @@ let initWebRoutes = (app) => {
   );
 
   // ADMIN
-
-
 
   // ADMIN LOGIN //CLEAR --- CHALLENGE 3KALI
   app.get("/code/resta/panitia/login", adminLogin.getLogin);
