@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Montserrat Font */
+
+body {
+    background-color: black;
+}
+
+.prompt {
+    background-color: #FF00C3;
+}
+
+.prompt .container p {
+    color: black;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 800;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+p.aresta {
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 2rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FF00C3;
+    color: black;
+}
+
+h1.tema {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: #FF00C3;
+}
+
+p.tanggal {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    color: #FF00C3;
+}
+
+a.tombol {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #FF00C3;
+    padding: 15px 20px;
+    outline: 2px solid;
+    text-decoration: none;
+}
+
+a.tombol:hover {
+    color: black;
+    background-color: #FF00C3;
+    transition: 0.4s ease all;
+}
+
+h1.perlombaan {
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 5rem;
+    color: #FF00C3;
+    text-align: center;
+}
+
+p.keterangan {
+    font-family: 'Montserrat';
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FF00C3;
+    color: black;
+}
+
+p.keterangan, h1.perlombaan {
+    padding: 0;
+    margin: 0;
+}
+
+.trailer#trailer {
+    margin: auto;
+    background-image: url(../resources/trailerv2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.trailer {
+    padding-top: 0.3vh;
+    position: relative;
+    overflow: hidden;
+}
+
+iframe.frame {
+    margin: auto;
+    height:34vw;
+    width: 60vw;
+    display: block;
+}
+
+.list-lomba {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list-lomba ul {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.list-lomba ul li {
+    display: flex;
+    padding: 6rem 2rem 6rem 2rem;
+}
+
+.list-lomba ul li a:hover {
+    filter: sepia();
+    transition: 0.4s ease all;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#gambar {
+    width: 100vh;
+}
+
+#headline {
+    height: 100vh;
+    padding-top: 25vh;
+}
+
+#bg {
+    background-image: url("../resources/bg-web-01.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#trailer {
+    height: 100vh;
+    margin: 0;
+}
+
+#lomba {
+    height: auto;
+}
+
+/* Footer Section */
+
+footer {
+    background-color: #FF00C3;
+}
+
+.ft-title {
+    color: black;
+    font-size: 1.2rem;
+    padding-bottom: 0.625rem;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.ft-main {
+    padding: 1.25rem 1.875rem;
+    padding-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ft-main-item {
+    padding: 1.25rem;
+    min-width: 12.5rem;
+}
+
+.ft-main-item#logo {
+    min-width: 1rem !important;
+}
+
+.ft-main-item ul li a:hover {
+    color: white;
+    font-weight: 700;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+ul li a {
+    color: black;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.ft-social {
+    padding: 0 1.875rem;
+
+}
+
+.ft-social-list {
+    display: flex;
+    justify-content: center;
+}
+
+.ft-social-list li {
+    margin: 0.5rem;
+    font-size: 1.25rem;
+    list-style: none;
+}
+
+.ft-social-list li a {
+    font-size: 1.2rem;
+}
+
+.ft-social-list li a:hover {
+    color: #47C0B4;
+}
+
+.ft-weem {
+    background-color: #47C0B4;
+}
+
+.weem {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: black;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* Media Queries */
+@media screen and (max-width: 900px) {
+    .ft-main {
+        flex-direction: column;
+    }
+    .list-lomba ul {
+        display: flex;
+        flex-direction: column;
+        margin-left: 100vw;
+        margin-right: 100vw;
+    }
+    h1.tema {
+        font-size: 10vw;
+    }
+    p.aresta {
+        font-size: 7vw;
+        margin: 0;
+    }
+    p.tanggal {
+        font-size: 5vw;
+    }
+    a.tombol {
+        font-size: 4vw;
+        padding: 2vw 4vw;
+    }
+    h1.perlombaan {
+        font-size: 10vw;
+    }
+    p.keterangan {
+        font-size: 5vw;
+    }
+    iframe.frame {
+        width: 79vw;
+        height: 42vw;
+    }
+    .trailer#trailer {
+        background-image: url("../resources/trailerv2_mobile.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
+}
