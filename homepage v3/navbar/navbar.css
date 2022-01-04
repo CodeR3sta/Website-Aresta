@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+
+body {
+  margin: 0px;
+  font-family: "poppins", sans-serif;
+  background-color: black;
+  height: 5000px;
+}
+
+.nav-color {
+  background-color: #ff00c3;
+}
+
+ul li a i#op-desk,
+ul div li.close {
+  display: none;
+  color: white;
+}
+
+.about-cont {
+  width: 150px;
+}
+
+.info-cont {
+  right: 20px;
+}
+
+.about-cont,
+.info-cont {
+  display: none;
+  position: fixed;
+  background-color: black;
+  box-shadow: 0px 8px 16px 0px rgba(54, 53, 53, 0.2);
+}
+
+.about-cont a:hover,
+.info-cont a:hover {
+  background-color: #ff00c3;
+}
+
+li.about-drop:hover .about-cont {
+  display: block;
+}
+
+li.info-drop:hover .info-cont {
+  display: block;
+}
+
+ul {
+  transition: 0.5s;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li.logo {
+  position: absolute;
+  left: 20px;
+}
+
+li.logo a:hover {
+  background-color: none;
+}
+
+li.logo a:hover {
+  background-color: black;
+}
+
+li.login-btn a {
+  background-color: #ff00c3;
+  padding: 14px 25px;
+}
+
+li.login-btn a:hover {
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 25px;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  ul {
+    justify-content: space-between;
+  }
+  li.logo {
+    position: static;
+    display: block;
+  }
+
+  ul li a i#op-desk {
+    display: block;
+    font-size: 25px;
+  }
+
+  .desk {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    background-color: #ff00c3;
+    height: 100%;
+    width: 100%;
+  }
+
+  .desk .about-cont,
+  .desk .info-cont {
+    display: none;
+    position: static;
+    width: 100%;
+    background-color: #ff2fceda;
+    box-shadow: none;
+  }
+
+  .desk .close {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+  }
+}
