@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+body {
+  margin: 0px;
+  background-color: black;
+}
+
+.judul {
+  font-size: 3em;
+  margin-top: 125px;
+  text-align: center;
+  font-family: "montserrat";
+  color: #ff00c3;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: #ff00c3;
+}
+
+.kotak {
+  width: 60%;
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: 200px auto;
+  font-family: "montserrat";
+}
+
+div .dalam {
+  background-color: #ff00c3;
+  width: 150px;
+}
+
+@media (max-width: 900px) {
+  .judul {
+    margin-top: 100px;
+    margin-bottom: 0px;
+  }
+  .kotak {
+    width: 80%;
+  }
+}
+
+@media (max-width: 750px) {
+  .judul {
+    font-size: 2.5em;
+    margin-top: 80px;
+    margin-bottom: 0px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.5em;
+  }
+
+  .kotak {
+    width: 90%;
+    grid-template-columns: 175px auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .judul {
+    margin-top: 70px;
+    margin-bottom: 0px;
+    font-size: 2em;
+  }
+  h1 {
+    font-size: 1em;
+  }
+  h2 {
+    font-size: 0.5em;
+  }
+  p {
+    font-size: 0.3em;
+  }
+  .kotak {
+    width: 90%;
+    grid-template-columns: 125px auto;
+  }
+  div .dalam {
+    width: 100px;
+  }
+}

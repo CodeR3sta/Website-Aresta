@@ -1,20 +1,3 @@
-let about = document.getElementById("mb-about");
-let info = document.getElementById("mb-info");
-
-about.addEventListener("click", () => {
-  let aboutCon = document.getElementById("ab-con");
-  if ((aboutCon.style.display = "none")) {
-    aboutCon.style.display = "block";
-  }
-});
-
-info.addEventListener("click", () => {
-  let aboutCon = document.getElementById("in-con");
-  if ((aboutCon.style.display = "none")) {
-    aboutCon.style.display = "block";
-  }
-});
-
 // SCROLL
 window.addEventListener("scroll", () => {
   let navbar = document.getElementById("navbar");
@@ -23,5 +6,27 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("nav-color");
   } else {
     navbar.classList.add("nav-color");
+  }
+});
+
+document.getElementById("op-desk").addEventListener("click", () => {
+  let desk = document.getElementById("desk");
+  desk.style.display = "flex";
+});
+
+document.getElementById("cls-desk").addEventListener("click", () => {
+  let desk = document.getElementById("desk");
+  desk.style.display = "none";
+});
+
+document.getElementById("op-about-cont").addEventListener("click", () => {
+  if (window.innerWidth < 901) {
+    let about = document.getElementById("about-cont");
+  }
+});
+
+document.getElementById("op-info-cont").addEventListener("click", () => {
+  if (window.innerWidth < 901) {
+    let info = document.getElementById("info-cont");
   }
 });

@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+body {
+  background-color: black;
+  margin: 0px;
+}
+
+.judul {
+  margin: 150px 0px auto;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  color: #ff00c3;
+}
+
+h1 {
+  color: white;
+  font-family: "Montserrat";
+}
+h2 {
+  color: white;
+  font-family: "Montserrat";
+}
+p {
+  font-family: "Montserrat";
+}
+
+.isi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.zero {
+  padding: 35px;
+  background-color: inherit;
+  margin: 87.5px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+
+.zero .dalam {
+  float: left;
+  width: 175px;
+  height: 175px;
+  margin-right: 35px;
+  background-color: #ff00c3;
+}
+
+.first {
+  padding: 35px;
+  background-color: inherit;
+  margin: 87.5px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+
+.first .dalam {
+  float: left;
+  width: 175px;
+  height: 175px;
+  margin-right: 35px;
+  background-color: #ff00c3;
+}
+
+.second {
+  padding: 35px;
+  background-color: inherit;
+  margin: 87.5px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+
+  justify-content: center;
+}
+.second .dalam {
+  float: left;
+  background-color: #ff00c3;
+  width: 175px;
+  height: 262.5px;
+  margin-right: 35px;
+}
+.third {
+  padding: 35px;
+  background-color: inherit;
+  margin: 105px auto 87.5px;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+
+.third .dalam {
+  float: left;
+  width: 175px;
+  height: 175px;
+  margin-right: 35px;
+  background-color: #ff00c3;
+}
+
+.fourth {
+  padding: 35px;
+  background-color: inherit;
+  margin: 87.5px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+
+.fourth .dalam {
+  float: left;
+  width: 175px;
+  height: 175px;
+  margin-right: 35px;
+  background-color: #ff00c3;
+}
+
+.fifth {
+  padding: 35px;
+  background-color: inherit;
+  margin: 87.5px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+.fifth .dalam {
+  float: left;
+  background-color: #ff00c3;
+  width: 175px;
+  height: 350px;
+  margin-right: 35px;
+}
+.sixth {
+  padding: 35px;
+  background-color: inherit;
+  margin: 210px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+.sixth .dalam {
+  float: left;
+  background-color: #ff00c3;
+  width: 175px;
+  height: 385px;
+  margin-right: 35px;
+}
+.seventh {
+  padding: 35px;
+  background-color: inherit;
+  margin: 245px auto 87.5px;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+
+.seventh .dalam {
+  float: left;
+  width: 175px;
+  height: 175px;
+  margin-right: 35px;
+  background-color: #ff00c3;
+}
+
+.eighth {
+  padding: 35px;
+  background-color: inherit;
+  margin: 87.5px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+.eighth .dalam {
+  float: left;
+  background-color: #ff00c3;
+  width: 175px;
+  height: 315px;
+  margin-right: 35px;
+}
+.ninth {
+  padding: 35px;
+  background-color: inherit;
+  margin: 210px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+.ninth .dalam {
+  float: left;
+  background-color: #ff00c3;
+  width: 175px;
+  height: 262.5px;
+  margin-right: 35px;
+}
+.tenth {
+  padding: 35px;
+  background-color: inherit;
+  margin: 210px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+.tenth .dalam {
+  float: left;
+  background-color: #ff00c3;
+  width: 175px;
+  height: 297.5px;
+  margin-right: 35px;
+}
+.eleventh {
+  padding: 35px;
+  background-color: inherit;
+  margin: 210px auto;
+  width: 875px;
+  height: 175px;
+  color: #ff00c3;
+}
+.eleventh .dalam {
+  float: left;
+  background-color: #ff00c3;
+  width: 175px;
+  height: 210px;
+  margin-right: 35px;
+}
+
+.ten {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  body {
+    width: 1000px;
+  }
+}

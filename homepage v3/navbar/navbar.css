@@ -1,18 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
 
-body {
-  margin: 0px;
-  font-family: "poppins", sans-serif;
-  background-color: black;
-  height: 5000px;
-}
-
-.nav-color {
+ul#navbar.nav-color {
   background-color: #ff00c3;
 }
 
-ul li a i#op-desk,
-ul div li.close {
+ul#navbar li a i#op-desk,
+ul#navbar div li.close {
   display: none;
   color: white;
 }
@@ -30,7 +23,7 @@ ul div li.close {
   display: none;
   position: fixed;
   background-color: black;
-  box-shadow: 0px 8px 16px 0px rgba(54, 53, 53, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(121, 118, 118, 0.2);
 }
 
 .about-cont a:hover,
@@ -46,7 +39,9 @@ li.info-drop:hover .info-cont {
   display: block;
 }
 
-ul {
+ul#navbar {
+  top: 0px;
+  font-family: "poppins";
   transition: 0.5s;
   position: fixed;
   width: 100%;
@@ -57,7 +52,8 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: black;
+  background-color: none;
+  z-index: 99999;
 }
 
 li.logo {
@@ -82,11 +78,17 @@ li.login-btn a:hover {
   background-color: black;
 }
 
-li {
+li.daf-btn {
+  display: none;
+}
+
+.desk li {
   float: left;
 }
 
-li a {
+ul#navbar li a,
+ul#navbar .desk li a {
+  font-family: "poppins";
   display: block;
   color: white;
   text-align: center;
@@ -95,7 +97,7 @@ li a {
 }
 
 @media (max-width: 900px) {
-  ul {
+  ul#navbar {
     justify-content: space-between;
   }
   li.logo {
@@ -103,7 +105,7 @@ li a {
     display: block;
   }
 
-  ul li a i#op-desk {
+  ul#navbar li a i#op-desk {
     display: block;
     font-size: 25px;
   }
@@ -127,12 +129,16 @@ li a {
     box-shadow: none;
   }
 
-  .desk .close {
+  ul#navbar .desk .close {
     display: block;
     position: absolute;
     top: 10px;
     right: 30px;
     font-size: 40px;
     color: white;
+  }
+
+  li.daf-btn {
+    display: block;
   }
 }
