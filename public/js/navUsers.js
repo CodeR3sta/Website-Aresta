@@ -11,7 +11,7 @@ window.addEventListener("click", (ev) => {
   let tabBtn = document.getElementsByClassName("tablinks");
   let nav = document.getElementById("mb-nav-users");
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
     if (ev.target === tabBtn[i]) {
       nav.style.display = "none";
     }

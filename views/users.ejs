@@ -9,45 +9,88 @@
     <link rel="stylesheet" href="/css/usersPage/tahap2.css">
     <link rel="stylesheet" href="/css/usersPage/tahap3.css">
     <link rel="stylesheet" href="/css/usersPage/status.css">
+    <link rel="stylesheet" href="/css/usersPage/grup.css">
     <title>Users Page</title>
     <script src="https://kit.fontawesome.com/78ac0bed3f.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <div class="mb-nav-users" id="mb-nav-users">
-        <h2 id="daftar">Pendaftaran &#709</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'tahap2')" id="defaultOpen">Tahap 2</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
-        <form action="/logout" method="post">
-            <button id="logout">Logout</button>
-        </form>
-    </div>
-    <nav>
-        <ul>
-            <li>ARESTA 17</li>
-            <li class="navbar-toggle"><i class="fas fa-bars" id="op-nav"></i></li>
-        </ul>
-        <img src="/img/usersPage/logoAresta.png" alt="logo-aresta">
-        <hr>
-        <h4><%= user.namaUtama %></h4>
-        <hr>
-        <h2 id="daftar">Pendaftaran &#709</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'tahap2')" id="defaultOpen">Tahap 2</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
-        <hr>
-        <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
-        <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
-        <hr>
-        <form action="/logout" method="post">
-            <button id="logout">Logout</button>
-        </form>
-    </nav>
+
+    <% if (user.status === 4) { %>
+        <div class="mb-nav-users" id="mb-nav-users">
+            <h2 id="daftar">Pendaftaran &#709</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap2')">Tahap 2</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'grup-lomba')" id="defaultOpen">Grup Lomba (Whatsapp)</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
+            <form action="/logout" method="post">
+                <button id="logout">Logout</button>
+            </form>
+        </div>
+        <nav>
+            <ul>
+                <li>ARESTA 17</li>
+                <li class="navbar-toggle"><i class="fas fa-bars" id="op-nav"></i></li>
+            </ul>
+            <img src="/img/usersPage/logoAresta.png" alt="logo-aresta">
+            <hr>
+            <h4><%= user.namaUtama %></h4>
+            <hr>
+            <h2 id="daftar">Pendaftaran &#709</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap2')">Tahap 2</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
+            <hr>
+            <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'grup-lomba')" id="defaultOpen">Grup Lomba (Whatsapp)</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
+            <hr>
+            <form action="/logout" method="post">
+                <button id="logout">Logout</button>
+            </form>
+        </nav>
+    <% } else { %>
+        <div class="mb-nav-users" id="mb-nav-users">
+            <h2 id="daftar">Pendaftaran &#709</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap2')" id="defaultOpen">Tahap 2</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'grup-lomba')">Grup Lomba (Whatsapp)</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
+            <form action="/logout" method="post">
+                <button id="logout">Logout</button>
+            </form>
+        </div>
+        <nav>
+            <ul>
+                <li>ARESTA 17</li>
+                <li class="navbar-toggle"><i class="fas fa-bars" id="op-nav"></i></li>
+            </ul>
+            <img src="/img/usersPage/logoAresta.png" alt="logo-aresta">
+            <hr>
+            <h4><%= user.namaUtama %></h4>
+            <hr>
+            <h2 id="daftar">Pendaftaran &#709</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap1')">Tahap 1</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap2')" id="defaultOpen">Tahap 2</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'tahap3')">Tahap 3</h2>
+            <hr>
+            <h2 class="tablinks" onclick="openCity(event, 'status')">Status Pendaftaran</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'grup-lomba')">Grup Lomba (Whatsapp)</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'juknis')">K U Lomba</h2>
+            <h2 class="tablinks" onclick="openCity(event, 'sertifikat')">E-Certificate</h2>
+            <hr>
+            <form action="/logout" method="post">
+                <button id="logout">Logout</button>
+            </form>
+        </nav>
+    <% } %>
 
     <div class="tahap1 tabcontent" id="tahap1">
         <div class="msg" >
@@ -328,6 +371,23 @@
             <p>0858-6370-4512 (whatsapp)</p>
         </div>
 
+    </div>
+    <div class="grup-lomba tabcontent" id="grup-lomba">
+        <div class="msg" >
+            <% if (user.pesan != '') { %>
+                <h1><%- user.pesan %> </h1>
+            <% } %>
+        </div>
+        <% if (user.status === 4) { %>
+            <div class="grup-cont">
+                <h1>ISI NYA APA NICH    </h1>
+            </div>
+        <% } else { %>
+            <div class="pdf">
+                <img src="/img/usersPage/wrong.png" alt="blm ada e-sertifikat" width="200px" >
+                <h1>Selesaikan Pendaftaran Terlebih dahulu</h1>
+            </div> 
+        <% } %>
     </div>
     <div class="juknis tabcontent" id="juknis">
  
