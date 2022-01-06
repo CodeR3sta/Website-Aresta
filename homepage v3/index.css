@@ -109,6 +109,18 @@ iframe.frame {
     display: block;
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.seminar, .talkshow {
+    margin: 0;
+    padding: 0;
+}
+
 .list-lomba {
     display: flex;
     flex-direction: row;
