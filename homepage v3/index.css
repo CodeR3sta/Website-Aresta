@@ -2,7 +2,7 @@
 /* Montserrat Font */
 
 body {
-    background-color: black;
+    background-color: #14042D;
 }
 
 .prompt {
@@ -81,7 +81,7 @@ p.keterangan {
     text-align: center;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #FF00C3;
-    color: black;
+    color: #14042D;
 }
 
 p.keterangan, h1.perlombaan {
@@ -109,16 +109,60 @@ iframe.frame {
     display: block;
 }
 
-img {
+.event {
+    height: 100vh;
+}
+
+.event h1 {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #FF00C3;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.event p {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: #14042D;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FF00C3;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.event li img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
 
-.seminar, .talkshow {
-    margin: 0;
-    padding: 0;
+.event ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.event a {
+    text-align: center;
+    color: #FF00C3;
+    outline: 1px solid #FF00C3;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.event a:hover {
+    background-color: #FF00C3;
+    color: black;
+}
+
+#seminar, #talkshow {
+    margin-left: 26%;
 }
 
 .list-lomba {
@@ -171,6 +215,12 @@ a {
 
 #lomba {
     height: auto;
+}
+
+.bg-lomba {
+    background-image: url("../img/city-outline.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Footer Section */
@@ -302,5 +352,30 @@ ul li a {
         background-repeat: no-repeat;
         background-size: contain;
     }
-    
+    .event {
+        height: auto;
+    }
+    .event li {
+        margin-bottom: 10vh;
+    }
+    .event ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .event a {
+        margin: 0;
+        font-size: 1rem;
+    }
+    .event h1 {
+        font-size: 4rem;
+    }
+    #seminar {
+        margin-left: 22vw;
+    }
+    #talkshow {
+        margin-left: 20vw;
+    }
+    .event p {
+        font-size: 1.7rem;
+    }
 }

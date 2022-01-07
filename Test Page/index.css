@@ -16,6 +16,26 @@
     box-sizing: border-box;
 }
 
+.event .seminar {
+    background-color: black;
+}
+
+.event .talkshow {
+    background-color: red;
+}
+
+#left {
+    width: 50%;
+    float: left;
+    height: 100vh;
+}
+
+#right {
+    width: 50%;
+    float: right;
+    height: 100vh;
+}
+
 body {
     display: flex;
     min-height: 100vh;
