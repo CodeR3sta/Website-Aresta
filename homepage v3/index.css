@@ -29,7 +29,7 @@ p.aresta {
     font-size: 2rem;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #FF00C3;
-    color: black;
+    color: #14042D;
 }
 
 h1.tema {
@@ -202,7 +202,7 @@ a {
 }
 
 #bg {
-    background-image: url("../resources/bg-web-01.png");
+    background-image: url("/img/bg-v2.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
