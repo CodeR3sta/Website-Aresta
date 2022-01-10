@@ -64,6 +64,50 @@ a.tombol:hover {
     transition: 0.4s ease all;
 }
 
+.container#apaitu {
+    height: 100vh;
+}
+
+.container#apaitu h1 {
+    padding-top: 4rem;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #FF00C3;
+    text-align: center;
+}
+
+.container#apaitu p {
+    font-family: 'Montserrat';
+    font-weight: 800;
+    color: #FF00C3;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.container#apaitu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container#apaitu ul li {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.container#apaitu ul li img {
+    height: 40vh;
+    width: auto;
+}
+
+.container#apaitu ul li img:hover {
+    filter: sepia();
+    transition: 0.4s ease all;
+}
+
 h1.perlombaan {
     text-transform: uppercase;
     font-family: 'Montserrat';
