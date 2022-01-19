@@ -156,68 +156,8 @@
         <div class="upload">
             <% if (user.status === 1) { %>
                 <div class="msg" style="text-align: left;">
-                    <p>
-                        *format file : png / jpg / jpeg <br>
-                        *file size : Kurang dari 20MB <br>
-                        *post Ig : <a target="_blink" href="https://twb.nz/aresta17">buat twibon</a> <br>
-                        *diharuskan untuk mengupload file satu-persatu dengan internet stabil <br>
-                    </p>
+                    <p>Pendaftaran Sudah Di Tutup</p>
                 </div>
-                <hr>
-                    <% if (user[`suratRekomendasi`] === '') { %>
-                            <form action="/users/suratRekomendasi" method="post" enctype="multipart/form-data">
-                                <td><label for="suratRekomendasi">Upload surat Rekomendasi sekolah:</label></td>
-                                <td><input type="file" name="suratRekomendasi" id="suratRekomendasi" accept="image/*" required></td>
-                                <td><button type="submit">submit</button></td>
-                            </form>
-                    <% } else { %>
-                            <td><label for="suratRekomendasi">Upload surat Rekomendasi sekolah:</label></td>
-                            <td>:</td>
-                            <td>Terkirim</td>
-                    <% } %>
-                    <hr>
-                    <% if (user.lomba === 'nasyid') { %>
-                        <% if (user[`fotoTim`] === '') { %>
-                                <form action="/users/fotoTim" method="post" enctype="multipart/form-data">
-                                    <td><label for="fotoTim">Upload Foto Tim:</label></td>
-                                    <td><input type="file" name="fotoTim" id="fotoTim" accept="image/*" required></td>
-                                    <td><button type="submit">submit</button></td>
-                                </form>
-                        <% } else { %>
-                                <td><label for="fotoTim">Upload Foto Tim:</label></td>
-                                <td>:</td>
-                                <td>Terkirim</td>                                 
-                        <% } %>
-                        <hr>
-                    <% } %>
-                    <% for( let i = 1; i <= user.jumlahAnggota + 1; i++ ) { %>
-
-                        <% if (user[`postIg${i}`] === '') { %>
-                                <form action="/users/postIg<%- i %>" method="post" enctype="multipart/form-data">
-                                    <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
-                                    <td><input type="file" name="postIg<%- i %>" id="postIg<%- i %>" accept="image/*" required></td>
-                                    <td><button type="submit">submit</button></td>
-                                </form>
-                        <% } else { %>
-                                <td><label for="postIg<%- i %>">Upload Bukti Post IG <%- i %>:</label></td>
-                                <td>:</td>
-                                <td>Terkirim</td>
-                        <% } %>
-                        <hr>
-                        <% if (user[`fotoDiri${i}`] === '') { %>
-                                <form action="/users/fotoDiri<%- i %>" method="post" enctype="multipart/form-data">
-                                    <td><label for="fotoDiri<%- i %>">Upload Foto Diri <%- i %> :</label></td>
-                                    <td><input type="file" name="fotoDiri<%- i %>" id="fotoDiri<%- i %>" accept="image/*" required></td>
-                                    <td><button type="submit">submit</button></td>
-                                </form>
-                        <% } else { %>
-                                <td><label for="fotoDiri<%- i %>">Upload Foto Diri <%- i %> :</label></td>
-                                <td>:</td>
-                                <td>Terkirim</td>
-                        <% } %>
-                     
-                    <% } %>
-                
 
             <% } else if (user.status === 2) { %>
                 <img id="logo-pending" src="/img/usersPage/attention.png" alt="attention" width="200px" height="200px" >
@@ -241,7 +181,7 @@
                 <img id="logo-pending" src="/img/usersPage/attention.png" alt="attention" width="200px" height="200px" >
                 <h1>Selesaikan dahulu Tahap Dua Pendaftaran</h1>
             <% } else if (user.status === 3) { %>
-                <h1>Pembayaran</h1>
+                <!-- <h1>Pembayaran</h1>
                 <p>-Melakukan pembayaran dengan nominal:</p>
                 <p>Individu = Rp. 25.000</p>
                 <p>Kelompok = Rp. 50.000</p>
@@ -252,7 +192,8 @@
                     <a class="chatWA" target="_blink" href="https://api.whatsapp.com/send?phone=085863704512&text=(kirim bukti pembayaran)%0Anama%20lengkap%20(ketua)%20%3A%0Alomba%20%3A%0Aasal%20sekolah%20%3A%0Anomor%20Hp%20%3A">
                         <div>chat</div>
                     </a>
-                </div>
+                </div> -->
+                <h1>Pendaftaran Sudah di Tutup</h1>
             <% } else if (user.status === 4) { %>
                 <img id="logo-selesaiTahap2" src="/img/usersPage/verified.png" alt="verified" width="200px" height="200px">
                 <h1>Tahap 3 Pendaftaran Telah Selesai</h1>
@@ -380,7 +321,38 @@
         </div>
         <% if (user.status === 4) { %>
             <div class="grup-cont">
-                <h1>ISI NYA APA NICH    </h1>
+                <h2>Bergabung ke grup whatsap untuk informasi lebih lanjut</h2>
+                <% if (user.lomba === 'nasyid') { %>
+                    <a href="https://chat.whatsapp.com/JkxfZQwEqrYEmfSsdqbuB8">Masuk Grup Nasyid</a>
+                <% } else if (user.lomba === 'storyTelling') { %>
+                    <a href="https://chat.whatsapp.com/H93MtXk0fwBL8hol7Axjir">Masuk Grup Story Telling</a>
+                <% } else if (user.lomba === 'olimpiadeArab') { %>
+                    <a href="https://chat.whatsapp.com/CEvbo8GureX7QfTPb3CUtI">Masuk Grup Olimpiade Bahasa Arab</a>
+                <% } else if (user.lomba === 'daiCilik') { %>
+                    <a href="https://chat.whatsapp.com/L9hjkVCJxLX6OJv1T8DKuS">Masuk Grup Da'i Cilik</a>
+                <% } else if (user.lomba === 'mhqSd') { %>
+                    <a href="https://chat.whatsapp.com/EBvGLUQNvXI8r9yqHz5T8D">Masuk Grup MHQ SD</a>
+                <% } else if (user.lomba === 'mhqSmp') { %>
+                    <a href="https://chat.whatsapp.com/LizSZ2k3luw2EssCB707Qb">Masuk Grup MHQ SMP</a>
+                <% } else if (user.lomba === 'mhqSma') { %>
+                    <a href="https://chat.whatsapp.com/FrJQHaCAv1jHkC2XdVSAUl">Masuk Grup MHQ SMA</a>
+                <% } else if (user.lomba === 'arestaSurvivalCamp') { %>
+                    <a href="https://chat.whatsapp.com/IgtZcYcD0vvAjfwzAQN4gM">Masuk Grup Aresta Survival Camp</a>
+                <% } else if (user.lomba === 'dramatisasiPuisi') { %> 
+                    <a href="#">Mohon Tunggu...</a>
+                <% } else if (user.lomba === 'videoKreatif') { %>
+                    <a href="https://chat.whatsapp.com/F8yUagtDkPu6nk2miaBC5l">Masuk Grup Video Kreatif</a>
+                <% } else if (user.lomba === 'ldbi') { %>
+                    <a href="https://chat.whatsapp.com/BDk0ihbX0YA34jUv7xq9ZM">Masuk Grup LDBI</a>
+                <% } else if (user.lomba === 'khitobah') { %>
+                    <a href="https://chat.whatsapp.com/BrdISjh5s8oLkzamtACTnJ">Masuk Grup Khitobah</a>
+                <% } else if (user.lomba === 'fotografi') { %>
+                    <a href="https://chat.whatsapp.com/La7E0qbewKLKsDCLcaDqEW">Masuk Grup Fotografi</a>
+                <% } else if (user.lomba === 'designPoster') { %>
+                    <a href="https://chat.whatsapp.com/Ivyf69ky2YzFTP5Bj7WC4q">Masuk Grup Design Poster</a>
+                <% } else if (user.lomba === 'businessPlan') { %>
+                    <a href="https://chat.whatsapp.com/Iz4PhNQOFra09GGQbgBNSD">Masuk Grup Business Plan</a>
+                <% } %>
             </div>
         <% } else { %>
             <div class="pdf">

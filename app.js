@@ -46,7 +46,7 @@ let sessionStore = new MySQLStore({
 
 // config session
 app.use(
-  session({ 
+  session({
     secret: "secret",
     saveUninitialized: true,
     store: sessionStore,

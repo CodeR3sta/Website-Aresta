@@ -14,6 +14,23 @@ let viewStatus = (req, res) => {
     let row3 = [];
     let row4 = [];
 
+    let daiCilik = [];
+    let designPoster = [];
+    let fotografi = [];
+    let khitobah = [];
+    let mhqSd = [];
+    let mhqSmp = [];
+    let mhqSma = [];
+    let olimpiadeArab = [];
+    let storyTelling = [];
+
+    let arestaSurvivalCamp = [];
+    let businessPlan = [];
+    let dramatisasiPuisi = [];
+    let ldbi = [];
+    let nasyid = [];
+    let videoKreatif = [];
+
     row.forEach((ppp) => {
       if (ppp.status === 0) {
         row0.push(ppp);
@@ -25,10 +42,64 @@ let viewStatus = (req, res) => {
         row3.push(ppp);
       } else if (ppp.status === 4) {
         row4.push(ppp);
+        if (ppp.lomba === "daiCilik") {
+          daiCilik.push(ppp);
+        } else if ((ppp.lomba = "designPoster")) {
+          console.log(ppp);
+          designPoster.push(ppp);
+        } else if ((ppp.lomba = "fotografi")) {
+          fotografi.push(ppp);
+        } else if ((ppp.lomba = "khitobah")) {
+          khitobah.push(ppp);
+        } else if ((ppp.lomba = "mhqSd")) {
+          mhqSd.push(ppp);
+        } else if ((ppp.lomba = "mhqSmp")) {
+          mhqSmp.push(ppp);
+        } else if ((ppp.lomba = "mhqSma")) {
+          mhqSma.push(ppp);
+        } else if ((ppp.lomba = "olimpiadeArab")) {
+          olimpiadeArab.push(ppp);
+        } else if ((ppp.lomba = "storyTelling")) {
+          storyTelling.push(ppp);
+        } else if ((ppp.lomba = "arestaSurvivalCamp")) {
+          arestaSurvivalCamp.push(ppp);
+        } else if ((ppp.lomba = "businessPlan")) {
+          businessPlan.push(ppp);
+        } else if ((ppp.lomba = "dramatisasiPuisi")) {
+          dramatisasiPuisi.push(ppp);
+        } else if ((ppp.lomba = "ldbi")) {
+          ldbi.push(ppp);
+        } else if ((ppp.lomba = "nasyid")) {
+          nasyid.push(ppp);
+        } else if ((ppp.lomba = "videoKreatif")) {
+          videoKreatif.push(ppp);
+        }
       }
     });
 
-    return res.render("admin", { row, row0, row1, row2, row3, row4 });
+    return res.render("admin", {
+      row,
+      row0,
+      row1,
+      row2,
+      row3,
+      row4,
+      daiCilik,
+      designPoster,
+      fotografi,
+      khitobah,
+      mhqSd,
+      mhqSmp,
+      mhqSma,
+      olimpiadeArab,
+      storyTelling,
+      arestaSurvivalCamp,
+      businessPlan,
+      dramatisasiPuisi,
+      ldbi,
+      nasyid,
+      videoKreatif,
+    });
   });
 };
 
@@ -36,7 +107,7 @@ let viewStatus = (req, res) => {
 let findUsers = (req, res) => {
   let cari = req.body.search;
   db.query(
-    "SELECT * FROM users WHERE namaUtama LIKE ?",
+    "SELECT * FROM users WHERE namaUtama,sekolah LIKE ?",
     ["%" + cari + "%"],
     (err, results) => {
       if (err) console.log(err);
@@ -48,6 +119,21 @@ let findUsers = (req, res) => {
         row2: undefined,
         row3: undefined,
         row4: undefined,
+        daiCilik: undefined,
+        designPoster: undefined,
+        fotografi: undefined,
+        khitobah: undefined,
+        mhqSd: undefined,
+        mhqSmp: undefined,
+        mhqSma: undefined,
+        olimpiadeArab: undefined,
+        storyTelling: undefined,
+        arestaSurvivalCamp: undefined,
+        businessPlan: undefined,
+        dramatisasiPuisi: undefined,
+        ldbi: undefined,
+        nasyid: undefined,
+        videoKreatif: undefined,
       });
     }
   );

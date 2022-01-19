@@ -284,7 +284,86 @@
         </table>
     </div>
     <div class="tabcontent sertifikat" id="sertifikat">sertifikat</div>
-    <div class="tabcontent excel" id="excel">excel</div>
+    <div class="tabcontent excel" id="excel">
+        <table>
+                <tr>
+                    <td>daiCilik</td>
+                    <% if (daiCilik != undefined) { %>
+                        <td><%- daiCilik.length %>/ 50 </td>                     
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>designPoster</td>
+                    <% if (designPoster != undefined) { %>
+                        <td><%- designPoster.length %>/ unlimit </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>fotografi</td>
+                    <% if (fotografi != undefined) { %>
+                        <td><%- fotografi.length %>/ unlimit </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>khitobah</td>
+                    <% if (khitobah != undefined) { %>
+                        <td><%- khitobah.length %>/ 50 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>mhqSd</td>
+                    <% if (mhqSd != undefined) { %>
+                        <td><%- mhqSd.length %>/ 40 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>mhqSmp</td>
+                    <% if (mhqSmp != undefined) { %>
+                        <td><%- mhqSmp.length %>/ 25 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>mhqSma</td>
+                    <% if (mhqSma != undefined) { %>
+                        <td><%- mhqSma.length %>/ 25 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>olimpiadeArab</td>
+                    <% if (olimpiadeArab != undefined) { %>
+                        <td><%- olimpiadeArab.length %>/ 120 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>storyTelling</td>
+                    <% if (storyTelling != undefined) { %>
+                        <td><%- storyTelling.length %>/ 30 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>arestaSurvivalCamp</td>
+                    <% if (arestaSurvivalCamp != undefined) { %>
+                        <td><%- arestaSurvivalCamp.length %>/ 30 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>businessPlan</td>
+                    <% if (businessPlan != undefined) { %>
+                        <td><%- businessPlan.length %>/ 20 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>dramatisasiPuisi</td>
+                    <% if (dramatisasiPuisi != undefined) { %>
+                        <td><%- dramatisasiPuisi.length %>/ 35 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>ldbi</td>
+                    <% if (ldbi != undefined) { %>
+                        <td><%- ldbi.length %>/ 16 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>nasyid</td>
+                    <% if (nasyid != undefined) { %>
+                        <td><%- nasyid.length %>/ 25 </td>                     
+                    <% } %>                </tr>
+                <tr>
+                    <td>videoKreatif</td>
+                    <% if (videoKreatif != undefined) { %>
+                        <td><%- videoKreatif.length %>/ 40 </td>                     
+                    <% } %>                </tr>
+        </table>
+    </div>
 
 </body>
 <script src="/js/users.js"></script>
