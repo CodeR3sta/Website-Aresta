@@ -68,6 +68,9 @@ a.tombol:hover {
 
 .countdown {
     height: 100vh;
+    background-image: url(/img/bg-countdown.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .countdown ul {
