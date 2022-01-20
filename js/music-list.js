@@ -25,7 +25,7 @@ let allMusic = [
   {
     name: "Aresta17 - Hilang",
     artist: "B.O.R.N",
-    img: "mAresta17-Hilang",
+    img: "Aresta17-Hilang",
     src: "Aresta17-Hilang"
   },
   // like this paste it and remember to give comma after ending of this bracket }
