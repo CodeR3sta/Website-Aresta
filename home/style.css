@@ -1,0 +1,299 @@
+@font-face {
+  font-family: "bebas-bold";
+  src: url("./font/BebasNeue-Bold.otf");
+}
+
+@font-face {
+  font-family: "manrope-exlight";
+  src: url("./font/Manrope-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "bebas-light";
+  src: url("./font/BebasNeue\ Light.otf");
+}
+
+@font-face {
+  font-family: "bebas-reg";
+  src: url("./font/BebasNeue\ Regular.otf");
+}
+body {
+  background-color: rgb(22, 3, 41);
+  margin: 0px;
+}
+
+.container {
+  background-image: url("./img/gelombang.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.satu {
+  width: 100%;
+}
+
+.satu .tulis {
+  /* background-color: green; */
+  width: 340px;
+  margin-left: 150px;
+}
+
+h1 {
+  margin: 0px;
+}
+
+.in {
+  top: 160px;
+  position: absolute;
+  font-family: "bebas-bold";
+  color: white;
+  font-size: 10em;
+  letter-spacing: 5px;
+}
+
+.out {
+  margin-top: 167px;
+  bottom: 0px;
+  font-family: "bebas-bold";
+  color: white;
+  font-size: 10em;
+  letter-spacing: 5px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.5px;
+}
+
+.satu p {
+  font-family: "manrope-exlight";
+  color: white;
+}
+
+.tombol {
+  display: flex;
+  align-items: center;
+  border: 3px solid white;
+  border-radius: 1px;
+  font-family: "manrope-exlight";
+  color: white;
+  text-decoration: none;
+  width: 250px;
+  height: 40px;
+  margin: 20px auto;
+}
+
+.tombol i {
+  color: rgb(22, 3, 41);
+  padding: 10px;
+  background-color: white;
+}
+
+.tombol p {
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+.in-2 {
+  top: 210px;
+  position: relative;
+  font-size: 6em;
+  color: white;
+  font-family: "bebas-bold";
+  text-align: center;
+}
+
+.out-2 {
+  margin-top: 100px;
+  font-size: 6em;
+  color: white;
+  font-family: "bebas-bold";
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.5px;
+}
+
+.dua #mv {
+  bottom: 510px;
+  position: relative;
+  display: block;
+  margin: auto;
+}
+
+.dua .mv-block {
+  margin: 150px auto;
+  width: 80%;
+  height: 300px;
+  background-color: rgb(255, 0, 194);
+}
+
+.tiga {
+  display: flex;
+  flex-direction: row;
+}
+
+.tiga h1 {
+  margin-left: 100px;
+  color: white;
+  font-size: 8em;
+  font-family: "bebas-bold";
+  letter-spacing: 5px;
+}
+
+.tiga h1 span {
+  font-family: "bebas-light";
+}
+
+.empat {
+  margin-top: 150px;
+  padding-bottom: 300px;
+}
+
+.empat .na-ares {
+  display: inline-block;
+  margin: 0px 50px;
+  position: relative;
+  font-family: "bebas-bold";
+  color: rgb(255, 0, 194);
+  font-size: 8em;
+}
+
+.empat h2 {
+  display: inline-block;
+  position: relative;
+  margin: 0px 50px;
+  color: white;
+  font-family: "bebas-reg";
+  letter-spacing: 2px;
+}
+
+.empat .gal {
+  display: inline-block;
+  position: relative;
+  font-family: "bebas-bold";
+  font-size: 8em;
+  color: rgb(255, 0, 194);
+  margin: 0px 50px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 3px;
+}
+
+.empat .kolek {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  height: 600px;
+  width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: auto;
+}
+
+.empat .kolek img {
+  width: 500px;
+  height: 100%;
+  background-color: transparent;
+}
+
+.lima {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+}
+
+.lima img {
+  width: 700px;
+  margin: auto;
+}
+
+/* Footer Section */
+
+footer {
+  background-color: #ff00c3;
+}
+
+.ft-title {
+  color: black;
+  font-size: 1.2rem;
+  padding-bottom: 0.625rem;
+  font-family: "Montserrat";
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ft-main {
+  padding: 1.25rem 1.875rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ft-main-item {
+  padding: 1.25rem;
+  min-width: 12.5rem;
+}
+
+.ft-main-item#logo {
+  min-width: 1rem !important;
+}
+
+.ft-main-item ul li a:hover {
+  color: white;
+  font-weight: 700;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+ul li a {
+  color: black;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.ft-social {
+  padding: 0 1.875rem;
+}
+
+.ft-social-list {
+  display: flex;
+  justify-content: center;
+}
+
+.ft-social-list li {
+  margin: 0.5rem;
+  font-size: 1.25rem;
+  list-style: none;
+}
+
+.ft-social-list li a {
+  font-size: 1.2rem;
+}
+
+.ft-social-list li a:hover {
+  color: #47c0b4;
+}
+
+.ft-weem {
+  background-color: #47c0b4;
+}
+
+.weem {
+  font-family: "Montserrat";
+  font-weight: 900;
+  color: black;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
