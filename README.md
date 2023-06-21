@@ -2,8 +2,8 @@
 
 Berisikan kode-kode website yang digunakan aresta17.com 2021 lalu.
 
-File front-end terletak di branch aresta-launch/homepage v3!  
-[Screenshot 2023-06-21 212403](https://github.com/CodeR3sta/Website-Aresta/assets/93329772/049af6e2-a83c-4c6f-900f-81d01ac07e5c)
+File front-end terletak di branch aresta-launch/homepage v3  
+![Screenshot 2023-06-21 212403](https://github.com/CodeR3sta/Website-Aresta/assets/93329772/049af6e2-a83c-4c6f-900f-81d01ac07e5c)
 
 ## Branch / Cabang
 
